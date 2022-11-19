@@ -142,9 +142,99 @@ button {
 }
 
 #slider {
-  min-height: 550px;
+  padding-top: 37%;  
   background-color: gray;
-  background-image: url("../img/slider-1.jpg");
+  background: url("../img/slider-1.jpg") top center / cover no-repeat;
+}
+
+/* END SLIDER */
+
+/* START NEWS */
+#news-content .container{
+  display: flex;  
+  justify-content: space-between;
+}
+
+#news-content .news-title {
+  height: 50px;
+  border-bottom: 1px solid #dddddd;
+  line-height: 50px;
+}
+
+#news-content #news-event{
+  width: 65%;
+}
+
+#news-top{    
+  padding: 10px;
+}
+
+#news-top #news-top-left{
+  width: 350px;
+  height: 200px;
+  background: url("../img/truong-cao-dang-y-te-dak-lak-1.jpg") top center / cover no-repeat;
+  float: left;    
+}
+
+#news-top #news-top-right{  
+  padding-left: 360px;
+}
+
+#news-top #news-top-body{
+  text-align: justify;
+  line-height: 27px;
+}
+
+#news-body #news-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#news-bottom .news-bottom-wrapper{
+  padding: 15px 5px 15px 5px;
+}
+
+.news-bottom-wrapper .new-bottom-img{
+  width: 170px;
+  height: 100px;
+  background: url("../img/truong-cao-dang-y-te-dak-lak-1.jpg") top center / cover no-repeat;
+}
+
+.news-bottom-wrapper .new-bottom-title{
+  text-align: justify;
+}
+
+#news-content #news-notify{
+  width: 33%;
+}
+
+#news-content #news-notify li{
+  list-style: none;
+  text-align: justify;
+  padding: 5px;
+}
+
+#news-content #news-notify a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #288b6c;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+#news-content #news-notify a:hover{
+  color:#7c1e1e
+}
+
+#news-content #news-notify span{  
+  color: #7c1e1e;
+}
+
+/* END NEWS */
+
+#infomation{
+  background-color: #f2f2f2;
 }
 
 #infomation .container {
@@ -205,9 +295,80 @@ button {
 }
 
 .edu-box .edu-box-content {
+  position: relative;
   float: left;
-  width: 31%;
+  width: 23%;
   height: 200px;
   margin: 10px;
   background-color: #288b6c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.edu-box .edu-box-content:hover{
+  opacity: 0.5;
+} 
+
+.edu-box .edu-box-content .edu-box-title{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  font-size: 14pt;
+  font-weight: bold;
+  background-color: black;
+  color: white;  
+}
+
+#footer{
+  background-color: brown;
+}
+
+#footer #footer-content{  
+  display: flex;
+  padding: 15px;
+  color: white;  
+  justify-content: space-between;
+}
+
+#footer #logo-footer{
+  display: flex;
+  align-items: center;    
+}
+
+#footer .footer-menu{
+  padding-top: 20px;
+}
+
+#footer .footer-menu li{
+  list-style: none;  
+}
+
+#footer .footer-menu a{
+  text-decoration: none;  
+  color: white;
+  line-height: 25px;
+  padding: 5px;
+}
+
+#copyright{
+  background-color: #7c1e1e;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-size: 10pt;
+}
+
+#copyright .container{  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#link-wrapper{
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#link-wrapper img{
+  padding-left: 15px;
 }

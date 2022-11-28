@@ -1,0 +1,40 @@
+// start bottom
+.okido-mainmenu {    
+    --navbar-height: 50px;
+    --navbar-item-width: 120px;    
+    .navbar {
+      height: var(--navbar-height);
+      line-height: var(--navbar-height);
+        .toggle{
+          font-size: 2rem;
+          color: white;
+          height: 50px;
+          :hover{
+            color: var(--secondary);
+          }
+        }
+        .nav-item {
+            min-width: var(--navbar-item-width);        
+            text-align: center;
+            .nav-link {
+                color: white;
+                padding: 0 10px;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .nav-link:hover {
+                background-color: var(--secondary);
+            }
+        }
+        .dropdown-menu{
+            background-color: #288b6c;
+            min-width: 250px;
+        }
+        @media (max-width: 990px) {
+          .navbar-nav{
+            background-color: #00000061;
+          }
+        }
+    }
+}
+// end bottom

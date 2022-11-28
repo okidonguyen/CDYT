@@ -1,0 +1,17 @@
+.wrapper-majors {
+    background-color: gray;
+    padding: 30px;
+
+    .majors-container {
+        background-color: white;
+    }
+    .card-img-overlay {
+        color: white;
+        background-color: black;
+        opacity: 0.4;
+    }
+
+    .card-img-overlay:hover {
+        opacity: 0.6;
+    }
+}

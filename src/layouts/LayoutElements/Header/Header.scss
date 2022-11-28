@@ -1,0 +1,113 @@
+//mobile
+// @media (max-width: 739px) {
+//   .wrapper-top {
+//     .text-running {
+//       display: none;
+//     }
+//   }
+// }
+
+//tablet
+@media (max-width: 1023px) {
+    .wrapper-top {
+        .text-running {
+            display: none;
+        }
+    }
+}
+
+//pc
+@media (min-width: 1024px) {
+    .wrapper-top {
+        .text-running {
+            display: block;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--default-layout-width);
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.wrapper-header {
+    // declare variable
+    --height-top: 40px;
+    --hotline-width: 240px;
+    --font-bold: 600;
+    // start top
+    .wrapper-top {
+        // others
+        border-bottom: 1px solid #dddddd;
+        font-size: 1rem;
+        color: var(--primary);
+        
+        .container {
+            height: var(--height-top);
+
+            .hotline {
+                min-width: var(--hotline-width);
+                font-weight: var(--font-bold);
+                :hover {
+                    color: var(--secondary);
+                }
+            }
+
+            marquee {
+                display: block;
+            }
+
+            .menu-top {
+                width: 200px;
+                display: flex;
+
+                .menu-top-item {
+                    font-size: 1.1rem;
+                    min-width: 100px;
+                    padding-left: 10px;
+                    text-align: center;
+                    cursor: pointer;
+                    :hover {
+                        color: var(--secondary);
+                        font-weight: var(--font-bold);
+                    }
+                }
+
+                .nav-link{
+                    display: inline-block;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+    // end top
+    // start middle
+    .wrapper-middle {
+        .container {
+            padding: 10px;
+            .wrapper-logo {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-width: 400px;
+                .img-logo {
+                    width: 125px;
+                    height: 125px;
+                    background-image: url('/assets/images/logo.png');
+                    background-size: cover;
+                }
+                .txt-logo {
+                    //a
+                }
+            }
+            .wrapper-search {
+                // a
+            }
+        }
+    }
+    // end middle
+}

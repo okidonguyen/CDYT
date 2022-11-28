@@ -1,0 +1,14 @@
+.notification{
+    li{
+        list-style: none;
+    }
+    .nav-link{
+        text-align: justify;
+        :hover{
+            color: var(--secondary);
+        }
+    }
+    .nav-link:hover{
+        color: var(--secondary);
+    }
+}

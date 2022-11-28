@@ -77,7 +77,7 @@ function SinhvienLayout({children}) {
         <Header/>               
         <MainMenu menuItems={menuItems} color={"#288b6c"}/>  
         <Slideshow />
-        <div id="containter">{children}</div>
+        <div id="containter" style={{height:"400px"}}>{children}</div>
         <Footer/>
     </div> );
 }

@@ -83,7 +83,7 @@ function DefaultLayout({children}) {
         <Header/>        
         <MainMenu menuItems={menuItems} color={"#288b6c"}/>   
         <Slideshow />
-        <div>{children}</div>
+        <div style={{height:"400px"}}>{children}</div>
         <Footer/>
     </div> );
 }

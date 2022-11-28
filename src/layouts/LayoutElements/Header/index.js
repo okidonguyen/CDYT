@@ -2,7 +2,6 @@ import { Container, NavLink } from 'reactstrap';
 import './Header.scss';
 
 function Header() {
-
     return (
         <header className={'wrapper-header'}>
             <HeaderTop />
@@ -14,7 +13,7 @@ function Header() {
 const HeaderTop = () => {
     return (
         <div className={'wrapper-top'}>
-            <Container>
+            <Container className='container-xl'>
                 <div className={'hotline'}>
                     <i className="bi bi-telephone"></i>
                     <span> Hotline: 02623.845.678</span>
@@ -24,14 +23,18 @@ const HeaderTop = () => {
                         Chào mừng các bạn đã đến với Website Trường Cao Đẳng Y tế Đắk Lắk
                     </marquee>
                 </div>
-                <div className={'menu-top'}>
+                <div className={'menu-top ms-auto'}>
+                    <div className={'menu-top-item'}>
+                        <i className="bi bi-door-open"></i>
+                        <NavLink href="/noibo/hoatdong">Đăng nhập</NavLink>
+                    </div>
                     <div className={'menu-top-item'}>
                         <i className="bi bi-book"></i>
-                        <NavLink href='/noibo/hoatdong'>CBCC</NavLink>
+                        <NavLink href="/noibo/hoatdong">CBCC</NavLink>
                     </div>
                     <div className={'menu-top-item'}>
                         <i className="bi bi-person-lines-fill"></i>
-                        <NavLink href='/sinhvien/hoatdong'>HSSV</NavLink>
+                        <NavLink href="/sinhvien/hoatdong">HSSV</NavLink>
                     </div>
                 </div>
             </Container>

@@ -7,7 +7,7 @@ const data =[
 
 const Notification = () => {
     return (
-        <Container className='notification' fluid style={{ paddingTop: '30px' }}>
+        <Container className='notification' fluid>
             <div>
             <h3 className='border-bottom'>THÔNG BÁO</h3>
                 <List>

@@ -15,7 +15,7 @@ function Majors() {
         <Container fluid className='wrapper-majors'>
             <div style={{ padding: '30px' }} className="majors-container container-lg" >
                 <Row className="p-0">
-                    <Col className="p-0 col-sm-12 col-md-6 col-xl-4">
+                    <Col className="p-0 col-12 col-md-6 col-xl-4">
                         <Card className="border-0 rounded-0" style={{ color: 'black',height: 200 }}>
                             <br/>
                             <CardTitle tag="h5">NGÀNH ĐÀO TẠO</CardTitle>
@@ -26,7 +26,7 @@ function Majors() {
                             </CardText>
                         </Card>
                     </Col>
-                    <Col className="p-0 col-sm-12 col-md-6 col-xl-4">
+                    <Col className="p-0 col-12 col-md-6 col-xl-4">
                         <Card className="border-0 rounded-0">
                             <CardImg
                                 className="rounded-0"
@@ -51,7 +51,7 @@ function Majors() {
                             </CardImgOverlay>
                         </Card>
                     </Col>
-                    <Col className="p-0 col-sm-12 col-md-6 col-xl-4">
+                    <Col className="p-0 col-12 col-md-6 col-xl-4">
                         <Card className="border-0 rounded-0">
                             <CardImg
                                 className="rounded-0"
@@ -76,7 +76,7 @@ function Majors() {
                             </CardImgOverlay>
                         </Card>
                     </Col>                
-                    <Col className="p-0 col-sm-12 col-md-6 col-xl-4">
+                    <Col className="p-0 col-12 col-md-6 col-xl-4">
                         <Card className="border-0 rounded-0">
                             <CardImg
                                 className="rounded-0"
@@ -101,7 +101,7 @@ function Majors() {
                             </CardImgOverlay>
                         </Card>
                     </Col>
-                    <Col className="p-0 col-sm-12 col-md-6 col-xl-4">
+                    <Col className="p-0 col-12 col-md-6 col-xl-4">
                         <Card className="border-0 rounded-0">
                             <CardImg
                                 className="rounded-0"
@@ -126,7 +126,7 @@ function Majors() {
                             </CardImgOverlay>
                         </Card>
                     </Col>
-                    <Col className="p-0 col-sm-12 col-md-6 col-xl-4">
+                    <Col className="p-0 col-12 col-md-6 col-xl-4">
                         <Card className="border-0 rounded-0">
                             <CardImg
                                 className="rounded-0"

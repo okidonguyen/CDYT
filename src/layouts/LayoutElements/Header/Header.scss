@@ -1,11 +1,11 @@
 //mobile
-// @media (max-width: 739px) {
-//   .wrapper-top {
-//     .text-running {
-//       display: none;
-//     }
-//   }
-// }
+@media (max-width: 739px) {
+  .wrapper-top {
+    .text-running {
+      display: none;
+    }
+  }
+}
 
 //tablet
 @media (max-width: 1023px) {
@@ -29,7 +29,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: var(--default-layout-width);
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -62,12 +61,11 @@
             }
 
             .menu-top {
-                width: 200px;
+                width: 290px;
                 display: flex;
 
                 .menu-top-item {
-                    font-size: 1.1rem;
-                    min-width: 100px;
+                    font-size: 1.1rem;                    
                     padding-left: 10px;
                     text-align: center;
                     cursor: pointer;

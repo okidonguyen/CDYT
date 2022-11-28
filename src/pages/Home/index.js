@@ -8,11 +8,11 @@ function Home() {
     return (
         <Container fluid className="p-0">            
             <Container fluid="lg">
-                <Row>
-                    <Col className='col-lg-7'>
+                <Row className='pt-3 pb-3'>
+                    <Col className='col-12 col-lg-7 p-0'>
                         <News/>
                     </Col>
-                    <Col className='col-lg-5'>
+                    <Col className='col-12 col-lg-5 p-0'>
                         <Notification />
                     </Col>
                 </Row>

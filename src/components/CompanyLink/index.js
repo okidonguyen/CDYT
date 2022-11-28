@@ -11,7 +11,7 @@ const imgLink = [
 
 const CompanyLink = () => {
     return (
-        <Container style={{padding:"30px"}}>
+        <Container className='d-none d-lg-block' style={{padding:"30px", textAlign:"center"}}>
             <div>
                 <h3 className='border-bottom'>ĐỐI TÁC LIÊN KẾT</h3>
                 {imgLink.map((image, index) => (

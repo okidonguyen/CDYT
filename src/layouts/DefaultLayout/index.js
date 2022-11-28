@@ -74,9 +74,6 @@ function DefaultLayout({children}) {
         {
             name: 'Hỏi đáp',
             link: '/profile',
-        },{
-            name: 'Tuyển dụng',
-            link: '/profile',
         }
     ];
     return ( <div>

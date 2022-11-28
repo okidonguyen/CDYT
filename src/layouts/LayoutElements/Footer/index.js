@@ -72,10 +72,10 @@ function Footer() {
                             </p>
                         </div>
                     </div>
-                    <div className="col-lg-2 d-md-none d-lg-block">
+                    <div className="col-lg-2 d-none d-lg-block">
                         <FooterMenu data={itemLeft} />
                     </div>
-                    <div className="col-lg-2 d-md-none d-lg-block">
+                    <div className="col-lg-2 d-none d-lg-block">
                         <FooterMenu data={itemRight} />
                     </div>
                 </div>

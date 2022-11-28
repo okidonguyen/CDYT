@@ -2,7 +2,7 @@ import { Card, CardBody, CardImg, CardText, CardTitle, Container, List, NavLink 
 
 const News = () => {
     return (
-        <Container fluid style={{ paddingTop: '30px' }}>
+        <Container fluid>
             <h3 className='border-bottom'>TIN TỨC NỔI BẬT</h3>
             <Card className="my-2">
                 <CardImg

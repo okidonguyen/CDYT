@@ -17,7 +17,7 @@ const MainMenu = ({ menuItems, color }) => {
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div className="okido-mainmenu" style={{ backgroundColor: color }}>
-            <Navbar expand="lg" className="fw-bold py-0  container-lg">
+            <Navbar expand="lg" className="fw-bold py-0  container-xl">
                 <div onClick={toggle} className="navbar-toggler toggle ms-auto">
                     <i className="bi bi-list"></i>
                 </div>
@@ -31,10 +31,10 @@ const MainMenu = ({ menuItems, color }) => {
                                             key={index}
                                             nav
                                             inNavbar
-                                            className="position-relative"
+                                            className="okido-top-menu"
                                         >
-                                            <DropdownToggle nav caret>
-                                                {item.name}
+                                            <DropdownToggle nav>
+                                                {item.name} <i className="bi bi-caret-down" />
                                             </DropdownToggle>
                                             <DropdownMenu className="p-0 rounded-0">
                                                 {item.submenu.map((sub, subindex) => (
@@ -49,7 +49,7 @@ const MainMenu = ({ menuItems, color }) => {
                                     );
                                 } else {
                                     return (
-                                        <NavItem key={index}>
+                                        <NavItem key={index} className="okido-top-menu">
                                             <NavLink href={item.link}>{item.name}</NavLink>
                                         </NavItem>
                                     );

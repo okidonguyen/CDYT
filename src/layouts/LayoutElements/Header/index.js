@@ -13,7 +13,7 @@ function Header() {
 const HeaderTop = () => {
     return (
         <div className={'wrapper-top'}>
-            <Container className='container-xl'>
+            <Container className="container-xl">
                 <div className={'hotline'}>
                     <i className="bi bi-telephone"></i>
                     <span> Hotline: 02623.845.678</span>
@@ -25,16 +25,25 @@ const HeaderTop = () => {
                 </div>
                 <div className={'menu-top ms-auto'}>
                     <div className={'menu-top-item'}>
-                        <i className="bi bi-door-open"></i>
-                        <NavLink href="/noibo/hoatdong">Đăng nhập</NavLink>
+                        <div className="bi bi-door-open">
+                            <NavLink href="/noibo/hoatdong">
+                                <span className="d-none d-md-block">Đăng nhập</span>
+                            </NavLink>
+                        </div>
                     </div>
                     <div className={'menu-top-item'}>
-                        <i className="bi bi-book"></i>
-                        <NavLink href="/noibo/hoatdong">CBCC</NavLink>
+                        <div className="bi bi-book">
+                            <NavLink href="/noibo/hoatdong">
+                                <span className="d-none d-md-block"> CBCC</span>
+                            </NavLink>
+                        </div>
                     </div>
                     <div className={'menu-top-item'}>
-                        <i className="bi bi-person-lines-fill"></i>
-                        <NavLink href="/sinhvien/hoatdong">HSSV</NavLink>
+                        <div className="bi bi-person-lines-fill">
+                            <NavLink href="/sinhvien/hoatdong">
+                                <span className="d-none d-md-block"> HSSV</span>
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </Container>

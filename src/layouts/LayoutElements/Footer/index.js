@@ -64,7 +64,7 @@ function Footer() {
                                 <br />
                                 Điện thoại: 0262 3 845 678
                                 <br />
-                                Email: capdangytedaklak@gmail.com
+                                Email: caodangytedaklak@gmail.com
                                 <br />
                                 <NavLink href="http://dmc.edu.vn">
                                     Website: http://dmc.edu.vn

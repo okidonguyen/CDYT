@@ -5,11 +5,12 @@ import News from '~/components/News';
 import Notification from '~/components/Notification';
 import { Slideshow } from '~/components';
 import {items, footerItems} from "~/data";
+import { SlideshowSettings as settings} from '~/data';
 
 function Home() {    
     return (
         <Container fluid className="p-0">            
-            <Slideshow items={items} />            
+            <Slideshow items={items} settings={settings} />            
             <Container fluid="lg">
                 <Row className="pt-3 pb-3">
                     <Col className="col-12 col-lg-7 p-0">
@@ -25,7 +26,7 @@ function Home() {
             <h3 className='border-bottom'>HÌNH ẢNH HOẠT ĐỘNG</h3>
             </Container>
             <Container className='d-none d-lg-block'>            
-                <Slideshow items={footerItems} />
+                <Slideshow items={footerItems}  settings={settings} />
             </Container>
             <CompanyLink />
         </Container>

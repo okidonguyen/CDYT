@@ -309,3 +309,12 @@ export const sinhvienMenu = [
         link: '/profile',
     }
 ];
+
+export const SlideshowSettings = {
+    dots: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    height: "550px"
+};

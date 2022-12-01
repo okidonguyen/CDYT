@@ -1,12 +1,7 @@
 // start sidebar
-.UncontrolledCarousel{    
-    .carousel-inner {
-        .carousel-item {
-         max-height: 600px;
-        }
-        .carousel-item img{
-            object-fit: cover;
-        }
+.slick-slider{
+    img{
+        object-fit: cover;
     }
 }
 

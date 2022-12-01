@@ -1,13 +1,23 @@
-import { UncontrolledCarousel } from 'reactstrap';
+import Slider from 'react-slick';
 import './Slideshow.scss';
 
-const Slideshow = ({ items }) => {
+// const settings = {
+//     dots: false,
+//     infinite: true,
+//     speed: 1000,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+// };
+
+const Slideshow = ({items, settings}) => {    
     return (
-        <UncontrolledCarousel
-            className={'UncontrolledCarousel'}
-            items={items}
-            style={{ zIndex: '-1' }}
-        />
+        <Slider {...settings}>
+            {
+                items.map((item, index)=>(
+                    <img className='imgSlider' key={index} src={item.src} width="100vw" height={settings.height} style={{objectFit:"cover"}}/>
+                ))
+            }
+        </Slider>
     );
 };
 

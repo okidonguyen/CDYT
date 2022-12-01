@@ -1,16 +1,15 @@
-import {
-    Button,
+import {    
     Card,
-    CardBody,
-    CardGroup,
-    CardImg,
-    CardSubtitle,
+    CardBody,    
+    CardImg,    
     CardText,
     CardTitle,
     Container,
     NavLink,
 } from 'reactstrap';
 import Slider from 'react-slick';
+import './News.scss';
+
 const News = () => {
     const settings = {
         dots: true,
@@ -42,7 +41,7 @@ const News = () => {
                         <CardText className='p-0 m-0'>
                             <small className="text-muted">Ngày 1/7/22022</small>
                         </CardText>
-                        <NavLink className="read-continue float-end  p-2">Đọc tiếp</NavLink>
+                        <NavLink className="read-continue float-end p-2">Đọc tiếp</NavLink>
                     </CardBody>
                 </Card>
                 <Card className="my-2" >
@@ -65,7 +64,7 @@ const News = () => {
                         <CardText className='p-0 m-0'>
                             <small className="text-muted">Ngày 1/7/22022</small>
                         </CardText>
-                        <NavLink className="float-end p-2">Đọc tiếp</NavLink>
+                        <NavLink className="read-continue float-end p-2">Đọc tiếp</NavLink>
                     </CardBody>
                 </Card>
             </Slider>

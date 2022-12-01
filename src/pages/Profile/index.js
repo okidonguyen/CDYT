@@ -1,5 +1,10 @@
+import TintucApi from "~/components/TintucApi";
+
 function Profile() {
-  return <h1>Profile Page</h1>;
+  <div>
+    <TintucApi/>
+    <h1>daya</h1>
+  </div>
 }
 
 export default Profile;

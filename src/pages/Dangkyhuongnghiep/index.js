@@ -1,22 +1,18 @@
 import { Col, Container, Row } from 'reactstrap';
 import {
     Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
     Form,
     FormGroup,
     Label,
     Input,
 } from 'reactstrap';
 
-function Dangkytuyensinh() {
+function Dangkyhuongnghiep() {
     return (
         <Container fluid className="p-0">
             <Container fluid="lg">
                 <br />
-                <h1>ĐĂNG KÝ TUYỂN SINH </h1>
+                <h1>ĐĂNG KÝ HƯỚNG NGHIỆP </h1>
                 <p>
                     Bạn vui lòng điền đầy đủ thông tin cá nhân vào bảng đăng ký xét tuyển trực tuyến
                     bên cạnh để tư vấn viên của trường liên hệ với bạn giải đáp các thắc mắc hoàn
@@ -80,4 +76,4 @@ function Dangkytuyensinh() {
     );
 }
 
-export default Dangkytuyensinh;
+export default Dangkyhuongnghiep;

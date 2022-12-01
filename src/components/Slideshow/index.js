@@ -11,10 +11,10 @@ import './Slideshow.scss';
 
 const Slideshow = ({items, settings}) => {    
     return (
-        <Slider {...settings}>
+        <Slider {...settings} >
             {
                 items.map((item, index)=>(
-                    <img className='imgSlider' key={index} src={item.src} width="100vw" height={settings.height} style={{objectFit:"cover"}}/>
+                    <img className='imgSlider' key={index} src={item.src} width="100%" />
                 ))
             }
         </Slider>

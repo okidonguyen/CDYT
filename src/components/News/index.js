@@ -25,9 +25,10 @@ const News = () => {
                 <Card className="my-2" >
                     <CardImg
                         alt="Card image cap"
-                        src="https://picsum.photos/900/400"
+                        src={require('~/assets/images/banner/banner-3.jpg')}
                         top
                         width="100%"
+                        height={"320px"}
                     />
                     <CardBody>
                         <CardTitle tag="h5">
@@ -47,9 +48,10 @@ const News = () => {
                 <Card className="my-2" >
                     <CardImg
                         alt="Card image cap"
-                        src="https://picsum.photos/900/400"
+                        src={require('~/assets/images/banner/banner-3.jpg')}
                         top
                         width="100%"
+                        height={"320px"}
                     />
                     <CardBody>
                         <CardTitle tag="h5">

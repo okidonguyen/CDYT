@@ -107,7 +107,7 @@ export const trangchuMenu = [
         ],
     },{
         name: 'Tin tức',
-        link: '/profile',
+        link: '/tintuc',
     },
     {
         name: 'Chương trình đào tạo',

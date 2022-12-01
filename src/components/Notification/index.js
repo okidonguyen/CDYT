@@ -1,57 +1,28 @@
-import { Container, List, NavLink } from 'reactstrap';
-import "./Notification.scss";
-
-const data =[
-    
-]
+import { Col, Container, NavLink, Row } from 'reactstrap';
+import './Notification.scss';
+import { notifyData } from '~/data';
 
 const Notification = () => {
     return (
-        <Container className='notification' fluid>
+        <Container className="notification" fluid>
             <div>
-            <h3 className='border-bottom'>THÔNG BÁO</h3>
-                <List>
-                    <li>                        
-                        <NavLink href="#">
-                            351/TB-HĐTDVC TB niêm yết điểm sát hạch tuyển dụng trường CĐYT 7-2021
-                        </NavLink>
-                    </li>
+                <h3 className="border-bottom">THÔNG BÁO</h3>
 
-                    <li>                        
-                        <NavLink href="#">
-                            299/CĐYT-TB: Danh sách đủ điều kiện xét tuyển viên chức CĐYT Đắk Lắk
-                            (Vòng 2)
-                        </NavLink>
-                    </li>
-
-                    <li>                        
-                        <NavLink href="#">
-                            284/TB-CĐYT Thông báo về việc điều chỉnh thời gian tổ chức xét tuyển
-                            viên chức Trường CĐYT Đắk Lắk 2020
-                        </NavLink>
-                    </li>
-
-                    <li>                        
-                        <NavLink href="#">
-                            Đề cương ôn tập tuyển dụng viên chức Trường CĐYT Đắk Lắk (6/2021)
-                        </NavLink>
-                    </li>
-
-                    <li>                        
-                        <NavLink href="#">Đề cương ôn tập tuyển dụng viên chức Trường CĐYT Đắk Lắk</NavLink>
-                    </li>
-
-                    <li>                        
-                        <NavLink href="#">
-                            Thông báo V/v điều chỉnh phụ lục kế hoạch tuyển dụng và gia hạn nộp hồ
-                            sơ dự tuyển cho vị trí tuyển dụng được điều chỉnh
-                        </NavLink>
-                    </li>
-
-                    <li>                        
-                        <NavLink href="#">Thông báo tuyển dụng viên chức Trường Cao đẳng tế Đắk Lắk</NavLink>
-                    </li>
-                </List>
+                {notifyData.map((item, index) => (
+                    <div key={index}>
+                        <Row className="pt-2 pb-2">
+                            <Col className="col-2">
+                                <div className="dateTimeBox p-2 align-middle">{item.date}</div>
+                            </Col>
+                            <Col>
+                                <NavLink className="" href={item.link}>
+                                    {item.title}
+                                </NavLink>
+                            </Col>
+                        </Row>
+                        <div className="border-bottom"></div>
+                    </div>
+                ))}
             </div>
         </Container>
     );

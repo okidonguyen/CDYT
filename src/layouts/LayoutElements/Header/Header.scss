@@ -90,15 +90,15 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                min-width: 400px;
+                min-width: 360px;
                 .img-logo {
-                    width: 125px;
-                    height: 125px;
+                    width: 155px;
+                    height: 155px;
                     background-image: url('/assets/images/logo.png');
                     background-size: cover;
                 }
                 .txt-logo {
-                    //a
+                    padding-left: 10px;
                 }
             }
             .wrapper-search {

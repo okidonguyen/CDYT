@@ -1,17 +1,23 @@
 .wrapper-majors {
     background-color: gray;
-    padding: 30px;
+    padding: 30px;    
 
     .majors-container {
         background-color: white;
     }
     .card-img-overlay {
         color: white;
-        background-color: black;
-        opacity: 0.4;
+        text-shadow: 1px 1px black;
+        font-size: 1.2rem;        
     }
 
-    .card-img-overlay:hover {
-        opacity: 0.6;
+    .card-img-overlay .card-text{
+        background-color: rgba(0, 0, 0, 0.185);
+        height: 130px;
+    }
+
+    .card-text li:hover {
+       color: var(--secondary);       
+       cursor: pointer;
     }
 }

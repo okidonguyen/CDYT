@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { publicRoute } from '~/routes';
 import { Fragment } from 'react';
 import { DefaultLayout } from './layouts';
-import { Button, UncontrolledTooltip } from 'reactstrap';
 import RegisterOnline from './components/RegisterOnline';
 
 function App() {

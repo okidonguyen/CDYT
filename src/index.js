@@ -7,6 +7,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 import './scss/custom.scss';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -12,12 +12,15 @@ import './Majors.scss';
 
 function Majors() {
     return (
-        <Container fluid className='wrapper-majors'>
-            <div style={{ padding: '30px' }} className="majors-container container-lg" >
+        <Container fluid className="wrapper-majors">
+            <div style={{ padding: '30px' }} className="majors-container container-lg">
                 <Row className="p-0">
                     <Col className="p-0 col-12 col-md-6 col-xl-4">
-                        <Card className="border-0 rounded-0" style={{ color: 'black',height: 200 }}>
-                            <br/>
+                        <Card
+                            className="border-0 rounded-0"
+                            style={{ color: 'black', height: 200 }}
+                        >
+                            <br />
                             <CardTitle tag="h5">NGÀNH ĐÀO TẠO</CardTitle>
                             <CardText>
                                 Với triết lý đào tạo “Thực học – Thực nghiệp”, Trường hướng tới đào
@@ -31,22 +34,22 @@ function Majors() {
                             <CardImg
                                 className="rounded-0"
                                 alt="Card image cap"
-                                src="https://picsum.photos/200/300?random=1"
+                                src={require('~/assets/images/edu-1.jpg')}
                                 style={{
                                     height: 200,
                                     color: 'white',
+                                    objectFit: 'cover',
                                 }}
                                 width="100%"
                             />
                             <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">Card Title</CardTitle>
+                                <CardTitle tag="h5">KHOA Y HỌC LÂM SÀNG</CardTitle>
                                 <CardText>
-                                    This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
-                                </CardText>
-                                <CardText>
-                                    <small className="text-muted">Last updated 3 mins ago</small>
+                                    <ul>
+                                        <li>Đội ngũ giáo viên</li>
+                                        <li>Hoạt động chuyên môn</li>
+                                        <li>Học sinh tiêu biểu</li>
+                                    </ul>
                                 </CardText>
                             </CardImgOverlay>
                         </Card>
@@ -56,47 +59,22 @@ function Majors() {
                             <CardImg
                                 className="rounded-0"
                                 alt="Card image cap"
-                                src="https://picsum.photos/200/300?random=2"
+                                src={require('~/assets/images/edu-2.jpg')}
                                 style={{
                                     height: 200,
                                     color: 'white',
+                                    objectFit: 'cover',
                                 }}
                                 width="100%"
                             />
                             <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">Card Title</CardTitle>
+                                <CardTitle tag="h5">KHOA Y TẾ CỘNG ĐỒNG</CardTitle>
                                 <CardText>
-                                    This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
-                                </CardText>
-                                <CardText>
-                                    <small className="text-muted">Last updated 3 mins ago</small>
-                                </CardText>
-                            </CardImgOverlay>
-                        </Card>
-                    </Col>                
-                    <Col className="p-0 col-12 col-md-6 col-xl-4">
-                        <Card className="border-0 rounded-0">
-                            <CardImg
-                                className="rounded-0"
-                                alt="Card image cap"
-                                src="https://picsum.photos/200/300?random=3"
-                                style={{
-                                    height: 200,
-                                    color: 'white',
-                                }}
-                                width="100%"
-                            />
-                            <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">Card Title</CardTitle>
-                                <CardText>
-                                    This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
-                                </CardText>
-                                <CardText>
-                                    <small className="text-muted">Last updated 3 mins ago</small>
+                                    <ul>
+                                        <li>Đội ngũ giáo viên</li>
+                                        <li>Hoạt động chuyên môn</li>
+                                        <li>Học sinh tiêu biểu</li>
+                                    </ul>
                                 </CardText>
                             </CardImgOverlay>
                         </Card>
@@ -106,22 +84,22 @@ function Majors() {
                             <CardImg
                                 className="rounded-0"
                                 alt="Card image cap"
-                                src="https://picsum.photos/200/300?random=4"
+                                src={require('~/assets/images/edu-3.jpg')}
                                 style={{
                                     height: 200,
                                     color: 'white',
+                                    objectFit: 'cover',
                                 }}
                                 width="100%"
                             />
                             <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">Card Title</CardTitle>
+                                <CardTitle tag="h5">KHOA ĐIỀU DƯỠNG - KTYH</CardTitle>
                                 <CardText>
-                                    This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
-                                </CardText>
-                                <CardText>
-                                    <small className="text-muted">Last updated 3 mins ago</small>
+                                    <ul>
+                                        <li>Đội ngũ giáo viên</li>
+                                        <li>Hoạt động chuyên môn</li>
+                                        <li>Học sinh tiêu biểu</li>
+                                    </ul>
                                 </CardText>
                             </CardImgOverlay>
                         </Card>
@@ -131,22 +109,46 @@ function Majors() {
                             <CardImg
                                 className="rounded-0"
                                 alt="Card image cap"
-                                src="https://picsum.photos/200/300?random=5"
+                                src={require('~/assets/images/edu-4.jpg')}
                                 style={{
                                     height: 200,
                                     color: 'white',
+                                    objectFit: 'cover',
                                 }}
                                 width="100%"
                             />
                             <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">Card Title</CardTitle>
+                                <CardTitle tag="h5">KHOA KHOA HỌC CƠ BẢN</CardTitle>
                                 <CardText>
-                                    This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
+                                    <ul>
+                                        <li>Đội ngũ giáo viên</li>
+                                        <li>Hoạt động chuyên môn</li>
+                                        <li>Học sinh tiêu biểu</li>
+                                    </ul>
                                 </CardText>
+                            </CardImgOverlay>
+                        </Card>
+                    </Col>
+                    <Col className="p-0 col-12 col-md-6 col-xl-4">
+                        <Card className="border-0 rounded-0">
+                            <CardImg
+                                className="rounded-0"
+                                alt="Card image cap"
+                                src={require('~/assets/images/edu-1.jpg')}
+                                style={{
+                                    height: 200,
+                                    color: 'white',
+                                    objectFit: 'cover',
+                                }}
+                                width="100%"
+                            />
+                            <CardImgOverlay className='rounded-0"'>
+                                <CardTitle tag="h5">PHÒNG KHẢO THÍ</CardTitle>
                                 <CardText>
-                                    <small className="text-muted">Last updated 3 mins ago</small>
+                                    <ul>
+                                        <li>Chất lượng cán bộ</li>
+                                        <li>Hoạt động chuyên môn</li>
+                                    </ul>
                                 </CardText>
                             </CardImgOverlay>
                         </Card>

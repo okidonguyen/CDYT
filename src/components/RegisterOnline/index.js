@@ -19,7 +19,7 @@ function RegisterOnline(args) {
     return (
         <div>
             <Button color="danger" onClick={toggle}>
-                <i className="bi bi-pencil-square" /> Đăng ký trực tuyến
+                <i className="bi bi-pencil-square" /> Đăng ký tuyển sinh Online
             </Button>
             <Modal isOpen={modal} toggle={toggle} {...args}>
                 <ModalHeader toggle={toggle}>Đăng ký trực tuyến</ModalHeader>

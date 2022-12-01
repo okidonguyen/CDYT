@@ -1,9 +1,13 @@
 // start sidebar
-.UncontrolledCarousel {
+.UncontrolledCarousel{    
     .carousel-inner {
         .carousel-item {
-            height: 300px;
+         max-height: 600px;
+        }
+        .carousel-item img{
+            object-fit: cover;
         }
     }
 }
+
 // end sidebar

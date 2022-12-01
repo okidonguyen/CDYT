@@ -1,5 +1,29 @@
+import { Col, Container, Row } from 'reactstrap';
+import News from '~/components/News';
+import Notification from '~/components/Notification';
+import { Slideshow } from '~/components';
+import {items, footerItems} from "~/data";
+
 function HoatdongSinhvien() {
-  return <h1>HoatdongSinhvien Page</h1>;
+    return (
+        <Container fluid className="p-0">
+            <Slideshow items={items} />
+            <Container fluid="lg">
+                <Row className="pt-3 pb-3">
+                    <Col className="col-12 col-lg-7 p-0">
+                        <News />
+                    </Col>
+                    <Col className="col-12 col-lg-5 p-0">
+                        <Notification />
+                    </Col>
+                </Row>
+            </Container>
+            <Container className="d-none d-lg-block">
+                <Slideshow items={footerItems} />
+            </Container>
+            <br/>
+        </Container>
+    );
 }
 
 export default HoatdongSinhvien;

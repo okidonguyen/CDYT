@@ -31,7 +31,7 @@ function Footer() {
         },
         {
             link: '/',
-            name: 'Tin tức &amp; Sự kiên',
+            name: 'Tin tức',
         },
         {
             link: '/',
@@ -64,7 +64,7 @@ function Footer() {
                                 <br />
                                 Điện thoại: 0262 3 845 678
                                 <br />
-                                Email: trungcapytedaklak@gmail.com
+                                Email: capdangytedaklak@gmail.com
                                 <br />
                                 <NavLink href="http://dmc.edu.vn">
                                     Website: http://dmc.edu.vn
@@ -78,11 +78,15 @@ function Footer() {
                     <div className="col-lg-2 d-none d-lg-block">
                         <FooterMenu data={itemRight} />
                     </div>
+                    <div className="col-lg-12 d-none d-lg-block">                        
+                        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                        <div className="elfsight-app-6165ece6-9149-46c4-8dda-cd73ecb5e5f3"></div>
+                    </div>
                 </div>
             </Container>
             <Container className="p-0" fluid>
                 <div className="footer-bottom">
-                    <p>Được thiết kế bởi Công ty Công nghệ TakaTech</p>
+                    <p>Copyright 2022</p>
                 </div>
             </Container>
         </div>

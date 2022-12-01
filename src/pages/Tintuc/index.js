@@ -3,6 +3,7 @@ import {
     CardBody,
     CardGroup,
     CardImg,
+    CardSubtitle,
     CardText,
     CardTitle,
     Col,
@@ -14,6 +15,7 @@ import { Slideshow } from '~/components';
 import { footerItems } from '~/data';
 import { SlideshowSettings as settings } from '~/data';
 import { useState } from 'react';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 function Tintuc() {
     const getAllPosts = () => {
@@ -36,28 +38,35 @@ function Tintuc() {
                 {posts['objects'] !== undefined ? (
                     <CardGroup>
                         {posts['objects'].map((post, index) => (
-                            <Col className="col-12 col-lg-4">
-                                <Card key={index} className="my-2 p-3 m-3 border">
+                            <Col className="col-12 col-lg-4 p-0">
+                                <Card key={index} className="my-2 p-2 m-2 border">
                                     <CardImg
                                         alt="Card image cap"
                                         src={post['metadata']['cover']['url']}
                                         top
                                         width="100%"
-                                        height={"300px"}
+                                        style={{
+                                            maxHeight: '200px',
+                                            objectFit: 'cover',
+                                        }}
                                     />
                                     <CardBody>
-                                        <CardTitle tag="h5">{post.title.substring(0,50)}</CardTitle>
-                                        <CardText
-                                            style={{ minHeight: '130px', textAlign: 'justify' }}
+                                        <CardTitle tag="h5">
+                                            {post.title.substring(0, 50)}
+                                        </CardTitle>
+                                        <CardSubtitle
+                                            className="mb-2 text-muted"
+                                            tag="h6"
                                         >
-                                            {post['metadata']['shorttext'].substring(0,220)+" ..."}
-                                        </CardText>
-                                        <CardText className="p-0 m-0">
-                                            <small className="text-muted">
-                                                {post['metadata']['ngaythang']}
-                                            </small>
-                                        </CardText>
-                                        <NavLink className="read-continue float-end p-2">
+                                            {post['metadata']['ngaythang']}
+                                        </CardSubtitle>
+                                        <CardText
+                                            style={{ minHeight: '100px', textAlign: 'justify' }}
+                                        >
+                                            {post['metadata']['shorttext'].substring(0, 180) +
+                                                ' ...'}
+                                        </CardText>                             
+                                        <NavLink className="read-continue float-end p-2" style={{}}>
                                             Đọc tiếp
                                         </NavLink>
                                     </CardBody>

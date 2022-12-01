@@ -12,8 +12,8 @@ import './News.scss';
 
 const News = () => {
     const settings = {
-        dots: true,
-        infinite: true,
+        dots: false,
+        infinite: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -28,7 +28,7 @@ const News = () => {
                         src={require('~/assets/images/banner/banner-3.jpg')}
                         top
                         width="100%"
-                        height={"320px"}
+                        height={"350px"}
                     />
                     <CardBody>
                         <CardTitle tag="h5">

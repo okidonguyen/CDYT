@@ -12,8 +12,11 @@ $line-height-base:1.5;
 }
 
 .App{
-  min-width: 500px;
+  min-width: 400px;
 }
 
+.card{
+  z-index: -1;
+}
 
 

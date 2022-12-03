@@ -26,12 +26,12 @@ function Header() {
 const HeaderTop = () => {
     return (
         <div className={'wrapper-top'}>
-            <Container className="container-xl">
+            <Container className="d-flex justify-content-center p-2">
                 <div className={'hotline'}>
                     <i className="bi bi-telephone"></i>
                     <span> Hotline: 02623.845.678</span>
                 </div>
-                <div className={'text-running'}>
+                <div className={'text-running d-none d-lg-inline-block '}>
                     <marquee>
                         Chào mừng các bạn đã đến với Website Trường Cao Đẳng Y tế Đắk Lắk
                     </marquee>
@@ -63,11 +63,12 @@ const HeaderMiddle = () => {
         <div className={'wrapper-middle'}>
             <Container>
                 <div className={'wrapper-logo'}>
-                    <div className={'img-logo'}></div>
+                    <img src={require('~/assets/images/logo-01.png')} height={"180px"}/>
+                    {/* <div className={'img-logo'}></div>
                     <div className={'txt-logo'}>
                         <h3>TRƯỜNG CAO ĐẲNG</h3>
                         <h1>Y TẾ ĐẮK LẮK</h1>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={'wrapper-search'}></div>
             </Container>

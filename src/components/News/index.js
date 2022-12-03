@@ -28,7 +28,7 @@ const News = () => {
                         src={require('~/assets/images/banner/banner-3.jpg')}
                         top
                         width="100%"
-                        height={"350px"}
+                        style={{maxHeight:"350px"}}
                     />
                     <CardBody>
                         <CardTitle tag="h5">

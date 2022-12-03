@@ -53,13 +53,12 @@ function Footer() {
                     <div className="col">
                         <div id="footer-info">
                             <div className={'wrapper-logo'}>
-                                <div className={'img-logo'}></div>
-                                <div className={'txt-logo'}>
-                                    <h4>TRƯỜNG CAO ĐẲNG</h4>
-                                    <h2>Y TẾ ĐẮK LẮK</h2>
-                                </div>
+                                <img
+                                    src={require('~/assets/images/logo-02.png')}
+                                    height={'180px'}
+                                />
                             </div>
-                            <p>
+                            <p className='p-2'>
                                 Địa chỉ: 32 Y Ngông - P. Tân Tiến - Tp.Buôn Ma Thuột - Tỉnh Đắk Lắk
                                 <br />
                                 Điện thoại: 0262 3 845 678
@@ -78,7 +77,7 @@ function Footer() {
                     <div className="col-lg-2 d-none d-lg-block">
                         <FooterMenu data={itemRight} />
                     </div>
-                    <div className="col-lg-12 d-none d-lg-block">                        
+                    <div className="col-lg-12 d-none d-lg-block">
                         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
                         <div className="elfsight-app-6165ece6-9149-46c4-8dda-cd73ecb5e5f3"></div>
                     </div>

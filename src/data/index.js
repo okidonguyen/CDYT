@@ -313,8 +313,8 @@ export const sinhvienMenu = [
 export const SlideshowSettings = {
     dots: true,
     infinite: true,
-    speed: 2000,
+    speed: 200,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     height: "550px"
 };

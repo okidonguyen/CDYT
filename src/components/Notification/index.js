@@ -10,12 +10,10 @@ const Notification = () => {
 
                 {notifyData.map((item, index) => (
                     <div key={index}>
-                        <Row className="pt-2 pb-2">
-                            <Col className="col-2">
-                                <div className="dateTimeBox p-2 align-middle">{item.date}</div>
-                            </Col>
-                            <Col>
-                                <NavLink className="" href={item.link}>
+                        <Row className="pt-2 pb-2">                           
+                            <Col className='d-flex'>
+                            <div style={{width:"60px"}} className="dateTimeBox p-2 align-middle">{item.date}</div>
+                                <NavLink className="" style={{maxWidth:"80%"}} href={item.link}>
                                     {item.title}
                                 </NavLink>
                             </Col>

@@ -7,8 +7,9 @@
 // start bottom
 .okido-mainmenu {    
     --navbar-height: 50px;
-    --navbar-item-width: 120px;        
+    --navbar-item-width: 120px;            
     .navbar {
+      z-index: 999999;
       height: var(--navbar-height);
       line-height: var(--navbar-height);
         .toggle{

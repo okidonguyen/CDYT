@@ -63,7 +63,7 @@ const HeaderMiddle = () => {
         <div className={'wrapper-middle'}>
             <Container>
                 <div className={'wrapper-logo'}>
-                    <img src={require('~/assets/images/logo-01.png')} height={"180px"}/>
+                    <img src={require('~/assets/images/logo-01.png')}/>
                     {/* <div className={'img-logo'}></div>
                     <div className={'txt-logo'}>
                         <h3>TRƯỜNG CAO ĐẲNG</h3>

@@ -36,7 +36,7 @@ const HeaderTop = () => {
                         Chào mừng các bạn đã đến với Website Trường Cao Đẳng Y tế Đắk Lắk
                     </marquee>
                 </div>
-                <div className={'menu-top ms-auto'}>
+                <div className={'menu-top ms-auto float-end'}>
                     <div className={'menu-top-item'}>
                         <Login />
                     </div>

@@ -1,15 +1,13 @@
 import { Col, Container, Row } from 'reactstrap';
-import {
-    Button,
-    Form,
-    FormGroup,
-    Label,
-    Input,
-} from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Slideshow } from '~/components';
+import { SlideshowSettings as settings } from '~/data';
+import { items } from '~/data';
 
 function Dangkyhuongnghiep() {
     return (
         <Container fluid className="p-0">
+            <Slideshow items={items} settings={settings} />
             <Container fluid="lg">
                 <br />
                 <h1>ĐĂNG KÝ HƯỚNG NGHIỆP </h1>
@@ -21,7 +19,7 @@ function Dangkyhuongnghiep() {
                     buộc phải điền.
                 </p>
 
-                <div style={{border:"solid 1px #ddd", padding:"20px"}}>
+                <div style={{ border: 'solid 1px #ddd', padding: '20px' }}>
                     <Form>
                         <Row>
                             <Col md={6}>
@@ -44,7 +42,7 @@ function Dangkyhuongnghiep() {
                                         type="number"
                                     />
                                 </FormGroup>
-                            </Col>                        
+                            </Col>
                         </Row>
                         <FormGroup>
                             <Label for="student-address">Địa chỉ</Label>
@@ -62,13 +60,13 @@ function Dangkyhuongnghiep() {
                                 <option>Khoa y tế cộng đồng</option>
                                 <option>Khoa điều dưỡng</option>
                             </Input>
-                        </FormGroup>    
+                        </FormGroup>
                         <FormGroup>
                             <Label for="student-job">Thời gian tư vấn</Label>
-                            <Input placeholder='Nhập thời gian để tư vấn gọi điện'></Input>
-                        </FormGroup>                    
+                            <Input placeholder="Nhập thời gian để tư vấn gọi điện"></Input>
+                        </FormGroup>
                         <Button color="primary">GỬI ĐĂNG KÝ</Button>
-                        <br/>
+                        <br />
                     </Form>
                 </div>
             </Container>

@@ -1,11 +1,24 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import { bucket } from '~/cosmicjs';
+import FeatureNews from '~/components/FeatureNews';
+import Breadcrumbs from '~/components/Breadcrumbs';
+import Majors from '~/components/Majors';
 
 function TintucPage() {
     let { slug } = useParams();
     const [contents, setContents] = useState();
+    let breadcrumbItems = [
+        {
+            name: 'Trang chủ',
+            href: '/',
+        },
+        {
+            name: 'Tin tức',
+            href: '/tintuc',
+        },
+    ];
 
     useEffect(() => {
         (async () => {
@@ -22,14 +35,22 @@ function TintucPage() {
     }, []);
     return (
         <Container>
-            {contents !== undefined ? (
-                <div>
-                    <h1>{contents.title}</h1>
-                    <div dangerouslySetInnerHTML={{ __html: contents.content }} />
-                </div>
-            ) : (
-                <></>
-            )}
+            <Breadcrumbs items={breadcrumbItems} />
+            <Row>
+                <Col className="col-12 col-lg-7 text-justify">
+                    {contents !== undefined ? (
+                        <div>
+                            <h1>{contents.title}</h1>
+                            <div dangerouslySetInnerHTML={{ __html: contents.content }} />
+                        </div>
+                    ) : (
+                        <></>
+                    )}
+                </Col>
+                <Col className="col-12 col-lg-5">
+                    <FeatureNews />
+                </Col>
+            </Row>
         </Container>
     );
 }

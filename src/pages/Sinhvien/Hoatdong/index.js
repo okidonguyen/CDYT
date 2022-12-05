@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'reactstrap';
-import News from '~/components/News';
+import NewsCarousel from '~/components/NewsCarousel';
 import Notification from '~/components/Notification';
 import { Slideshow } from '~/components';
 import { items, footerItems, SlideshowSettings as settings } from '~/data';
@@ -11,7 +11,7 @@ function HoatdongSinhvien() {
             <Container fluid="lg">
                 <Row className="pt-3 pb-3">
                     <Col className="col-12 col-lg-7 p-0">
-                        <News />
+                        <NewsCarousel />
                     </Col>
                     <Col className="col-12 col-lg-5 p-0">
                         <Notification />

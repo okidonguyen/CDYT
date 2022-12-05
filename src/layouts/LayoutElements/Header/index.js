@@ -25,39 +25,41 @@ function Header() {
 
 const HeaderTop = () => {
     return (
-        <div className={'wrapper-top'}>
-            <div className="d-flex p-2 justify-content-between justify-content-lg-around container-xl">
-                <div className={'hotline'}>
-                    <i className="bi bi-telephone"></i>
-                    <span> Hotline: 02623.845.678</span>
-                </div>
-                <div className={'text-running d-none d-lg-inline-block '}>
-                    <marquee>
-                        Chào mừng các bạn đã đến với Website Trường Cao Đẳng Y tế Đắk Lắk
-                    </marquee>
-                </div>
-                <div
-                    className={'menu-top d-flex justify-content-end'}
-                    // style={{ minWidth: '370px' }}
-                >
-                    <div className={'menu-top-item ps-2'}>
-                        <Login />
+        <Container>
+            <div className={'wrapper-top'}>
+                <div className="d-flex p-2 justify-content-between justify-content-lg-around container-xl">
+                    <div className={'hotline'}>
+                        <i className="bi bi-telephone"></i>
+                        <span> Hotline: 02623.845.678</span>
                     </div>
-                    <div className={'menu-top-item ps-2'}>
-                        <NavLink href="/noibo/hoatdong">
-                            <i className="bi bi-book"> </i>
-                            <span className="d-none d-sm-inline-block"> CBCC</span>
-                        </NavLink>
+                    <div className={'text-running d-none d-lg-inline-block '}>
+                        <marquee>
+                            Chào mừng các bạn đã đến với Website Trường Cao Đẳng Y tế Đắk Lắk
+                        </marquee>
                     </div>
-                    <div className={'menu-top-item ps-2'}>
-                        <NavLink href="/sinhvien/hoatdong">
-                            <i className="bi bi-person-lines-fill"> </i>
-                            <span className="d-none d-sm-inline-block"> HSSV</span>
-                        </NavLink>
+                    <div
+                        className={'menu-top d-flex justify-content-end'}
+                        // style={{ minWidth: '370px' }}
+                    >
+                        <div className={'menu-top-item ps-2'}>
+                            <Login />
+                        </div>
+                        <div className={'menu-top-item ps-2'}>
+                            <NavLink href="/noibo/hoatdong">
+                                <i className="bi bi-book"> </i>
+                                <span className="d-none d-sm-inline-block"> CBCC</span>
+                            </NavLink>
+                        </div>
+                        <div className={'menu-top-item ps-2'}>
+                            <NavLink href="/sinhvien/hoatdong">
+                                <i className="bi bi-person-lines-fill"> </i>
+                                <span className="d-none d-sm-inline-block"> HSSV</span>
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </Container>
     );
 };
 

@@ -1,9 +1,13 @@
 import { Col, Container, Row } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Slideshow } from '~/components';
+import { SlideshowSettings as settings } from '~/data';
+import { items } from '~/data';
 
 function Dangkytuyensinh() {
     return (
         <Container fluid className="p-0">
+            <Slideshow items={items} settings={settings} />
             <Container fluid="lg">
                 <br />
                 <h1>ĐĂNG KÝ TUYỂN SINH </h1>

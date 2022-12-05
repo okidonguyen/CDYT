@@ -6,11 +6,11 @@
     .wrapper-logo {
         display: flex;
         align-items: center;
-        min-width: 400px;
         padding: 10px;
-        
-        img{                    
-            max-width: 350px;
+        max-width: 350px;
+
+        img {
+            width: 100%;
             height: auto;
         }
     }

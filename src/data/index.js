@@ -103,9 +103,10 @@ export const trangchuMenu = [
             {
                 name: 'Công khai chất lượng GD',
                 link: '/profile',
-            }
+            },
         ],
-    },{
+    },
+    {
         name: 'Tin tức',
         link: '/tintuc',
     },
@@ -158,7 +159,7 @@ export const trangchuMenu = [
     {
         name: 'Hỏi đáp',
         link: '/profile',
-    }
+    },
 ];
 
 export const noiboMenu = [
@@ -188,8 +189,7 @@ export const noiboMenu = [
             {
                 name: 'Phòng tài chính Kế toán',
                 link: '/profile',
-            }
-            ,
+            },
             {
                 name: 'Phòng Quản lý HSSV',
                 link: '/profile',
@@ -210,9 +210,9 @@ export const noiboMenu = [
             {
                 name: 'Đoàn thanh niên',
                 link: '/profile',
-            }
+            },
         ],
-    },  
+    },
     {
         name: 'Lịch Công tác',
         link: '/profile',
@@ -231,13 +231,13 @@ export const noiboMenu = [
             {
                 name: 'Văn bản trường',
                 link: '/profile',
-            }
+            },
         ],
-    },  
+    },
     {
         name: 'Tài liệu',
         link: '/profile',
-    }
+    },
 ];
 
 export const sinhvienMenu = [
@@ -272,7 +272,7 @@ export const sinhvienMenu = [
             {
                 name: 'Đăng ký hướng nghiệp',
                 link: '/profile',
-            },                
+            },
             {
                 name: 'Việc làm & thực tập',
                 link: '/profile',
@@ -280,7 +280,7 @@ export const sinhvienMenu = [
             {
                 name: 'Đối tác liên kết',
                 link: '/profile',
-            }
+            },
         ],
     },
     {
@@ -289,7 +289,7 @@ export const sinhvienMenu = [
             {
                 name: 'Lịch giảng',
                 link: '/profile',
-            },                
+            },
             {
                 name: 'Tra cứu điểm',
                 link: '/profile',
@@ -297,7 +297,7 @@ export const sinhvienMenu = [
             {
                 name: 'Tài liệu',
                 link: '/profile',
-            }
+            },
         ],
     },
     {
@@ -307,7 +307,7 @@ export const sinhvienMenu = [
     {
         name: 'Thư viện - Bài giảng',
         link: '/profile',
-    }
+    },
 ];
 
 export const SlideshowSettings = {
@@ -315,6 +315,6 @@ export const SlideshowSettings = {
     infinite: true,
     speed: 200,
     slidesToShow: 1,
-    slidesToScroll: 2,
-    height: "550px"
+    slidesToScroll: 1,
+    height: '550px',
 };

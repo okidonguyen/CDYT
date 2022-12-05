@@ -1,24 +1,25 @@
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
-$font-family-base:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-$font-size-base:1rem;
-$line-height-base:1.5;
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
 
 :root {
-  --primary: #288b6c;
-  --secondary: #b02225;
-  --default-layout-width: 1150px;  
+    --primary: #288b6c;
+    --secondary: #b02225;
+    --default-layout-width: 1150px;
 }
 
-.App{
-  min-width: 450px;
+.App {
+    //min-width: 450px;
 }
 
 // .card{
 //   z-index: -1;
 // }
 
-html, body { overflow-x: hidden; }
-
-
+html,
+body {
+    overflow-x: hidden;
+}

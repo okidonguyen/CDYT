@@ -1,0 +1,19 @@
+.carousel {
+    .card-body a:hover {
+        color: var(--secondary);
+    }
+
+    .carousel-indicators button {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: var(--primary);
+    }
+
+    .carousel-item {
+        .read-continue {
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}

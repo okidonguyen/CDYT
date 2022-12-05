@@ -15,7 +15,6 @@ import { Slideshow } from '~/components';
 import { footerItems } from '~/data';
 import { SlideshowSettings as settings } from '~/data';
 import { useState } from 'react';
-import { hover } from '@testing-library/user-event/dist/hover';
 
 function Tintuc() {
     const getAllPosts = () => {
@@ -38,15 +37,15 @@ function Tintuc() {
                 {posts['objects'] !== undefined ? (
                     <CardGroup>
                         {posts['objects'].map((post, index) => (
-                            <Col className="col-12 col-lg-4 p-0">
-                                <Card key={index} className="my-2 p-2 m-2 border">
+                            <Col key={index} className="col-12 col-lg-4 p-0">
+                                <Card className="my-2 p-2 m-2 border">
                                     <CardImg
                                         alt="Card image cap"
                                         src={post['metadata']['cover']['url']}
                                         top
                                         width="100%"
                                         style={{
-                                            maxHeight: '200px',
+                                            height: '200px',
                                             objectFit: 'cover',
                                         }}
                                     />
@@ -54,10 +53,7 @@ function Tintuc() {
                                         <CardTitle tag="h5">
                                             {post.title.substring(0, 50)}
                                         </CardTitle>
-                                        <CardSubtitle
-                                            className="mb-2 text-muted"
-                                            tag="h6"
-                                        >
+                                        <CardSubtitle className="mb-2 text-muted" tag="h6">
                                             {post['metadata']['ngaythang']}
                                         </CardSubtitle>
                                         <CardText
@@ -65,7 +61,7 @@ function Tintuc() {
                                         >
                                             {post['metadata']['shorttext'].substring(0, 180) +
                                                 ' ...'}
-                                        </CardText>                             
+                                        </CardText>
                                         <NavLink className="read-continue float-end p-2" style={{}}>
                                             Đọc tiếp
                                         </NavLink>

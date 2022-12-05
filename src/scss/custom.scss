@@ -15,8 +15,10 @@ $line-height-base:1.5;
   min-width: 450px;
 }
 
-.card{
-  z-index: -1;
-}
+// .card{
+//   z-index: -1;
+// }
+
+html, body { overflow-x: hidden; }
 
 

@@ -4,7 +4,6 @@ import { Fragment } from 'react';
 import { DefaultLayout } from './layouts';
 import RegisterOnline from './components/RegisterOnline';
 
-
 function App() {
     return (
         <BrowserRouter>

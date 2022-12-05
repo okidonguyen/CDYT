@@ -54,11 +54,12 @@ function Footer() {
                         <div id="footer-info">
                             <div className={'wrapper-logo'}>
                                 <img
+                                    alt=""
                                     src={require('~/assets/images/logo-02.png')}
                                     height={'180px'}
                                 />
                             </div>
-                            <p className='p-2'>
+                            <p className="p-2">
                                 Địa chỉ: 32 Y Ngông - P. Tân Tiến - Tp.Buôn Ma Thuột - Tỉnh Đắk Lắk
                                 <br />
                                 Điện thoại: 0262 3 845 678

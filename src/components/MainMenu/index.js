@@ -17,7 +17,7 @@ const MainMenu = ({ menuItems, color }) => {
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div className="okido-mainmenu" style={{ backgroundColor: color }}>
-            <Navbar expand="lg" className="fw-bold py-0  container-xl">
+            <Navbar expand="lg" className="fw-bold py-0 container-xl">
                 <div onClick={toggle} className="navbar-toggler toggle ms-auto">
                     <i className="bi bi-list"></i>
                 </div>

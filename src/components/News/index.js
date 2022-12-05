@@ -1,40 +1,50 @@
-import React, { useState } from 'react';
+import { bucket } from '../../cosmicjs';
+import { useEffect, useState, memo } from 'react';
 import {
     Carousel,
     CarouselItem,
-    CarouselControl,
     CarouselIndicators,
-    CarouselCaption,
     Card,
-    CardBody,    
-    CardImg,    
+    CardBody,
+    CardImg,
     CardText,
-    CardTitle,    
+    CardTitle,
     NavLink,
 } from 'reactstrap';
-
-const items = [
-    {
-        src: require('~/assets/images/banner/banner-3.jpg'),
-        altText: 'Slide 2',
-        caption: 'Slide 2',
-        title: 'Trường Cao đẳng Y tế Đắk Lắk thông báo tuyển sinh năm 2022 1'
-    },
-    {
-        src: require('~/assets/images/banner/banner-3.jpg'),
-        altText: 'Slide 2',
-        caption: 'Slide 2',
-        title: 'Trường Cao đẳng Y tế Đắk Lắk thông báo tuyển sinh năm 2022 2'
-    },
-    {
-        src: require('~/assets/images/banner/banner-3.jpg'),
-        altText: 'Slide 3',
-        caption: 'Slide 3',
-        title: 'Trường Cao đẳng Y tế Đắk Lắk thông báo tuyển sinh năm 2022 3'
-    },
-];
+import './News.scss';
 
 function News(args) {
+    const [items, setItems] = useState(() => {
+        return [{}];
+    });
+
+    useEffect(() => {
+        (async () => {
+            console.log('katub');
+            const data = await bucket.objects
+                .find({
+                    type: 'trangchu-tintuc',
+                    'metadata.bai_viet_noi_bat': true,
+                })
+                .props('slug,title,metadata');
+
+            let posts = [];
+            data.objects.map((post) =>
+                posts.push({
+                    src: post['metadata']['cover']['url'],
+                    slug: post['slug'],
+                    title: post['title'],
+                    content: post['metadata']['shorttext'].substring(0, 180) + ' ...',
+                    date: post['metadata']['ngaythang'],
+                })
+            );
+            //console.log(items);
+            setItems(posts);
+        })();
+    }, []);
+
+    // return <h1>slide</h1>;
+
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
@@ -67,24 +77,27 @@ function News(args) {
                         alt="Card image cap"
                         src={item.src}
                         top
-                        width="100%"
-                        style={{ maxHeight: '350px' }}
+                        style={{ height: '350px', objectFit: 'cover' }}
                     />
                     <CardBody>
-                        <CardTitle tag="h5">
+                        <CardTitle style={{ height: '50px', textAlign: 'justify' }} tag="h5">
                             {item.title}
                         </CardTitle>
                         <CardText style={{ height: '80px', textAlign: 'justify' }}>
-                            Triển khai kế hoạch phát triển nhân lực Nhà trường năm học 2022 - 2023,
-                            Trường cao Đẳng Y tế Đắk Lắk thông báo tuyển dụng nhân sự với các thông
-                            tin sau.
+                            {item.content}
                         </CardText>
                         <CardText className="p-0 m-0">
-                            <small className="text-muted">Ngày 1/7/22022</small>
+                            <small className="text-muted">{item.date}</small>
                         </CardText>
-                        <NavLink className="read-continue float-end p-2">Đọc tiếp</NavLink>
+                        <NavLink
+                            href={`tintuc/` + item.slug}
+                            className="read-continue float-end p-2 "
+                            style={{ zIndex: '10' }}
+                        >
+                            Đọc tiếp
+                        </NavLink>
                     </CardBody>
-                </Card>                
+                </Card>
             </CarouselItem>
         );
     });
@@ -97,10 +110,10 @@ function News(args) {
                 onClickHandler={goToIndex}
             />
             {slides}
-            <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-            <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+            {/* <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+            <CarouselControl direction="next" directionText="Next" onClickHandler={next} /> */}
         </Carousel>
     );
 }
 
-export default News;
+export default memo(News);

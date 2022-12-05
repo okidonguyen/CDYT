@@ -26,7 +26,7 @@ function Header() {
 const HeaderTop = () => {
     return (
         <div className={'wrapper-top'}>
-            <Container className="d-flex justify-content-center p-2">
+            <div className="d-flex p-2 justify-content-between justify-content-lg-around container-xl">
                 <div className={'hotline'}>
                     <i className="bi bi-telephone"></i>
                     <span> Hotline: 02623.845.678</span>
@@ -36,24 +36,27 @@ const HeaderTop = () => {
                         Chào mừng các bạn đã đến với Website Trường Cao Đẳng Y tế Đắk Lắk
                     </marquee>
                 </div>
-                <div className={'menu-top ms-auto float-end'}>
-                    <div className={'menu-top-item'}>
+                <div
+                    className={'menu-top d-flex justify-content-end'}
+                    // style={{ minWidth: '370px' }}
+                >
+                    <div className={'menu-top-item ps-2'}>
                         <Login />
                     </div>
-                    <div className={'menu-top-item'}>
+                    <div className={'menu-top-item ps-2'}>
                         <NavLink href="/noibo/hoatdong">
                             <i className="bi bi-book"> </i>
-                            <span className="d-none d-md-inline-block"> CBCC</span>
+                            <span className="d-none d-sm-inline-block"> CBCC</span>
                         </NavLink>
                     </div>
-                    <div className={'menu-top-item'}>
+                    <div className={'menu-top-item ps-2'}>
                         <NavLink href="/sinhvien/hoatdong">
                             <i className="bi bi-person-lines-fill"> </i>
-                            <span className="d-none d-md-inline-block"> HSSV</span>
+                            <span className="d-none d-sm-inline-block"> HSSV</span>
                         </NavLink>
                     </div>
                 </div>
-            </Container>
+            </div>
         </div>
     );
 };
@@ -63,12 +66,7 @@ const HeaderMiddle = () => {
         <div className={'wrapper-middle'}>
             <Container>
                 <div className={'wrapper-logo'}>
-                    <img src={require('~/assets/images/logo-01.png')}/>
-                    {/* <div className={'img-logo'}></div>
-                    <div className={'txt-logo'}>
-                        <h3>TRƯỜNG CAO ĐẲNG</h3>
-                        <h1>Y TẾ ĐẮK LẮK</h1>
-                    </div> */}
+                    <img src={require('~/assets/images/logo-01.png')} />
                 </div>
                 <div className={'wrapper-search'}></div>
             </Container>
@@ -82,10 +80,10 @@ const Login = (args) => {
     const toggle = () => setModal(!modal);
 
     return (
-        <div>
+        <div style={{ cursor: 'pointer' }}>
             <NavLink onClick={toggle}>
                 <i className="bi bi-door-open"> </i>
-                <span className="d-none d-md-inline-block"> Đăng nhập</span>
+                <span className="d-none d-sm-inline-block"> Đăng nhập</span>
             </NavLink>
             <Modal isOpen={modal} toggle={toggle} {...args}>
                 <ModalHeader toggle={toggle}>Đăng nhập</ModalHeader>
@@ -97,7 +95,7 @@ const Login = (args) => {
                         </FormGroup>
                         <FormGroup>
                             <Label for="student-phone">Mật khẩu</Label>
-                            <Input id="student-phone" placeholder="Nhập mật khẩu" type='password' />
+                            <Input id="student-phone" placeholder="Nhập mật khẩu" type="password" />
                         </FormGroup>
                     </Form>
                 </ModalBody>

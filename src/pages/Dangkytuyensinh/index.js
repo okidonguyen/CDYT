@@ -1,15 +1,5 @@
 import { Col, Container, Row } from 'reactstrap';
-import {
-    Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    Form,
-    FormGroup,
-    Label,
-    Input,
-} from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 function Dangkytuyensinh() {
     return (
@@ -25,7 +15,7 @@ function Dangkytuyensinh() {
                     buộc phải điền.
                 </p>
 
-                <div style={{border:"solid 1px #ddd", padding:"20px"}}>
+                <div style={{ border: 'solid 1px #ddd', padding: '20px' }}>
                     <Form>
                         <Row>
                             <Col md={6}>
@@ -48,7 +38,7 @@ function Dangkytuyensinh() {
                                         type="number"
                                     />
                                 </FormGroup>
-                            </Col>                        
+                            </Col>
                         </Row>
                         <FormGroup>
                             <Label for="student-address">Địa chỉ</Label>
@@ -66,13 +56,13 @@ function Dangkytuyensinh() {
                                 <option>Khoa y tế cộng đồng</option>
                                 <option>Khoa điều dưỡng</option>
                             </Input>
-                        </FormGroup>    
+                        </FormGroup>
                         <FormGroup>
                             <Label for="student-job">Thời gian tư vấn</Label>
-                            <Input placeholder='Nhập thời gian để tư vấn gọi điện'></Input>
-                        </FormGroup>                    
+                            <Input placeholder="Nhập thời gian để tư vấn gọi điện"></Input>
+                        </FormGroup>
                         <Button color="primary">GỬI ĐĂNG KÝ</Button>
-                        <br/>
+                        <br />
                     </Form>
                 </div>
             </Container>

@@ -44,13 +44,11 @@ function Majors() {
                             />
                             <CardImgOverlay className='rounded-0"'>
                                 <CardTitle tag="h5">KHOA Y HỌC LÂM SÀNG</CardTitle>
-                                <CardText>
-                                    <ul>
-                                        <li>Đội ngũ giáo viên</li>
-                                        <li>Hoạt động chuyên môn</li>
-                                        <li>Học sinh tiêu biểu</li>
-                                    </ul>
-                                </CardText>
+                                <ul>
+                                    <li>Đội ngũ giáo viên</li>
+                                    <li>Hoạt động chuyên môn</li>
+                                    <li>Học sinh tiêu biểu</li>
+                                </ul>
                             </CardImgOverlay>
                         </Card>
                     </Col>
@@ -69,13 +67,11 @@ function Majors() {
                             />
                             <CardImgOverlay className='rounded-0"'>
                                 <CardTitle tag="h5">KHOA Y TẾ CỘNG ĐỒNG</CardTitle>
-                                <CardText>
-                                    <ul>
-                                        <li>Đội ngũ giáo viên</li>
-                                        <li>Hoạt động chuyên môn</li>
-                                        <li>Học sinh tiêu biểu</li>
-                                    </ul>
-                                </CardText>
+                                <ul>
+                                    <li>Đội ngũ giáo viên</li>
+                                    <li>Hoạt động chuyên môn</li>
+                                    <li>Học sinh tiêu biểu</li>
+                                </ul>
                             </CardImgOverlay>
                         </Card>
                     </Col>
@@ -94,13 +90,11 @@ function Majors() {
                             />
                             <CardImgOverlay className='rounded-0"'>
                                 <CardTitle tag="h5">KHOA ĐIỀU DƯỠNG - KTYH</CardTitle>
-                                <CardText>
-                                    <ul>
-                                        <li>Đội ngũ giáo viên</li>
-                                        <li>Hoạt động chuyên môn</li>
-                                        <li>Học sinh tiêu biểu</li>
-                                    </ul>
-                                </CardText>
+                                <ul>
+                                    <li>Đội ngũ giáo viên</li>
+                                    <li>Hoạt động chuyên môn</li>
+                                    <li>Học sinh tiêu biểu</li>
+                                </ul>
                             </CardImgOverlay>
                         </Card>
                     </Col>
@@ -119,13 +113,11 @@ function Majors() {
                             />
                             <CardImgOverlay className='rounded-0"'>
                                 <CardTitle tag="h5">KHOA KHOA HỌC CƠ BẢN</CardTitle>
-                                <CardText>
-                                    <ul>
-                                        <li>Đội ngũ giáo viên</li>
-                                        <li>Hoạt động chuyên môn</li>
-                                        <li>Học sinh tiêu biểu</li>
-                                    </ul>
-                                </CardText>
+                                <ul>
+                                    <li>Đội ngũ giáo viên</li>
+                                    <li>Hoạt động chuyên môn</li>
+                                    <li>Học sinh tiêu biểu</li>
+                                </ul>
                             </CardImgOverlay>
                         </Card>
                     </Col>
@@ -144,12 +136,10 @@ function Majors() {
                             />
                             <CardImgOverlay className='rounded-0"'>
                                 <CardTitle tag="h5">PHÒNG KHẢO THÍ</CardTitle>
-                                <CardText>
-                                    <ul>
-                                        <li>Chất lượng cán bộ</li>
-                                        <li>Hoạt động chuyên môn</li>
-                                    </ul>
-                                </CardText>
+                                <ul>
+                                    <li>Chất lượng cán bộ</li>
+                                    <li>Hoạt động chuyên môn</li>
+                                </ul>
                             </CardImgOverlay>
                         </Card>
                     </Col>

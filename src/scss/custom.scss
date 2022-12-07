@@ -5,6 +5,10 @@ $font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.5;
 
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
 :root {
     --primary: #288b6c;
     --secondary: #b02225;

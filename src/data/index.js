@@ -3,19 +3,31 @@ export const items = [
         altText: '',
         caption: '',
         key: 1,
-        src: require('~/assets/images/banner/banner-1.jpg'),
+        src: require('~/assets/images/banner/Photo-01.jpg'),
     },
     {
         altText: '',
         caption: '',
         key: 2,
-        src: require('~/assets/images/banner/banner-4.jpg'),
+        src: require('~/assets/images/banner/Photo-02.jpg'),
     },
     {
         altText: '',
         caption: '',
-        key: 2,
-        src: require('~/assets/images/banner/banner-5.jpg'),
+        key: 3,
+        src: require('~/assets/images/banner/Photo-03.jpg'),
+    },
+    {
+        altText: '',
+        caption: '',
+        key: 4,
+        src: require('~/assets/images/banner/Photo-04.jpg'),
+    },
+    {
+        altText: '',
+        caption: '',
+        key: 5,
+        src: require('~/assets/images/banner/Photo-05.jpg'),
     },
 ];
 

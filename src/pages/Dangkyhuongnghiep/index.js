@@ -1,4 +1,13 @@
-import { Col, Container, Row } from 'reactstrap';
+import {
+    Col,
+    Container,
+    Row,
+    Card,
+    CardImgOverlay,
+    CardText,
+    CardTitle,
+    CardImg,
+} from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Slideshow } from '~/components';
 import { SlideshowSettings as settings } from '~/data';
@@ -7,7 +16,24 @@ import { items } from '~/data';
 function Dangkyhuongnghiep() {
     return (
         <Container fluid className="p-0">
-            <Slideshow items={items} settings={settings} />
+            <Card inverse>
+                <CardImg
+                    alt="Card image cap"
+                    src="https://picsum.photos/900/350?blur"
+                    style={{
+                        height: 350,
+                    }}
+                    width="100%"
+                />
+                <CardImgOverlay className="text-center p-5">
+                    <CardTitle tag="h1" style={{ paddingTop: '70px' }}>
+                        TRANG HƯỚNG NGHIỆP
+                    </CardTitle>
+                    <CardText tag={'h4'}>
+                        Điền đầy đủ thông tin để được tư vấn hướng nghiệp
+                    </CardText>
+                </CardImgOverlay>
+            </Card>
             <Container fluid="lg">
                 <br />
                 <h1>ĐĂNG KÝ HƯỚNG NGHIỆP </h1>

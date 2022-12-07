@@ -40,7 +40,7 @@ function TintucPage() {
                 <Col className="col-12 col-lg-7 text-justify">
                     {contents !== undefined ? (
                         <div>
-                            <h1>{contents.title}</h1>
+                            <h2>{contents.title}</h2>
                             <div dangerouslySetInnerHTML={{ __html: contents.content }} />
                         </div>
                     ) : (
@@ -48,6 +48,7 @@ function TintucPage() {
                     )}
                 </Col>
                 <Col className="col-12 col-lg-5">
+                    <h4 className="border-bottom">TIN TỨC NỔI BẬT</h4>
                     <FeatureNews />
                 </Col>
             </Row>

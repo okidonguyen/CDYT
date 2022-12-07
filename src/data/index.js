@@ -11,6 +11,12 @@ export const items = [
         key: 2,
         src: require('~/assets/images/banner/banner-4.jpg'),
     },
+    {
+        altText: '',
+        caption: '',
+        key: 2,
+        src: require('~/assets/images/banner/banner-5.jpg'),
+    },
 ];
 
 export const footerItems = [
@@ -94,15 +100,15 @@ export const trangchuMenu = [
         submenu: [
             {
                 name: 'Sứ mệnh nhà trường',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Đội ngũ giảng viên',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Công khai chất lượng GD',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
@@ -115,19 +121,19 @@ export const trangchuMenu = [
         submenu: [
             {
                 name: 'Y HỌC LÂM SÀN',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Y TẾ CỘNG ĐỒNG',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'ĐIỀU DƯỠNG -KTYH',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'KHOA HỌC CƠ BẢN',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
@@ -144,21 +150,21 @@ export const trangchuMenu = [
             },
             {
                 name: 'Tuyển sinh 2022',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Học phí',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Những điều cần biết',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
     {
         name: 'Hỏi đáp',
-        link: '/profile',
+        link: '/hoidap',
     },
 ];
 
@@ -176,23 +182,23 @@ export const noiboMenu = [
         submenu: [
             {
                 name: 'Ban giám hiệu',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Phòng Tổ chức',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Phòng đào tạo',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Phòng tài chính Kế toán',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Phòng Quản lý HSSV',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
@@ -205,17 +211,17 @@ export const noiboMenu = [
             },
             {
                 name: 'Công đoàn',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Đoàn thanh niên',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
     {
         name: 'Lịch Công tác',
-        link: '/profile',
+        link: '/',
     },
     {
         name: 'Văn bản',
@@ -226,17 +232,17 @@ export const noiboMenu = [
             },
             {
                 name: 'Văn bản địa phương',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Văn bản trường',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
     {
         name: 'Tài liệu',
-        link: '/profile',
+        link: '/',
     },
 ];
 
@@ -250,19 +256,19 @@ export const sinhvienMenu = [
         submenu: [
             {
                 name: 'KHOA Y HỌC LÂM SÀN',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'KHOA Y TẾ CỘNG ĐỒNG',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'KHOA ĐIỀU DƯỠNG -KTYH',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'KHOA KHOA HỌC CƠ BẢN',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
@@ -271,15 +277,15 @@ export const sinhvienMenu = [
         submenu: [
             {
                 name: 'Đăng ký hướng nghiệp',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Việc làm & thực tập',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Đối tác liên kết',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
@@ -288,25 +294,25 @@ export const sinhvienMenu = [
         submenu: [
             {
                 name: 'Lịch giảng',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Tra cứu điểm',
-                link: '/profile',
+                link: '/',
             },
             {
                 name: 'Tài liệu',
-                link: '/profile',
+                link: '/',
             },
         ],
     },
     {
         name: 'Kiến thức chuyên ngành',
-        link: '/profile',
+        link: '/',
     },
     {
         name: 'Thư viện - Bài giảng',
-        link: '/profile',
+        link: '/',
     },
 ];
 
@@ -318,3 +324,5 @@ export const SlideshowSettings = {
     slidesToScroll: 1,
     height: '550px',
 };
+
+export const CauhoiThuonggap = {};

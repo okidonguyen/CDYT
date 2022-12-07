@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
     Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    Form,
-    FormGroup,
-    Label,
-    Input,
+    // Modal,
+    // ModalHeader,
+    // ModalBody,
+    // ModalFooter,
+    // Form,
+    // FormGroup,
+    // Label,
+    // Input,
 } from 'reactstrap';
 
 function RegisterOnline(args) {
-    const [modal, setModal] = useState(false);
+    // const [modal, setModal] = useState(false);
 
-    const toggle = () => setModal(!modal);
+    // const toggle = () => setModal(!modal);
 
     return (
         <div>
-            <Button color="danger" onClick={toggle}>
-                <i className="bi bi-pencil-square" /> Đăng ký tuyển sinh Online
-            </Button>
-            <Modal isOpen={modal} toggle={toggle} {...args}>
+            <Link to={'/dangkytuyensinh'}>
+                <Button color="danger">
+                    <i className="bi bi-pencil-square" /> Đăng ký tuyển sinh
+                </Button>
+            </Link>
+            {/* <Modal isOpen={modal} toggle={toggle} {...args}>
                 <ModalHeader toggle={toggle}>Đăng ký trực tuyến</ModalHeader>
                 <ModalBody>
                     <Form>
@@ -56,7 +59,7 @@ function RegisterOnline(args) {
                         Huỷ
                     </Button>
                 </ModalFooter>
-            </Modal>
+            </Modal> */}
         </div>
     );
 }

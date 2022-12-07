@@ -1,27 +1,34 @@
 @media all and (min-width: 992px) {
-	.navbar .nav-item .dropdown-menu{ display: none; }
-	.navbar .nav-item:hover .nav-link{   }
-	.navbar .nav-item:hover .dropdown-menu{ display: block; }
-	.navbar .nav-item .dropdown-menu{ margin-top:0; }
-}	
+    .navbar .nav-item .dropdown-menu {
+        display: none;
+    }
+    .navbar .nav-item:hover .nav-link {
+    }
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+    .navbar .nav-item .dropdown-menu {
+        margin-top: 0;
+    }
+}
 // start bottom
-.okido-mainmenu {    
+.okido-mainmenu {
     --navbar-height: 50px;
-    --navbar-item-width: 120px;            
+    --navbar-item-width: 120px;
     .navbar {
-      z-index: 999999;
-      height: var(--navbar-height);
-      line-height: var(--navbar-height);
-        .toggle{
-          font-size: 2rem;
-          color: white;
-          height: 50px;
-          :hover{
-            color: var(--secondary);
-          }
+        z-index: 2;
+        height: var(--navbar-height);
+        line-height: var(--navbar-height);
+        .toggle {
+            font-size: 2rem;
+            color: white;
+            height: 50px;
+            :hover {
+                color: var(--secondary);
+            }
         }
         .nav-item {
-            min-width: var(--navbar-item-width);        
+            min-width: var(--navbar-item-width);
             text-align: center;
             .nav-link {
                 color: white;
@@ -33,14 +40,14 @@
                 background-color: var(--secondary);
             }
         }
-        .dropdown-menu{
+        .dropdown-menu {
             background-color: #288b6c;
             min-width: 250px;
         }
         @media (max-width: 990px) {
-          .navbar-nav{
-            background-color: #00000061;
-          }
+            .navbar-nav {
+                background-color: #00000061;
+            }
         }
     }
 }

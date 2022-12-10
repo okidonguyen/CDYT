@@ -20,7 +20,6 @@ function NewsCarousel(args) {
 
     useEffect(() => {
         (async () => {
-            console.log('katub');
             const data = await bucket.objects
                 .find({
                     type: 'trangchu-tintuc',

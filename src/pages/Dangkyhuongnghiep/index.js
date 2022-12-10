@@ -9,6 +9,7 @@ import {
     CardImg,
 } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { ProvinceLists } from '~/components';
 import { Slideshow } from '~/components';
 import { SlideshowSettings as settings } from '~/data';
 import { items } from '~/data';
@@ -18,11 +19,9 @@ function Dangkyhuongnghiep() {
         <Container fluid className="p-0">
             <Card inverse>
                 <CardImg
+                    className="rounded-0"
                     alt="Card image cap"
-                    src="https://picsum.photos/900/350?blur"
-                    style={{
-                        height: 350,
-                    }}
+                    src={require('~/assets/images/banner/Photo-05.jpg')}
                     width="100%"
                 />
                 <CardImgOverlay className="text-center p-5">
@@ -70,6 +69,7 @@ function Dangkyhuongnghiep() {
                                 </FormGroup>
                             </Col>
                         </Row>
+                        <ProvinceLists />
                         <FormGroup>
                             <Label for="student-address">Địa chỉ</Label>
                             <Input id="student-address" placeholder="Nhập thông tin" />

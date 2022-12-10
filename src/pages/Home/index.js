@@ -3,6 +3,7 @@ import CompanyLink from '~/components/CompanyLink';
 import Majors from '~/components/Majors';
 import NewsCarousel from '~/components/NewsCarousel';
 import Notification from '~/components/Notification';
+import ImgCarousel from '~/components/ImgCarousel';
 
 import { items, footerItems } from '~/data';
 import { Slideshow } from '~/components';
@@ -12,7 +13,6 @@ function Home() {
     let newSettings = {
         dots: true,
         infinite: true,
-        speed: 200,
         slidesToShow: 3,
         slidesToScroll: 3,
         height: '200px',
@@ -20,6 +20,7 @@ function Home() {
     return (
         <Container fluid className="p-0">
             <Slideshow items={items} settings={settings} />
+            {/* <ImgCarousel items={items} /> */}
             <Container fluid="lg">
                 <Row className="pt-3 pb-3">
                     <Col className="col-12 col-lg-7 p-0">

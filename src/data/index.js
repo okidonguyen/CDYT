@@ -129,7 +129,7 @@ export const trangchuMenu = [
         link: '/tintuc',
     },
     {
-        name: 'Chương trình đào tạo',
+        name: 'Ngành đào tạo',
         submenu: [
             {
                 name: 'Y HỌC LÂM SÀN',
@@ -150,19 +150,11 @@ export const trangchuMenu = [
         ],
     },
     {
-        name: 'Tuyển sinh - Đào tạo',
+        name: 'Tuyển sinh',
         submenu: [
             {
                 name: 'Đăng ký tuyển sinh',
                 link: '/dangkytuyensinh',
-            },
-            {
-                name: 'Đăng ký hướng nghiệp',
-                link: '/dangkyhuongnghiep',
-            },
-            {
-                name: 'Tuyển sinh 2022',
-                link: '/',
             },
             {
                 name: 'Học phí',
@@ -174,6 +166,20 @@ export const trangchuMenu = [
             },
         ],
     },
+    {
+        name: 'Hướng nghiệp',
+        submenu: [
+            {
+                name: 'Đăng ký hướng nghiệp',
+                link: '/dangkyhuongnghiep',
+            },
+            {
+                name: 'Những điều cần biết',
+                link: '/',
+            },
+        ],
+    },
+
     {
         name: 'Hỏi đáp',
         link: '/hoidap',
@@ -329,12 +335,15 @@ export const sinhvienMenu = [
 ];
 
 export const SlideshowSettings = {
-    dots: true,
-    infinite: true,
-    speed: 200,
+    dots: false,
+    infinite: false,
+    autoplaySpeed: 1000,
+    autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     height: '550px',
+    fade: true,
+    cssEase: 'linear',
 };
 
 export const CauhoiThuonggap = {};

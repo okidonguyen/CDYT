@@ -42,7 +42,11 @@ const HeaderTop = () => {
                         // style={{ minWidth: '370px' }}
                     >
                         <div className={'menu-top-item ps-2'}>
-                            <Login />
+                            {/* <Login /> */}
+                            <NavLink href="/quantri/">
+                                <i className="bi bi-door-open"> </i>
+                                <span className="d-none d-sm-inline-block"> Đăng nhập</span>
+                            </NavLink>
                         </div>
                         <div className={'menu-top-item ps-2'}>
                             <NavLink href="/noibo/hoatdong">
@@ -68,7 +72,7 @@ const HeaderMiddle = () => {
         <div className={'wrapper-middle'}>
             <Container>
                 <div className={'wrapper-logo'}>
-                    <img src={require('~/assets/images/logo-01.png')} />
+                    <img src={require('~/assets/images/logo-01.png')} alt="logo" />
                 </div>
                 <div className={'wrapper-search'}></div>
             </Container>

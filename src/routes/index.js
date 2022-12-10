@@ -10,7 +10,12 @@ import HoatdongNoibo from '~/pages/Noibo/Hoatdong';
 import HoatdongSinhvien from '~/pages/Sinhvien/Hoatdong';
 import Profile from '~/pages/Profile';
 import Search from '~/pages/Search';
-import { NoiboLayout, SinhvienLayout } from '~/layouts';
+
+// ADMIN
+import QtTrangchu from '~/pages/Quantri/QtTrangchu';
+
+// LAYOUT
+import { NoiboLayout, SinhvienLayout, QuantriLayout } from '~/layouts';
 
 const publicRoute = [
     // TRANG CHU
@@ -25,6 +30,8 @@ const publicRoute = [
     { path: '/dangkyhuongnghiep', component: Dangkyhuongnghiep },
     { path: '/noibo/hoatdong', component: HoatdongNoibo, layout: NoiboLayout },
     { path: '/sinhvien/hoatdong', component: HoatdongSinhvien, layout: SinhvienLayout },
+    // Quan tri
+    { path: '/quantri', component: QtTrangchu, layout: QuantriLayout },
 ];
 
 const privateRoute = [];

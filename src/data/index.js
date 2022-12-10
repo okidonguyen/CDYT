@@ -336,8 +336,8 @@ export const sinhvienMenu = [
 
 export const SlideshowSettings = {
     dots: false,
-    infinite: false,
-    autoplaySpeed: 1000,
+    infinite: true,
+    autoplaySpeed: 10000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,

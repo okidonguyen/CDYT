@@ -27,3 +27,9 @@ html,
 body {
     overflow-x: hidden;
 }
+
+.admin-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}

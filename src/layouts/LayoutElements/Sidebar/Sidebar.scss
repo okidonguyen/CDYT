@@ -1,0 +1,72 @@
+.admin-sidebar {
+    .sidebar {
+        min-width: 250px;
+        max-width: 250px;
+        height: 100vh;
+        background: var(--primary);
+        color: #fff;
+        margin-left: -250px;
+        transition: all 0.5s;
+
+        .sidebar-header {
+            background-color: #0e7349;
+        }
+    }
+
+    .sidebar.is-open {
+        margin-left: 0;
+        transition: 0.5s;
+    }
+
+    .menu-open {
+        background: var(--primary);
+    }
+
+    .nav-item:hover {
+        color: #0e7349;
+        background: var(--secondary);
+    }
+
+    .items-menu {
+        color: #fff;
+        background: #0e7349;
+    }
+
+    li a.dropdown-toggle::after {
+        display: inline-flex;
+        position: relative;
+        left: 50%;
+        top: 10%;
+    }
+
+    .sidebar-header > span {
+        position: relative;
+        float: right;
+        margin: 0.5em;
+        font-size: 2rem;
+        cursor: pointer;
+        display: none;
+    }
+
+    .side-menu {
+        height: calc(100vh - 130px);
+        overflow-y: scroll;
+    }
+
+    .side-menu .nav-link {
+        color: white;
+    }
+
+    .side-menu::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .side-menu::-webkit-scrollbar-thumb {
+        background: #0e7349;
+        border-radius: 3px;
+    }
+
+    .side-menu::-webkit-scrollbar-thumb:hover {
+        background: #0e7349;
+    }
+}

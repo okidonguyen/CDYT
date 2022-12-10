@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { publicRoute } from '~/routes';
 import { Fragment } from 'react';
 import { DefaultLayout } from './layouts';
-import RegisterOnline from './components/RegisterOnline';
 
 function App() {
     return (
@@ -33,16 +32,6 @@ function App() {
                         );
                     })}
                 </Routes>
-                <div
-                    style={{
-                        position: 'fixed',
-                        right: '20px',
-                        bottom: '30px',
-                        textAlign: 'center',
-                    }}
-                >
-                    <RegisterOnline />
-                </div>
             </div>
         </BrowserRouter>
     );

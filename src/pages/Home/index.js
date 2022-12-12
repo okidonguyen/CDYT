@@ -3,11 +3,11 @@ import CompanyLink from '~/components/CompanyLink';
 import Majors from '~/components/Majors';
 import NewsCarousel from '~/components/NewsCarousel';
 import Notification from '~/components/Notification';
-import ImgCarousel from '~/components/ImgCarousel';
 
 import { items, footerItems } from '~/data';
 import { Slideshow } from '~/components';
 import { SlideshowSettings as settings } from '~/data';
+import Quotes from '../../components/Quotes';
 
 function Home() {
     let newSettings = {
@@ -32,32 +32,13 @@ function Home() {
                 </Row>
             </Container>
             <Majors />
-            <Container
-                fluid
-                className="text-center p-0"
-                style={
-                    {
-                        // padding: '10px',
-                        // backgroundImage: 'url(' + require('~/assets/images/open-book.jpg') + ')',
-                        // backgroundSize: 'cover',
-                    }
+            <Quotes
+                title={'TẦM NHÌN - SỨ MỆNH'}
+                content={
+                    'ĐÀO TẠO NGUỒN NHÂN LỰC Y TẾ CÓ TRÌNH ĐỘ ĐỂ BẢO VỆ CHĂM SÓC VÀ NÂNG CAO SỨC KHỎE CỘNG ĐỒNG VÙNG TÂY NGUYÊN'
                 }
-            >
-                <div
-                    style={{
-                        //backgroundColor: 'rgba(0, 0, 0, 0.185)',
-                        // color: 'white',
-                        padding: '80px',
-                    }}
-                >
-                    <h3 className="border-bottom">TẦM NHÌN - SỨ MỆNH</h3>
-                    <i className="bi bi-book" style={{ fontSize: '6rem' }}></i>
-                    <h3>
-                        <i className="bi bi-quote"></i>ĐÀO TẠO NGUỒN NHÂN LỰC Y TẾ CÓ TRÌNH ĐỘ ĐỂ
-                        BẢO VỆ CHĂM SÓC VÀ NÂNG CAO SỨC KHỎE CỘNG ĐỒNG VÙNG TÂY NGUYÊN
-                    </h3>
-                </div>
-            </Container>
+                icon={'bi bi-book'}
+            />
 
             <Container
                 className="d-none d-lg-block"

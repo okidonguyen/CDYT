@@ -14,7 +14,7 @@ import {
 } from 'reactstrap';
 import './News.scss';
 
-function News(args) {
+function News({ numbers = 10 }) {
     const [items, setItems] = useState(() => {
         return [{}];
     });
@@ -25,7 +25,8 @@ function News(args) {
                 .find({
                     type: 'trangchu-tintuc',
                 })
-                .props('slug,title,metadata');
+                .props('slug,title,metadata')
+                .limit(numbers);
 
             let posts = [];
             data.objects.map((post) =>

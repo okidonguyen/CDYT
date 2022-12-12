@@ -174,6 +174,14 @@ export const trangchuMenu = [
                 link: '/dangkyhuongnghiep',
             },
             {
+                name: 'Việc làm & thực tập',
+                link: '/',
+            },
+            {
+                name: 'Đối tác liên kết',
+                link: '/',
+            },
+            {
                 name: 'Những điều cần biết',
                 link: '/',
             },
@@ -192,7 +200,7 @@ export const noiboMenu = [
         link: '/',
     },
     {
-        name: 'Tin tức hoạt động',
+        name: 'Tin tức nội bộ',
         link: '/',
     },
     {
@@ -291,27 +299,14 @@ export const sinhvienMenu = [
         ],
     },
     {
-        name: 'Hướng nghiệp',
-        submenu: [
-            {
-                name: 'Đăng ký hướng nghiệp',
-                link: '/',
-            },
-            {
-                name: 'Việc làm & thực tập',
-                link: '/',
-            },
-            {
-                name: 'Đối tác liên kết',
-                link: '/',
-            },
-        ],
-    },
-    {
         name: 'Học tập',
         submenu: [
             {
                 name: 'Lịch giảng',
+                link: '/',
+            },
+            {
+                name: 'Thời khoá biểu',
                 link: '/',
             },
             {

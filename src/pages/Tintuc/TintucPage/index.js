@@ -9,17 +9,6 @@ import Majors from '~/components/Majors';
 function TintucPage() {
     let { slug } = useParams();
     const [contents, setContents] = useState();
-    let breadcrumbItems = [
-        {
-            name: 'Trang chủ',
-            href: '/',
-        },
-        {
-            name: 'Tin tức',
-            href: '/tintuc',
-        },
-    ];
-
     useEffect(() => {
         (async () => {
             const data = await bucket.objects
@@ -35,7 +24,6 @@ function TintucPage() {
     }, []);
     return (
         <Container>
-            <Breadcrumbs items={breadcrumbItems} />
             <Row>
                 <Col className="col-12 col-lg-7 text-justify">
                     {contents !== undefined ? (

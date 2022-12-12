@@ -3,25 +3,12 @@ import CompanyLink from '~/components/CompanyLink';
 import { Slideshow } from '~/components';
 import { footerItems } from '~/data';
 import { SlideshowSettings as settings } from '~/data';
-import Breadcrumbs from '~/components/Breadcrumbs';
 import News from '~/components/News';
 
 function Tintuc() {
-    let breadcrumbItems = [
-        {
-            name: 'Trang chủ',
-            href: '/',
-        },
-        {
-            name: 'Tin tức',
-            href: '/tintuc',
-        },
-    ];
-
     return (
         <Container fluid className="p-0">
             <Container fluid="lg">
-                <Breadcrumbs items={breadcrumbItems} />
                 <News />
             </Container>
             <Container

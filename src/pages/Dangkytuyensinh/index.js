@@ -11,6 +11,7 @@ import {
     CardImgOverlay,
 } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import News from '~/components/News';
 import { Slideshow } from '~/components';
 import { SlideshowSettings as settings } from '~/data';
 import { items } from '~/data';
@@ -34,6 +35,53 @@ function Dangkytuyensinh() {
                     <CardText tag={'h4'}>Điền đầy đủ thông tin để được tư vấn tuyển sinh</CardText>
                 </CardImgOverlay>
             </Card>
+            <Container className="p-4  text-center">
+                <h3 className="border-bottom">BẠN NÊN CHỌN HỌC TẠI TRƯỜNG VÌ</h3>
+                <Row>
+                    <Col className="col-12 col-lg-3">
+                        <Card className="m-2" color="success" inverse>
+                            <CardBody>
+                                <CardTitle tag="h1">
+                                    <i className="bi bi-heart"></i>
+                                </CardTitle>
+                                <CardText tag={'h5'}>Đội ngũ cán bộ, giảng viên tận tâm</CardText>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col className="col-12 col-lg-3">
+                        <Card className="m-2" color="warning" inverse>
+                            <CardBody>
+                                <CardTitle tag="h1">
+                                    <i className="bi bi-graph-up-arrow"></i>
+                                </CardTitle>
+                                <CardText tag={'h5'}>Sinh viên được phát triển toàn diện</CardText>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col className="col-12 col-lg-3">
+                        <Card className="m-2" color="danger" inverse>
+                            <CardBody>
+                                <CardTitle tag="h1">
+                                    <i className="bi bi-telephone-plus"></i>
+                                </CardTitle>
+                                <CardText tag={'h5'}>Được tư vấn hướng nghiệp khi đăng ký</CardText>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col className="col-12 col-lg-3">
+                        <Card className="m-2" color="info" inverse>
+                            <CardBody>
+                                <CardTitle tag="h1">
+                                    <i className="bi bi-upload"></i>
+                                </CardTitle>
+                                <CardText tag={'h5'}>
+                                    Được giới thiệu việc làm khi ra trường
+                                </CardText>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
             <Container fluid="lg">
                 <br />
                 <h1>ĐĂNG KÝ TUYỂN SINH </h1>
@@ -112,58 +160,11 @@ function Dangkytuyensinh() {
                         <CardImg src={require('~/assets/images/hoatdong/10.jpg')} alt="SINH VIEN" />
                     </Col>
                 </Row>
-                <Container className="p-4  text-center">
-                    <h3 className="border-bottom">BẠN NÊN CHỌN HỌC TẠI TRƯỜNG VÌ</h3>
-                    <Row>
-                        <Col className="col-12 col-lg-3">
-                            <Card className="m-2" color="success" inverse>
-                                <CardBody>
-                                    <CardTitle tag="h1">
-                                        <i className="bi bi-heart"></i>
-                                    </CardTitle>
-                                    <CardText tag={'h5'}>
-                                        Đội ngũ cán bộ, giảng viên tận tâm
-                                    </CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col className="col-12 col-lg-3">
-                            <Card className="m-2" color="warning" inverse>
-                                <CardBody>
-                                    <CardTitle tag="h1">
-                                        <i className="bi bi-graph-up-arrow"></i>
-                                    </CardTitle>
-                                    <CardText tag={'h5'}>
-                                        Sinh viên được phát triển toàn diện
-                                    </CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col className="col-12 col-lg-3">
-                            <Card className="m-2" color="danger" inverse>
-                                <CardBody>
-                                    <CardTitle tag="h1">
-                                        <i className="bi bi-telephone-plus"></i>
-                                    </CardTitle>
-                                    <CardText tag={'h5'}>
-                                        Được tư vấn hướng nghiệp khi đăng ký
-                                    </CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col className="col-12 col-lg-3">
-                            <Card className="m-2" color="info" inverse>
-                                <CardBody>
-                                    <CardTitle tag="h1">
-                                        <i className="bi bi-upload"></i>
-                                    </CardTitle>
-                                    <CardText tag={'h5'}>
-                                        Được giới thiệu việc làm khi ra trường
-                                    </CardText>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    </Row>
+
+                {/* TIN TUC */}
+                <Container fluid="lg">
+                    <h3 className="border-bottom">Tin tức tuyển sinh</h3>
+                    <News numbers={3} />
                 </Container>
             </Container>
         </Container>

@@ -11,6 +11,8 @@ import {
     FormGroup,
     Label,
     Input,
+    Col,
+    Row,
 } from 'reactstrap';
 import './Header.scss';
 
@@ -71,10 +73,66 @@ const HeaderMiddle = () => {
     return (
         <div className={'wrapper-middle'}>
             <Container>
-                <div className={'wrapper-logo'}>
-                    <img src={require('~/assets/images/logo-01.png')} alt="logo" />
-                </div>
-                <div className={'wrapper-search'}></div>
+                <Row className="align-items-center">
+                    <Col className="col-12 col-lg-4">
+                        <div
+                            className={
+                                'wrapper-logo d-flex justify-content-center align-items-center'
+                            }
+                        >
+                            <img src={require('~/assets/images/logo-01.png')} alt="logo" />
+                        </div>
+                    </Col>
+                    <Col></Col>
+                    <Col className=" col-12 col-lg-5">
+                        <div className={'wrapper-search'}>
+                            <Form>
+                                <FormGroup className="d-flex justify-content-center align-items-center">
+                                    <div className="position-relative">
+                                        <Input
+                                            placeholder="Tìm kiếm"
+                                            className="rounded-5"
+                                            style={{ width: '280px' }}
+                                        />
+                                        <i
+                                            className="bi bi-search position-absolute"
+                                            style={{
+                                                right: '10px',
+                                                top: '0px',
+                                                cursor: 'pointer',
+                                                fontSize: '1.5rem',
+                                            }}
+                                        />
+                                    </div>
+                                    <i
+                                        className="bi bi-facebook"
+                                        style={{
+                                            cursor: 'pointer',
+                                            fontSize: '1.5rem',
+                                            paddingLeft: '20px',
+                                        }}
+                                    ></i>
+                                    <i
+                                        className="bi bi-youtube"
+                                        style={{
+                                            cursor: 'pointer',
+                                            fontSize: '1.5rem',
+                                            paddingLeft: '20px',
+                                        }}
+                                    ></i>
+                                    <i
+                                        className="bi bi-telephone"
+                                        style={{
+                                            cursor: 'pointer',
+                                            fontSize: '1.5rem',
+                                            paddingLeft: '20px',
+                                        }}
+                                    ></i>
+                                </FormGroup>
+                            </Form>
+                        </div>
+                    </Col>
+                </Row>
             </Container>
         </div>
     );

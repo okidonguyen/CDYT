@@ -9,11 +9,13 @@ function Quotes({ title, content, icon }) {
                 }}
             >
                 <h3 className="border-bottom">{title}</h3>
-                <i className={icon} style={{ fontSize: '6rem' }}></i>
-                <h3>
-                    <i className="bi bi-quote"></i>
-                    {content}
-                </h3>
+                <div style={{ color: 'var(--secondary)' }}>
+                    <i className={icon} style={{ fontSize: '6rem' }}></i>
+                    <h3>
+                        <i className="bi bi-quote"></i>
+                        {content}
+                    </h3>
+                </div>
             </div>
         </Container>
     );

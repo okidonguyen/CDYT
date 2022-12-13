@@ -111,40 +111,98 @@ export const trangchuMenu = [
         name: 'Giới thiệu',
         submenu: [
             {
-                name: 'Sứ mệnh nhà trường',
+                name: 'Giới thiệu chung',
+                link: '/gioithieu/gioi-thieu-chung',
+            },
+            {
+                name: 'Chức năng nhiệm vụ',
+                link: '/gioithieu/chuc-nang-nhiem-vu',
+            },
+            {
+                name: 'Cơ cấu tổ chức',
+                link: '/gioithieu/co-cau-to-chuc',
+            },
+            {
+                name: 'Công khai chất lượng',
+                link: '/gioithieu/cong-khai-chat-luong',
+            },
+        ],
+    },
+    {
+        name: 'Phòng ban',
+        submenu: [
+            {
+                name: 'Ban giám hiệu',
                 link: '/',
             },
             {
-                name: 'Đội ngũ giảng viên',
+                name: 'Phòng Tổ chức hành chính',
                 link: '/',
             },
             {
-                name: 'Công khai chất lượng GD',
+                name: 'Phòng đào tạo',
+                link: '/',
+            },
+            {
+                name: 'Phòng tài chính kế toán',
+                link: '/',
+            },
+            {
+                name: 'Phòng Quản lý HSSV',
+                link: '/',
+            },
+            {
+                name: 'Phòng khảo thí',
                 link: '/',
             },
         ],
     },
     {
         name: 'Tin tức',
-        link: '/tintuc',
-    },
-    {
-        name: 'Ngành đào tạo',
         submenu: [
             {
-                name: 'Y HỌC LÂM SÀN',
+                name: 'Hoạt động Đảng – Đoàn thể',
+                link: '/tintuc',
+            },
+            {
+                name: 'Hoạt động chuyên môn',
+                link: '/tintuc',
+            },
+            {
+                name: 'Thi và Tuyển sinh',
+                link: '/tintuc',
+            },
+            {
+                name: 'Hoạt động khác',
+                link: '/tintuc',
+            },
+            {
+                name: 'Ảnh & Video',
+                link: '/tintuc',
+            },
+        ],
+    },
+    {
+        name: 'Đào tạo',
+        submenu: [
+            {
+                name: 'Ngành nghề đào tạo',
                 link: '/',
             },
             {
-                name: 'Y TẾ CỘNG ĐỒNG',
+                name: 'Chương trình đào tạo',
                 link: '/',
             },
             {
-                name: 'ĐIỀU DƯỠNG -KTYH',
+                name: 'Lịch giảng giáo viên',
                 link: '/',
             },
             {
-                name: 'KHOA HỌC CƠ BẢN',
+                name: 'Lịch thi hết môn',
+                link: '/',
+            },
+            {
+                name: 'Văn bản đào tạo',
                 link: '/',
             },
         ],
@@ -153,44 +211,51 @@ export const trangchuMenu = [
         name: 'Tuyển sinh',
         submenu: [
             {
-                name: 'Đăng ký tuyển sinh',
-                link: '/dangkytuyensinh',
-            },
-            {
-                name: 'Học phí',
+                name: 'Thông báo tuyển sinh',
                 link: '/',
             },
-            {
-                name: 'Những điều cần biết',
-                link: '/',
-            },
-        ],
-    },
-    {
-        name: 'Hướng nghiệp',
-        submenu: [
             {
                 name: 'Đăng ký hướng nghiệp',
                 link: '/dangkyhuongnghiep',
             },
             {
-                name: 'Việc làm & thực tập',
+                name: 'Đăng ký tuyển sinh trực tuyến',
+                link: '/dangkytuyensinh',
+            },
+            {
+                name: 'Kết quả tuyển sinh',
+                link: '/dangkytuyensinh',
+            },
+        ],
+    },
+    {
+        name: 'Sinh viên',
+        submenu: [
+            {
+                name: 'Tra cứu điểm',
                 link: '/',
             },
             {
-                name: 'Đối tác liên kết',
+                name: 'Tra cứu Lịch học',
                 link: '/',
             },
             {
-                name: 'Những điều cần biết',
+                name: 'Tài liệu học tập',
+                link: '/',
+            },
+            {
+                name: 'Thư viện bài giảng',
                 link: '/',
             },
         ],
     },
-
     {
         name: 'Hỏi đáp',
         link: '/hoidap',
+    },
+    {
+        name: 'Liên hệ',
+        link: '/',
     },
 ];
 

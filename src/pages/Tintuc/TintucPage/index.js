@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import { bucket } from '~/cosmicjs';
 import FeatureNews from '~/components/FeatureNews';
-import Breadcrumbs from '~/components/Breadcrumbs';
-import Majors from '~/components/Majors';
 
 function TintucPage() {
     let { slug } = useParams();

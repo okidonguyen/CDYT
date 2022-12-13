@@ -44,24 +44,24 @@ const HeaderTop = () => {
                         // style={{ minWidth: '370px' }}
                     >
                         <div className={'menu-top-item ps-2'}>
+                            <NavLink href="/">
+                                <i className="bi bi-diagram-2"> </i>
+                                <span className="d-none d-sm-inline-block"> Sitemap</span>
+                            </NavLink>
+                        </div>
+                        <div className={'menu-top-item ps-2'}>
                             {/* <Login /> */}
                             <NavLink href="/quantri/">
                                 <i className="bi bi-door-open"> </i>
-                                <span className="d-none d-sm-inline-block"> Đăng nhập</span>
+                                <span className="d-none d-sm-inline-block"> </span>
                             </NavLink>
                         </div>
-                        <div className={'menu-top-item ps-2'}>
-                            <NavLink href="/noibo/hoatdong">
-                                <i className="bi bi-book"> </i>
-                                <span className="d-none d-sm-inline-block"> CBCC</span>
-                            </NavLink>
-                        </div>
-                        <div className={'menu-top-item ps-2'}>
+                        {/* <div className={'menu-top-item ps-2'}>
                             <NavLink href="/sinhvien/hoatdong">
                                 <i className="bi bi-person-lines-fill"> </i>
                                 <span className="d-none d-sm-inline-block"> HSSV</span>
                             </NavLink>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ const HeaderMiddle = () => {
                                         <Input
                                             placeholder="Tìm kiếm"
                                             className="rounded-5"
-                                            style={{ width: '280px' }}
+                                            style={{ minWidth: '280px' }}
                                         />
                                         <i
                                             className="bi bi-search position-absolute"
@@ -105,7 +105,7 @@ const HeaderMiddle = () => {
                                         />
                                     </div>
                                     <i
-                                        className="bi bi-facebook"
+                                        className="bi bi-facebook d-none d-md-block"
                                         style={{
                                             cursor: 'pointer',
                                             fontSize: '1.5rem',
@@ -113,7 +113,7 @@ const HeaderMiddle = () => {
                                         }}
                                     ></i>
                                     <i
-                                        className="bi bi-youtube"
+                                        className="bi bi-youtube  d-none d-md-block"
                                         style={{
                                             cursor: 'pointer',
                                             fontSize: '1.5rem',
@@ -121,7 +121,7 @@ const HeaderMiddle = () => {
                                         }}
                                     ></i>
                                     <i
-                                        className="bi bi-telephone"
+                                        className="bi bi-telephone  d-none d-md-block"
                                         style={{
                                             cursor: 'pointer',
                                             fontSize: '1.5rem',

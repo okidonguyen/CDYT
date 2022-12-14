@@ -2,7 +2,6 @@
     .sidebar {
         min-width: 250px;
         max-width: 250px;
-        height: 100vh;
         background: var(--primary);
         color: #fff;
         margin-left: -250px;
@@ -22,8 +21,13 @@
         background: var(--primary);
     }
 
-    .nav-item:hover {
-        color: #0e7349;
+
+    .nav-item, .nav-link{
+        width: 100%;
+    }
+
+    .nav-link:hover{
+        font-weight: 500;
         background: var(--secondary);
     }
 
@@ -33,10 +37,10 @@
     }
 
     li a.dropdown-toggle::after {
-        display: inline-flex;
-        position: relative;
-        left: 50%;
-        top: 10%;
+        // display: inline-flex;
+        // position: relative;
+        // //left: 50%;
+        // top: 10%;
     }
 
     .sidebar-header > span {

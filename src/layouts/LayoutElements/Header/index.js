@@ -29,16 +29,11 @@ const HeaderTop = () => {
     return (
         <Container>
             <div className={'wrapper-top'}>
-                <div className="d-flex p-2 justify-content-between justify-content-lg-around container-xl">
+                <div className="d-flex p-2 justify-content-between">
                     <div className={'hotline'}>
                         <i className="bi bi-telephone"></i>
                         <span> Hotline: 02623.845.678</span>
-                    </div>
-                    <div className={'text-running d-none d-lg-inline-block '}>
-                        <marquee>
-                            Chào mừng các bạn đã đến với Website Trường Cao Đẳng Y tế Đắk Lắk
-                        </marquee>
-                    </div>
+                    </div>                   
                     <div
                         className={'menu-top d-flex justify-content-end'}
                         // style={{ minWidth: '370px' }}

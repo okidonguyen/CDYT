@@ -103,29 +103,48 @@ function Dangkyhuongnghiep() {
                                 trong vòng 24h kể từ khi nhận được thông tin đăng ký.
                             </h4>
                         </Col>
-                        <Col md={6} className="border p-3">
+                        <Col md={6} className="border p-3  rounded-3">
                             <FormGroup>
                                 <Label for="fullName">Họ và tên</Label>
-                                <Input id="fullName" name="fullName" placeholder="nhập họ và tên" />
+                                <Input
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Nhập họ và tên ..."
+                                />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="phoneNumber">Số điện thoại</Label>
                                 <Input
                                     id="phoneNumber"
                                     name="phoneNumber"
-                                    placeholder="nhập số điện thoại"
+                                    placeholder="Nhập số điện thoại ..."
                                     type="number"
                                 />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="student-address">Địa chỉ</Label>
-                                <Input id="student-address" placeholder="Nhập thông tin" />
+                                <Input id="student-address" placeholder="Nhập thông tin ..." />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="student-job">Thời gian tư vấn</Label>
-                                <Input placeholder="Nhập thời gian để tư vấn gọi điện"></Input>
+                                <Input id="exampleSelect" name="select" type="select">
+                                    <option value="0">
+                                        Chọn thời gian tư vấn từ thứ 2 đến thứ 7
+                                    </option>
+                                    <option value="12"> 04:00 PM - 05:00 PM</option>
+                                    <option value="11"> 03:00 PM - 04:00 PM</option>
+                                    <option value="10"> 02:00 PM - 03:00 PM</option>
+                                    <option value="9"> 01:00 PM - 02:00 PM</option>
+                                    <option value="8"> 11:00 AM - 12:00 AM</option>
+                                    <option value="7"> 10:00 AM - 11:00 AM</option>
+                                    <option value="6"> 09:00 AM - 10:00 AM</option>
+                                    <option value="5"> 08:00 AM - 09:00 AM</option>
+                                </Input>
                             </FormGroup>
-                            <Button color="primary">GỬI ĐĂNG KÝ</Button>
+                            <br/>
+                            <Button block color="info">
+                                ĐĂNG KÝ HƯỚNG NGHIỆP
+                            </Button>
                         </Col>
                     </Row>
 

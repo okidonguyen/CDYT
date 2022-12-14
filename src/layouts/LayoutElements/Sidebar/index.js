@@ -3,7 +3,7 @@ import { NavItem, NavLink, Nav, Collapse } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './Sidebar.scss';
 
-const Sidebar = ({ isOpen, menuSidebar, isHeader = true }) => (
+const Sidebar = ({ isOpen, menuSidebar, isHeader = true, title = 'Danh mục' }) => (
     <div className="admin-sidebar ">
         <div className={isOpen ? 'sidebar is-open' : 'sidebar'}>
             {isHeader ? (
@@ -13,10 +13,12 @@ const Sidebar = ({ isOpen, menuSidebar, isHeader = true }) => (
             ) : (
                 ''
             )}
-            <div className="side-menu">
+            <div className="side-menu p-2">
+                <h4 className='border-bottom'>{title}</h4>
                 <Nav vertical className="list-unstyled pb-3">
                     {menuSidebar.map((menuItem, index) => (
-                        <NavItem key={index}>
+                        <NavItem key={index} className="d-flex align-items-center">
+                            <i className="bi bi-caret-right"></i>
                             {menuItem.sub !== null ? (
                                 <SubMenu title={menuItem.name} items={menuItem.sub} />
                             ) : (

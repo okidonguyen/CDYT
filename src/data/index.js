@@ -208,15 +208,15 @@ export const trangchuMenu = [
         ],
     },
     {
+        name: 'Hướng nghiệp',
+        link: '/dangkyhuongnghiep',
+    },
+    {
         name: 'Tuyển sinh',
         submenu: [
             {
                 name: 'Thông báo tuyển sinh',
                 link: '/',
-            },
-            {
-                name: 'Đăng ký hướng nghiệp',
-                link: '/dangkyhuongnghiep',
             },
             {
                 name: 'Đăng ký tuyển sinh trực tuyến',
@@ -228,6 +228,7 @@ export const trangchuMenu = [
             },
         ],
     },
+    
     {
         name: 'Sinh viên',
         submenu: [

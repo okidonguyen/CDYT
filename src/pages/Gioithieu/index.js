@@ -48,24 +48,26 @@ function GioithieuPage() {
     ];
     return (
         <Container>
-            <Row className="p-3">
-                <Col className="col-12 col-lg-3 d-none d-lg-block">
-                    <Sidebar
-                        toggle={toggleSidebar}
-                        isOpen={sidebarIsOpen}
-                        menuSidebar={menuSidebar}
-                        isHeader={false}
-                    />
-                </Col>
+            <Row>
+                
                 <Col className="col-12 col-lg-9 text-justify">
                     {contents !== undefined ? (
                         <div>
-                            <h2>{contents.title}</h2>
+                            <h2 className='border-bottom'>{contents.title}</h2>
                             <div dangerouslySetInnerHTML={{ __html: contents.content }} />
                         </div>
                     ) : (
                         <></>
                     )}
+                </Col>
+                <Col className="col-12 col-lg-3 d-none d-lg-block">                   
+                    <Sidebar
+                        toggle={toggleSidebar}
+                        isOpen={sidebarIsOpen}
+                        menuSidebar={menuSidebar}
+                        isHeader={false}
+                        title="DANH MỤC"
+                    />                    
                 </Col>
             </Row>
         </Container>

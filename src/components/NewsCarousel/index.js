@@ -71,18 +71,18 @@ function NewsCarousel(args) {
                 onExited={() => setAnimating(false)}
                 key={index}
             >
-                <Card className="my-2">
+                <Card className="p-0 m-0 rounded-0">
                     <CardImg
                         alt="Card image cap"
                         src={item.src}
                         top
-                        style={{ height: '350px', objectFit: 'cover' }}
+                        style={{ height: '350px', objectFit: 'cover', borderRadius:"0px" }}
                     />
                     <CardBody>
                         <CardTitle style={{ height: '50px', textAlign: 'justify' }} tag="h5">
                             {item.title}
                         </CardTitle>
-                        <CardText style={{ height: '80px', textAlign: 'justify' }}>
+                        <CardText style={{ height: '70px', textAlign: 'justify' }}>
                             {item.content}
                         </CardText>
                         <CardText className="p-0 m-0">

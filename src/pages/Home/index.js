@@ -9,6 +9,8 @@ import { Slideshow } from '~/components';
 import { SlideshowSettings as settings } from '~/data';
 import Quotes from '../../components/Quotes';
 
+import RunningText from '~/components/RunningText';
+
 function Home() {
     let newSettings = {
         dots: true,
@@ -20,13 +22,14 @@ function Home() {
     return (
         <Container fluid className="p-0">
             <Slideshow items={items} settings={settings} />
+            <RunningText separator={"/"}/>
             {/* <ImgCarousel items={items} /> */}
-            <Container fluid="lg">
-                <Row className="pt-3 pb-3">
-                    <Col className="col-12 col-lg-7 p-0">
+            <Container fluid="lg" className=''>
+                <Row>
+                    <Col className="col-12 col-lg-8 p-2">
                         <NewsCarousel />
                     </Col>
-                    <Col className="col-12 col-lg-5 p-0">
+                    <Col className="col-12 col-lg-4 p-2">
                         <Notification />
                     </Col>
                 </Row>

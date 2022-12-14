@@ -9,7 +9,7 @@ function DefaultLayout({ children }) {
     return (
         <div>
             <Header />
-            <MainMenu menuItems={menuItems} color={'#288b6c'} />
+            <MainMenu menuItems={menuItems} color={'#288b6c'} />            
             <div style={{ minHeight: '500px' }}>{children}</div>
             <Footer />
             <div

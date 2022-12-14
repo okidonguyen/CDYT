@@ -6,7 +6,8 @@ const RunningText = ({ separator = '' }) => {
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
     return (
-        <Container className="d-flex mb-2">
+        <Container fluid style={{}} >
+            <Container className="d-flex p-2 align-items-center">
             <div style={{width:"200px", paddingLeft:"20px", fontWeight:"bold"}}>
                 Ngày {date}{separator}{month}{separator}{year}:
             </div>
@@ -14,6 +15,7 @@ const RunningText = ({ separator = '' }) => {
                 Trường Cao Đẳng Y tế Đắk Lắk - 32 Y Ngông, phường Tân Tiến, thành phố Buôn Ma Thuột,
                 tỉnh Đắk Lắk.
             </marquee>
+            </Container>
         </Container>
     );
 };

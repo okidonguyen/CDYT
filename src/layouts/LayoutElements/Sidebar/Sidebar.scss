@@ -1,15 +1,12 @@
 .admin-sidebar {
+    background: var(--primary);
+    padding-left: 10px;
     .sidebar {
         min-width: 250px;
         max-width: 250px;
-        background: var(--primary);
         color: #fff;
         margin-left: -250px;
         transition: all 0.5s;
-
-        .sidebar-header {
-            background-color: #0e7349;
-        }
     }
 
     .sidebar.is-open {
@@ -21,12 +18,12 @@
         background: var(--primary);
     }
 
-
-    .nav-item, .nav-link{
+    .nav-item,
+    .nav-link {
         width: 100%;
     }
 
-    .nav-link:hover{
+    .nav-link:hover {
         font-weight: 500;
         background: var(--secondary);
     }

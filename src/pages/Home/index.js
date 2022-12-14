@@ -3,13 +3,12 @@ import CompanyLink from '~/components/CompanyLink';
 import Majors from '~/components/Majors';
 import NewsCarousel from '~/components/NewsCarousel';
 import Notification from '~/components/Notification';
-
-import { items, footerItems } from '~/data';
-import { Slideshow } from '~/components';
-import { SlideshowSettings as settings } from '~/data';
-import Quotes from '../../components/Quotes';
-
+import Quotes from '~/components/Quotes';
 import RunningText from '~/components/RunningText';
+import HeadTittle from '~/components/HeadTittle';
+import { Slideshow } from '~/components';
+import { items, footerItems } from '~/data';
+import { SlideshowSettings as settings } from '~/data';
 
 function Home() {
     let newSettings = {
@@ -22,9 +21,8 @@ function Home() {
     return (
         <Container fluid className="p-0">
             <Slideshow items={items} settings={settings} />
-            <RunningText separator={"/"}/>
-            {/* <ImgCarousel items={items} /> */}
-            <Container fluid="lg" className=''>
+            <RunningText separator={'/'} />
+            <Container fluid="lg" className="">
                 <Row>
                     <Col className="col-12 col-lg-8 p-2">
                         <NewsCarousel />
@@ -47,7 +45,7 @@ function Home() {
                 className="d-none d-lg-block"
                 style={{ padding: '30px', textAlign: 'center' }}
             >
-                <h3 className="border-bottom">HÌNH ẢNH HOẠT ĐỘNG</h3>
+                <HeadTittle title={'HÌNH ẢNH HOẠT ĐỘNG'} />
                 <Slideshow
                     items={footerItems}
                     settings={newSettings}

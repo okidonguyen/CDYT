@@ -33,7 +33,7 @@ const HeaderTop = () => {
                     <div className={'hotline'}>
                         <i className="bi bi-telephone"></i>
                         <span> Hotline: 02623.845.678</span>
-                    </div>                   
+                    </div>
                     <div
                         className={'menu-top d-flex justify-content-end'}
                         // style={{ minWidth: '370px' }}
@@ -48,7 +48,7 @@ const HeaderTop = () => {
                             {/* <Login /> */}
                             <NavLink href="/quantri/">
                                 <i className="bi bi-door-open"> </i>
-                                <span className="d-none d-sm-inline-block"> </span>
+                                <span className="d-none d-sm-inline-block">Đăng nhập</span>
                             </NavLink>
                         </div>
                         {/* <div className={'menu-top-item ps-2'}>

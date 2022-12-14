@@ -5,7 +5,7 @@ import { bucket } from '~/cosmicjs';
 import Sidebar from '~/layouts/LayoutElements/Sidebar';
 import HeadTittle from '~/components/HeadTittle';
 
-function GioithieuPage() {
+function PhongbanPage() {
     let { slug } = useParams();
     const [contents, setContents] = useState();
     const [sidebarIsOpen, setSidebarOpen] = useState(true);
@@ -15,7 +15,7 @@ function GioithieuPage() {
         (async () => {
             const data = await bucket.objects
                 .find({
-                    type: 'gioithieu',
+                    type: 'phongban',
                     slug: slug,
                 })
                 .props('title,content');
@@ -27,23 +27,33 @@ function GioithieuPage() {
 
     const menuSidebar = [
         {
-            name: 'Giới thiệu chung',
-            link: '/gioithieu/gioi-thieu-chung',
+            name: 'Ban giám hiệu',
+            link: '/phongban/ban-giam-hieu',
             sub: null,
         },
         {
-            name: 'Chức năng nhiệm vụ',
-            link: '/gioithieu/chuc-nang-nhiem-vu',
+            name: 'Phòng Tổ chức hành chính',
+            link: '/phongban/phong-to-chuc-hanh-chinh',
             sub: null,
         },
         {
-            name: 'Cơ cấu tổ chức',
-            link: '/gioithieu/co-cau-to-chuc',
+            name: 'Phòng đào tạo',
+            link: '/phongban/phong-dao-tao',
             sub: null,
         },
         {
-            name: 'Công khai chất lượng',
-            link: '/gioithieu/cong-khai-chat-luong',
+            name: 'Phòng tài chính kế toán',
+            link: '/phongban/phong-tai-chinh-ke-toan',
+            sub: null,
+        },
+        {
+            name: 'Phòng Công tác HSSV',
+            link: '/phongban/phong-cong-tac-hoc-sinh-sinh-vien',
+            sub: null,
+        },
+        {
+            name: 'Phòng Khảo thí và Kiểm định chất lượng',
+            link: '/phongban/phong-khao-thi-va-kiem-dinh-chat-luong',
             sub: null,
         },
     ];
@@ -76,4 +86,4 @@ function GioithieuPage() {
     );
 }
 
-export default GioithieuPage;
+export default PhongbanPage;

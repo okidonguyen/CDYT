@@ -1,25 +1,6 @@
 import { Container, Nav, NavItem, NavLink } from 'reactstrap';
 import './Footer.scss';
 function Footer() {
-    const itemRight = [
-        {
-            link: '/',
-            name: 'Đội ngũ',
-        },
-        {
-            link: '/',
-            name: 'Sinh viên',
-        },
-        {
-            link: '/',
-            name: 'Thư viện',
-        },
-        {
-            link: '/',
-            name: 'Phần mềm đào tạo',
-        },
-    ];
-
     const itemLeft = [
         {
             link: '/',
@@ -72,11 +53,33 @@ function Footer() {
                             </p>
                         </div>
                     </div>
-                    <div className="col-lg-2 d-none d-lg-block">
-                        <FooterMenu data={itemLeft} />
-                    </div>
-                    <div className="col-lg-2 d-none d-lg-block">
-                        <FooterMenu data={itemRight} />
+                    <div className="col-lg-2 d-none d-lg-block"></div>
+                    <div className="col-lg-3 d-none d-lg-block">
+                        <div className="footer-menu " style={{ textAlign: 'left' }}>
+                            <h5 className="border-bottom">Thống kê truy cập</h5>
+                            <Nav vertical>
+                                <NavItem>
+                                    <NavLink>
+                                        <i className="bi bi-people"></i> Tổng truy cập: 300.000
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink>
+                                        <i className="bi bi-person"></i> Đang online: 300
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink>
+                                        <i className="bi bi-calendar-event"></i> Trong ngày: 6.000
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink>
+                                        <i className="bi bi-calendar2-event"></i> Hôm qua: 7.000
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                        </div>
                     </div>
                     <div className="col-lg-12 d-none d-lg-block">
                         <script src="https://apps.elfsight.com/p/platform.js" defer></script>

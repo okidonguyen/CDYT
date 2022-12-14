@@ -133,27 +133,27 @@ export const trangchuMenu = [
         submenu: [
             {
                 name: 'Ban giám hiệu',
-                link: '/',
+                link: '/phongban/ban-giam-hieu',
             },
             {
                 name: 'Phòng Tổ chức hành chính',
-                link: '/',
+                link: '/phongban/phong-to-chuc-hanh-chinh',
             },
             {
                 name: 'Phòng đào tạo',
-                link: '/',
+                link: '/phongban/phong-dao-tao',
             },
             {
                 name: 'Phòng tài chính kế toán',
-                link: '/',
+                link: '/phongban/phong-tai-chinh-ke-toan',
             },
             {
-                name: 'Phòng Quản lý HSSV',
-                link: '/',
+                name: 'Phòng Công tác HSSV',
+                link: '/phongban/phong-cong-tac-hoc-sinh-sinh-vien',
             },
             {
-                name: 'Phòng khảo thí',
-                link: '/',
+                name: 'Phòng Khảo thí và Kiểm định chất lượng',
+                link: '/phongban/phong-khao-thi-va-kiem-dinh-chat-luong',
             },
         ],
     },
@@ -228,7 +228,7 @@ export const trangchuMenu = [
             },
         ],
     },
-    
+
     {
         name: 'Sinh viên',
         submenu: [
@@ -256,7 +256,7 @@ export const trangchuMenu = [
     },
     {
         name: 'Liên hệ',
-        link: '/',
+        link: '/lienhe',
     },
 ];
 

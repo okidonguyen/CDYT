@@ -1,4 +1,5 @@
 import { Container } from 'reactstrap';
+import HeadTittle from '~/components/HeadTittle';
 
 function Quotes({ title, content, icon }) {
     return (
@@ -8,7 +9,7 @@ function Quotes({ title, content, icon }) {
                     padding: '80px',
                 }}
             >
-                <h3 className="border-bottom">{title}</h3>
+                <HeadTittle title={title} />
                 <div style={{ color: 'var(--secondary)' }}>
                     <i className={icon} style={{ fontSize: '6rem' }}></i>
                     <h3>

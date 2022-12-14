@@ -15,6 +15,7 @@ import { Slideshow } from '~/components';
 import { SlideshowSettings as settings } from '~/data';
 import { items } from '~/data';
 import News from '~/components/News';
+import HeadTittle from '~/components/HeadTittle';
 import Quotes from '../../components/Quotes';
 
 function Dangkyhuongnghiep() {
@@ -22,13 +23,17 @@ function Dangkyhuongnghiep() {
         <Container fluid className="p-0">
             <Card inverse>
                 <CardImg
-                    className="rounded-0"
                     alt="Card image cap"
-                    src={require('~/assets/images/banner/Photo-05.jpg')}
+                    src="https://picsum.photos/900/350?blur"
+                    style={{
+                        height: 350,
+                    }}
                     width="100%"
                 />
-                <CardImgOverlay className="text-center" style={{ paddingTop: '170px' }}>
-                    <CardTitle tag="h1">TƯ VẤN HƯỚNG NGHIỆP</CardTitle>
+                <CardImgOverlay className="d-flex align-items-center justify-content-center">
+                    <div style={{ backgroundColor: '#274c3575' }} className="p-3">
+                        <CardTitle tag="h1">TƯ VẤN HƯỚNG NGHIỆP</CardTitle>
+                    </div>
                 </CardImgOverlay>
             </Card>
             <Quotes
@@ -39,7 +44,7 @@ function Dangkyhuongnghiep() {
                 icon={'bi bi-book'}
             />
             <Container className="text-center">
-                <h3 className="border-bottom">Bạn nhận được những gì khi đăng ký hướng nghiệp?</h3>
+                <HeadTittle title={'Bạn nhận được những gì khi đăng ký hướng nghiệp?'} />
                 <Row>
                     <Col className="col-12 col-lg-4">
                         <Card className="m-2" color="danger" inverse>
@@ -95,7 +100,7 @@ function Dangkyhuongnghiep() {
                 <Form>
                     <Row>
                         <Col md={6} className="d-flex flex-column justify-content-center">
-                            <h3>ĐĂNG KÝ HƯỚNG NGHIỆP </h3>
+                            <HeadTittle title={'ĐĂNG KÝ HƯỚNG NGHIỆP'} color={'white'} />
                             <br />
                             <h4>
                                 Nhập thông tin để tư vấn viên của trường liên hệ giải đáp các thắc
@@ -141,7 +146,7 @@ function Dangkyhuongnghiep() {
                                     <option value="5"> 08:00 AM - 09:00 AM</option>
                                 </Input>
                             </FormGroup>
-                            <br/>
+                            <br />
                             <Button block color="info">
                                 ĐĂNG KÝ HƯỚNG NGHIỆP
                             </Button>
@@ -153,7 +158,7 @@ function Dangkyhuongnghiep() {
             </Container>
             {/* TIN TUC */}
             <Container fluid="lg">
-                <h3 className="border-bottom">Tin tức hướng nghiệp</h3>
+                <HeadTittle title={'TIN TỨC HƯỚNG NGHIỆP'} />
                 <News numbers={3} />
             </Container>
         </Container>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import HeadTittle from '~/components/HeadTittle';
+import RunningText from '~/components/RunningText';
 import {
-    Accordion,
     AccordionBody,
     AccordionHeader,
     AccordionItem,
@@ -70,20 +71,21 @@ function Hoidap(props) {
                     }}
                     width="100%"
                 />
-                <CardImgOverlay className="text-center p-5">
-                    <CardTitle tag="h1" style={{ paddingTop: '70px' }}>
-                        NHỮNG CÂU HỎI THƯỜNG GẶP
-                    </CardTitle>
-                    <CardText tag={'h4'}>
-                        Đây là những câu hỏi & trả lời được nhiều bạn thắc mắc nhất.
-                    </CardText>
+                <CardImgOverlay className="d-flex align-items-center justify-content-center">
+                    <div style={{ backgroundColor: '#274c3575' }} className="p-3">
+                        <CardTitle tag="h1">NHỮNG CÂU HỎI THƯỜNG GẶP</CardTitle>
+                        <CardText tag={'h4'}>
+                            Đây là những câu hỏi & trả lời được nhiều bạn thắc mắc nhất.
+                        </CardText>
+                    </div>
                 </CardImgOverlay>
             </Card>
-
+            <RunningText separator={'/'} />
             <Container className="col-lg-12 p-3">
                 <Row>
                     <Col>
-                        <h3>Danh sách câu hỏi</h3>
+                        <HeadTittle title="Danh sách câu hỏi" />
+                        <br />
                         <UncontrolledAccordion defaultOpen="1">
                             {questions.map((ques, index) => (
                                 <AccordionItem key={index}>
@@ -98,9 +100,13 @@ function Hoidap(props) {
                         </UncontrolledAccordion>
                         <br />
                     </Col>
-                    <Col className="col-12 col-lg-4" style={{ backgroundColor: '#c1bdbd' }}>
-                        <Form className="m-2">
-                            <h3>Đặt câu hỏi cho nhà trường</h3>
+                    <Col
+                        className="col-12 col-lg-4 border rounded-3"
+                        style={{ backgroundColor: '#c1bdbd' }}
+                    >
+                        <Form>
+                            <HeadTittle title="Đặt câu hỏi" />
+                            <br />
                             <FormGroup>
                                 <Label for="exampleName">Nhập họ & tên:</Label>
                                 <Input

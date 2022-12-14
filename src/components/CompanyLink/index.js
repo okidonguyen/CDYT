@@ -1,4 +1,5 @@
 import { Container } from 'reactstrap';
+import HeadTittle from '~/components/HeadTittle';
 
 const imgLink = [
     require('~/assets/images/brands/link-01.png'),
@@ -13,7 +14,7 @@ const CompanyLink = () => {
     return (
         <Container className="d-none d-lg-block" style={{ padding: '30px', textAlign: 'center' }}>
             <div>
-                <h3 className="border-bottom">ĐỐI TÁC LIÊN KẾT</h3>
+                <HeadTittle title={'ĐỐI TÁC LIÊN KẾT'} />
                 {imgLink.map((image, index) => (
                     <img
                         alt=""

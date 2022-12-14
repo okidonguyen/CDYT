@@ -12,6 +12,7 @@ import {
 } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import News from '~/components/News';
+import HeadTittle from '~/components/HeadTittle';
 import { Slideshow } from '~/components';
 import { SlideshowSettings as settings } from '~/data';
 import { items } from '~/data';
@@ -28,15 +29,17 @@ function Dangkytuyensinh() {
                     }}
                     width="100%"
                 />
-                <CardImgOverlay className="text-center p-5">
-                    <CardTitle tag="h1" style={{ paddingTop: '70px' }}>
-                        TRANG TUYỂN SINH
-                    </CardTitle>
-                    <CardText tag={'h4'}>Điền đầy đủ thông tin để được tư vấn tuyển sinh</CardText>
+                <CardImgOverlay className="d-flex align-items-center justify-content-center">
+                    <div style={{ backgroundColor: '#274c3575' }} className="p-3">
+                        <CardTitle tag="h1">TRANG TUYỂN SINH</CardTitle>
+                        <CardText tag={'h4'}>
+                            Điền đầy đủ thông tin để được tư vấn tuyển sinh
+                        </CardText>
+                    </div>
                 </CardImgOverlay>
             </Card>
             <Container className="p-4  text-center">
-                <h3 className="border-bottom">BẠN NÊN CHỌN HỌC TẠI TRƯỜNG VÌ</h3>
+                <HeadTittle title={'BẠN NÊN CHỌN HỌC TẠI TRƯỜNG VÌ'} />
                 <Row>
                     <Col className="col-12 col-lg-3">
                         <Card className="m-2" color="success" inverse>
@@ -84,7 +87,7 @@ function Dangkytuyensinh() {
             </Container>
             <Container fluid="lg">
                 <br />
-                <h1>ĐĂNG KÝ TUYỂN SINH </h1>
+                <HeadTittle title={'Đăng ký tuyển sinh'} />
                 <p>
                     Bạn vui lòng điền đầy đủ thông tin cá nhân vào bảng đăng ký xét tuyển trực tuyến
                     bên cạnh để tư vấn viên của trường liên hệ với bạn giải đáp các thắc mắc hoàn
@@ -163,7 +166,7 @@ function Dangkytuyensinh() {
 
                 {/* TIN TUC */}
                 <Container fluid="lg">
-                    <h3 className="border-bottom">Tin tức tuyển sinh</h3>
+                    <HeadTittle title={'Tin tức tuyển sinh'} />
                     <News numbers={3} />
                 </Container>
             </Container>

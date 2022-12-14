@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { NavItem, NavLink, Nav, Collapse } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import HeadTittle from '~/components/HeadTittle';
 import './Sidebar.scss';
 
 const Sidebar = ({ isOpen, menuSidebar, isHeader = true, title = 'Danh mục' }) => (
-    <div className="admin-sidebar ">
+    <div className="admin-sidebar border rounded-3 ">
         <div className={isOpen ? 'sidebar is-open' : 'sidebar'}>
             {isHeader ? (
                 <div className="sidebar-header">
@@ -13,9 +13,9 @@ const Sidebar = ({ isOpen, menuSidebar, isHeader = true, title = 'Danh mục' })
             ) : (
                 ''
             )}
-            <div className="side-menu p-2">
-                <h4 className='border-bottom'>{title}</h4>
-                <Nav vertical className="list-unstyled pb-3">
+            <div className="side-menu">
+                <HeadTittle title={title} color="white" />
+                <Nav vertical className="list-unstyled pb-3 pt-3">
                     {menuSidebar.map((menuItem, index) => (
                         <NavItem key={index} className="d-flex align-items-center">
                             <i className="bi bi-caret-right"></i>

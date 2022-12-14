@@ -33,7 +33,7 @@ function NewsCarousel(args) {
                     src: post['metadata']['cover']['url'],
                     slug: post['slug'],
                     title: post['title'],
-                    content: post['metadata']['shorttext'].substring(0, 180) + ' ...',
+                    content: post['metadata']['shorttext'].substring(0, 250) + ' ...',
                     date: post['metadata']['ngaythang'],
                 })
             );
@@ -76,13 +76,13 @@ function NewsCarousel(args) {
                         alt="Card image cap"
                         src={item.src}
                         top
-                        style={{ height: '350px', objectFit: 'cover', borderRadius:"0px" }}
+                        style={{ height: '350px', objectFit: 'cover', borderRadius: '0px' }}
                     />
                     <CardBody>
-                        <CardTitle style={{ height: '50px', textAlign: 'justify' }} tag="h5">
+                        <CardTitle style={{ height: '40px', textAlign: 'justify' }} tag="h5">
                             {item.title}
                         </CardTitle>
-                        <CardText style={{ height: '70px', textAlign: 'justify' }}>
+                        <CardText style={{ height: '60px', textAlign: 'justify' }}>
                             {item.content}
                         </CardText>
                         <CardText className="p-0 m-0">

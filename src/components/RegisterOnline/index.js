@@ -18,7 +18,7 @@ function RegisterOnline(args) {
     // const toggle = () => setModal(!modal);
 
     return (
-        <div>
+        <div style={{ zIndex: 999 }}>
             <Link to={'/dangkytuyensinh'}>
                 <Button color="danger">
                     <i className="bi bi-pencil-square" /> Đăng ký tuyển sinh

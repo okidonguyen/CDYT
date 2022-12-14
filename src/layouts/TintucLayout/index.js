@@ -4,7 +4,6 @@ import MainMenu from '~/components/MainMenu';
 import RunningText from '~/components/RunningText';
 import { trangchuMenu as menuItems } from '~/data';
 
-import { useState } from 'react';
 import { Container } from 'reactstrap';
 
 function TintucLayout({ children }) {
@@ -12,7 +11,7 @@ function TintucLayout({ children }) {
         <div>
             <Header />
             <MainMenu menuItems={menuItems} color={'#288b6c'} />
-            <RunningText separator={"/"}/>
+            <RunningText separator={'/'} />
             <Container style={{ minHeight: '500px' }}>{children}</Container>
             <Footer />
         </div>

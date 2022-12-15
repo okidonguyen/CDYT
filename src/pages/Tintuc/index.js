@@ -5,10 +5,12 @@ import { footerItems } from '~/data';
 import { SlideshowSettings as settings } from '~/data';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
+import RunningText from '~/components/RunningText';
 
 function Tintuc() {
     return (
         <Container fluid className="p-0">
+
             <Container fluid="lg">
                 <News />
             </Container>

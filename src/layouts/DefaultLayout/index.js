@@ -2,15 +2,13 @@ import Header from '~/layouts/LayoutElements/Header';
 import Footer from '~/layouts/LayoutElements/Footer';
 import MainMenu from '~/components/MainMenu';
 import RegisterOnline from '~/components/RegisterOnline';
-import RunningText from '~/components/RunningText';
 import { trangchuMenu as menuItems } from '~/data';
 
 function DefaultLayout({ children }) {
     return (
         <div>
             <Header />
-            <MainMenu menuItems={menuItems} color={'#288b6c'} />
-            <RunningText separator={'/'} />
+            <MainMenu menuItems={menuItems} color={'#288b6c'} />            
             <div style={{ minHeight: '500px' }}>{children}</div>
             <Footer />
             <div

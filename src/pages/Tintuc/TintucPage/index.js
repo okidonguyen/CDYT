@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import { bucket } from '~/cosmicjs';
 import FeatureNews from '~/components/FeatureNews';
+import HeadTittle from '~/components/HeadTittle';
 
 function TintucPage() {
     let { slug } = useParams();
@@ -21,20 +22,20 @@ function TintucPage() {
         })();
     }, []);
     return (
-        <Container>
+        <Container className='pt-3'>
             <Row>
-                <Col className="col-12 col-lg-7 text-justify">
+                <Col className="col-12 col-lg-8 text-justify">
                     {contents !== undefined ? (
-                        <div>
-                            <h2>{contents.title}</h2>
+                        <div>                            
+                            <HeadTittle title={contents.title}/>
                             <div dangerouslySetInnerHTML={{ __html: contents.content }} />
                         </div>
                     ) : (
                         <></>
                     )}
                 </Col>
-                <Col className="col-12 col-lg-5">
-                    <h4 className="border-bottom">TIN TỨC NỔI BẬT</h4>
+                <Col className="col-12 col-lg-4">                    
+                    <HeadTittle title={'TIN TỨC NỔI BẬT'}/>
                     <FeatureNews />
                 </Col>
             </Row>

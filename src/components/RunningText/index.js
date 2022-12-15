@@ -8,18 +8,25 @@ const RunningText = ({ separator = '' }) => {
     return (
         <Container fluid style={{}}>
             <Container className="d-flex p-2 align-items-center border-bottom">
-                <div style={{ width: '200px' }}>
-                    Ngày
+                
+                <marquee style={{ color: 'var(--primary)' }}>
+                    Trường Cao Đẳng Y tế Đắk Lắk - 32 Y Ngông, phường Tân Tiến, thành phố Buôn Ma
+                    Thuột, tỉnh Đắk Lắk.
+                </marquee>
+                <div
+                    style={{
+                        width: '200px',
+                        background: `url(${require('~/assets/images/bg_title.png')}) no-repeat top right`,                                            
+                        textAlign:'center'
+                    }}
+                >
+                    Ngày 
                     {date}
                     {separator}
                     {month}
                     {separator}
                     {year}
                 </div>
-                <marquee style={{ color: 'var(--primary)' }}>
-                    Trường Cao Đẳng Y tế Đắk Lắk - 32 Y Ngông, phường Tân Tiến, thành phố Buôn Ma
-                    Thuột, tỉnh Đắk Lắk.
-                </marquee>
             </Container>
         </Container>
     );

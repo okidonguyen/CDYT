@@ -1,43 +1,16 @@
-import {
-    Col,
-    Container,
-    Row,
-    Card,
-    CardImgOverlay,
-    CardText,
-    CardTitle,
-    CardImg,
-    CardBody,
-} from 'reactstrap';
+import { Col, Container, Row, Card, CardText, CardTitle, CardBody } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { ProvinceLists } from '~/components';
-import { Slideshow } from '~/components';
-import { SlideshowSettings as settings } from '~/data';
-import { items } from '~/data';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
 import Quotes from '../../components/Quotes';
+import RunningText from '~/components/RunningText';
 
 function Dangkyhuongnghiep() {
     return (
         <Container fluid className="p-0">
-            <Card inverse>
-                <CardImg
-                    alt="Card image cap"
-                    src="https://picsum.photos/900/350?blur"
-                    style={{
-                        height: 350,
-                    }}
-                    width="100%"
-                />
-                <CardImgOverlay className="d-flex align-items-center justify-content-center">
-                    <div style={{ backgroundColor: '#274c3575' }} className="p-3">
-                        <CardTitle tag="h1">TƯ VẤN HƯỚNG NGHIỆP</CardTitle>
-                    </div>
-                </CardImgOverlay>
-            </Card>
+            <RunningText separator={'/'} />
             <Quotes
-                title={'Bạn đang gặp các vấn đề chọn ngành, chọn nghề?'}
+                title={'TRANG TƯ VẤN HƯỚNG NGHIỆP'}
                 content={
                     'Nhà trường luôn sẵn sàng đồng hành cùng bạn để giải quyết các băn khoăn, trăn trở liên quan đến định hướng và phát triển nghề nghiệp.'
                 }

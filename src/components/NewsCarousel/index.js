@@ -33,7 +33,7 @@ function NewsCarousel(args) {
                     src: post['metadata']['cover']['url'],
                     slug: post['slug'],
                     title: post['title'],
-                    content: post['metadata']['shorttext'].substring(0, 250) + ' ...',
+                    content: post['metadata']['shorttext'],
                     date: post['metadata']['ngaythang'],
                 })
             );
@@ -71,6 +71,11 @@ function NewsCarousel(args) {
                 onExited={() => setAnimating(false)}
                 key={index}
             >
+                <NavLink
+                            href={`tintuc/` + item.slug}
+                            className="read-continue float-end p-2 "
+                            style={{ zIndex: '10' }}
+                        >
                 <Card className="p-0 m-0 rounded-0">
                     <CardImg
                         alt="Card image cap"
@@ -79,36 +84,30 @@ function NewsCarousel(args) {
                         style={{ height: '350px', objectFit: 'cover', borderRadius: '0px' }}
                     />
                     <CardBody>
-                        <CardTitle style={{ height: '40px', textAlign: 'justify' }} tag="h5">
+                        <CardTitle style={{ textAlign: 'justify' }} tag="h5">
                             {item.title}
                         </CardTitle>
-                        <CardText style={{ height: '60px', textAlign: 'justify' }}>
+                        <CardText style={{minHeight: '100px', textAlign: 'justify', paddingBottom:"10px" }}>
                             {item.content}
-                        </CardText>
-                        <CardText className="p-0 m-0">
-                            <small className="text-muted">{item.date}</small>
-                        </CardText>
-                        <NavLink
-                            href={`tintuc/` + item.slug}
-                            className="read-continue float-end p-2 "
-                            style={{ zIndex: '10' }}
-                        >
-                            Đọc tiếp
-                        </NavLink>
+                        </CardText>                        
                     </CardBody>
                 </Card>
+                </NavLink>
             </CarouselItem>
         );
     });
 
     return (
         <Carousel activeIndex={activeIndex} next={next} previous={previous} {...args}>
+            
+            {slides}
+
             <CarouselIndicators
                 items={items}
                 activeIndex={activeIndex}
                 onClickHandler={goToIndex}
+                style={{display:"none"}}
             />
-            {slides}
             {/* <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
             <CarouselControl direction="next" directionText="Next" onClickHandler={next} /> */}
         </Carousel>

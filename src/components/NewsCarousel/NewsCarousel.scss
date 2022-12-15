@@ -11,9 +11,12 @@
     }
 
     .carousel-item {
-        .read-continue {
-            font-weight: 500;
-            cursor: pointer;
-        }
+        font-weight: 500;
+        cursor: pointer;
     }
+
+    .carousel-item:hover {
+        color: var(--secondary);
+    }
+
 }

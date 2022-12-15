@@ -4,6 +4,7 @@ import { Slideshow } from '~/components';
 import { footerItems } from '~/data';
 import { SlideshowSettings as settings } from '~/data';
 import News from '~/components/News';
+import HeadTittle from '~/components/HeadTittle';
 
 function Tintuc() {
     return (
@@ -13,9 +14,8 @@ function Tintuc() {
             </Container>
             <Container
                 className="d-none d-lg-block"
-                style={{ padding: '30px', textAlign: 'center' }}
-            >
-                <h3 className="border-bottom">HÌNH ẢNH HOẠT ĐỘNG</h3>
+            >                
+                <HeadTittle title={'HÌNH ẢNH HOẠT ĐỘNG'}/>
             </Container>
             <Container className="d-none d-lg-block">
                 <Slideshow items={footerItems} settings={settings} />

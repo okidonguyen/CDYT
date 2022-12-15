@@ -1,43 +1,19 @@
-import {
-    Card,
-    CardBody,
-    CardGroup,
-    CardText,
-    CardTitle,
-    CardImg,
-    Col,
-    Container,
-    Row,
-    CardImgOverlay,
-} from 'reactstrap';
+import { Card, CardBody, CardText, CardTitle, CardImg, Col, Container, Row } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
-import { Slideshow } from '~/components';
-import { SlideshowSettings as settings } from '~/data';
-import { items } from '~/data';
+import Quotes from '../../components/Quotes';
+import RunningText from '~/components/RunningText';
 
 function Dangkytuyensinh() {
     return (
         <Container fluid className="p-0">
-            <Card inverse>
-                <CardImg
-                    alt="Card image cap"
-                    src="https://picsum.photos/900/350?blur"
-                    style={{
-                        height: 350,
-                    }}
-                    width="100%"
-                />
-                <CardImgOverlay className="d-flex align-items-center justify-content-center">
-                    <div style={{ backgroundColor: '#274c3575' }} className="p-3">
-                        <CardTitle tag="h1">TRANG TUYỂN SINH</CardTitle>
-                        <CardText tag={'h4'}>
-                            Điền đầy đủ thông tin để được tư vấn tuyển sinh
-                        </CardText>
-                    </div>
-                </CardImgOverlay>
-            </Card>
+            <RunningText separator={'/'} />
+            <Quotes
+                title={'TRANG TƯ VẤN TUYỂN SINH'}
+                content={'Hãy đăng ký liên hệ nhà trường để được hỗ trợ, hướng dẫn.'}
+                icon={'bi bi-book'}
+            />
             <Container className="p-4  text-center">
                 <HeadTittle title={'BẠN NÊN CHỌN HỌC TẠI TRƯỜNG VÌ'} />
                 <Row>

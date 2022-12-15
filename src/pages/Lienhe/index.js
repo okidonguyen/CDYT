@@ -59,6 +59,10 @@ function Lienhe() {
                                     <option>Khoa Dược</option>
                                 </Input>
                             </FormGroup>
+                            <FormGroup>
+                                <Label for="student-email">Nội dung công tác</Label>
+                                <Input type='textarea' placeholder="Nhập nội dung" />
+                            </FormGroup>
                             <Button color="danger" className="w-100">
                                 Gửi thông tin
                             </Button>

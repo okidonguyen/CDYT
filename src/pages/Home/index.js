@@ -22,7 +22,7 @@ function Home() {
         <Container fluid className="p-0">
             <Slideshow items={items} settings={settings} />
             <RunningText separator={'/'} />
-            <Container fluid="lg" className="">
+            <Container fluid="lg">
                 <Row>
                     <Col className="col-12 col-lg-8 p-2">
                         <NewsCarousel />
@@ -33,13 +33,13 @@ function Home() {
                 </Row>
             </Container>
             <Majors />
-            <Quotes
-                title={'TẦM NHÌN - SỨ MỆNH'}
-                content={
-                    'ĐÀO TẠO NGUỒN NHÂN LỰC Y TẾ CÓ TRÌNH ĐỘ ĐỂ BẢO VỆ CHĂM SÓC VÀ NÂNG CAO SỨC KHỎE CỘNG ĐỒNG VÙNG TÂY NGUYÊN'
-                }
-                icon={'bi bi-book'}
-            />
+            <Quotes 
+                    title={'TẦM NHÌN - SỨ MỆNH'}
+                    content={
+                        'ĐÀO TẠO NGUỒN NHÂN LỰC Y TẾ CÓ TRÌNH ĐỘ ĐỂ BẢO VỆ CHĂM SÓC VÀ NÂNG CAO SỨC KHỎE CỘNG ĐỒNG VÙNG TÂY NGUYÊN'
+                    }
+                    icon={'bi bi-book'}
+                />
 
             <Container
                 className="d-none d-lg-block"

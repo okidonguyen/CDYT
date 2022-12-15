@@ -1,14 +1,43 @@
 import { Col, Container, NavLink, Row } from 'reactstrap';
-import './Notification.scss';
-import { notifyData } from '~/data';
+import { bucket } from '~/cosmicjs';
 import HeadTittle from '~/components/HeadTittle';
+import './Notification.scss';
+import { useEffect, useState } from 'react';
 
 const Notification = () => {
+    const [items, setItems] = useState(() => {
+        return [{}];
+    });
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const data = await bucket.objects
+                    .find({
+                        type: 'thongbao',
+                    })
+                    .props('slug,title,metadata')
+                    .limit(7);
+
+                let posts = [];
+                data.objects.map((post) =>
+                    posts.push({
+                        slug: `/thongbao/${post['slug']}`,
+                        title: post['title'].substring(0, 100),
+                        date: post['metadata']['ngay_thang'],
+                    })
+                );
+                setItems(posts);
+            } catch (error) {
+                setItems([{}]);
+            }
+        })();
+    }, []);
     return (
         <Container className="notification border rounded-3" fluid>
             <div>
                 <HeadTittle title={'Thông báo'} />
-                {notifyData.map((item, index) => (
+                {items.map((item, index) => (
                     <div key={index}>
                         <Row className="pt-1 pb-1">
                             <Col className="d-flex">
@@ -21,9 +50,9 @@ const Notification = () => {
                                 <NavLink
                                     className="border-bottom"
                                     style={{ width: '100%' }}
-                                    href={item.link}
+                                    href={item.slug}
                                 >
-                                    {item.title.substring(0, 110)}
+                                    {item.title}
                                 </NavLink>
                             </Col>
                         </Row>

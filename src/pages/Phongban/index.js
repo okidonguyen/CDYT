@@ -28,32 +28,32 @@ function PhongbanPage() {
     const menuSidebar = [
         {
             name: 'Ban giám hiệu',
-            link: '/phongban/ban-giam-hieu',
+            link: '/phongkhoa/ban-giam-hieu',
             sub: null,
         },
         {
             name: 'Phòng Tổ chức hành chính',
-            link: '/phongban/phong-to-chuc-hanh-chinh',
+            link: '/phongkhoa/phong-to-chuc-hanh-chinh',
             sub: null,
         },
         {
             name: 'Phòng đào tạo',
-            link: '/phongban/phong-dao-tao',
+            link: '/phongkhoa/phong-dao-tao',
             sub: null,
         },
         {
             name: 'Phòng tài chính kế toán',
-            link: '/phongban/phong-tai-chinh-ke-toan',
+            link: '/phongkhoa/phong-tai-chinh-ke-toan',
             sub: null,
         },
         {
             name: 'Phòng Công tác HSSV',
-            link: '/phongban/phong-cong-tac-hoc-sinh-sinh-vien',
+            link: '/phongkhoa/phong-cong-tac-hoc-sinh-sinh-vien',
             sub: null,
         },
         {
             name: 'Phòng Khảo thí và Kiểm định chất lượng',
-            link: '/phongban/phong-khao-thi-va-kiem-dinh-chat-luong',
+            link: '/phongkhoa/phong-khao-thi-va-kiem-dinh-chat-luong',
             sub: null,
         },
     ];

@@ -66,7 +66,7 @@ function Majors() {
                                 width="100%"
                             />
                             <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">KHOA Y;</CardTitle>
+                                <CardTitle tag="h5">KHOA Y</CardTitle>
                                 <ul>
                                     <li>Đội ngũ giáo viên</li>
                                     <li>Hoạt động chuyên môn</li>

@@ -6,9 +6,8 @@ const RunningText = ({ separator = '' }) => {
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
     return (
-        <Container fluid style={{}}>
-            <Container className="d-flex p-2 align-items-center border-bottom">
-                
+        <Container fluid>
+            <Container className="d-flex align-items-center border-bottom pt-2 pb-2">
                 <marquee style={{ color: 'var(--primary)' }}>
                     Trường Cao Đẳng Y tế Đắk Lắk - 32 Y Ngông, phường Tân Tiến, thành phố Buôn Ma
                     Thuột, tỉnh Đắk Lắk.
@@ -16,11 +15,11 @@ const RunningText = ({ separator = '' }) => {
                 <div
                     style={{
                         width: '200px',
-                        background: `url(${require('~/assets/images/bg_title.png')}) no-repeat top right`,                                            
-                        textAlign:'center'
+                        background: `url(${require('~/assets/images/bg_title.png')}) no-repeat top right`,
+                        textAlign: 'center',
                     }}
                 >
-                    Ngày 
+                    Ngày
                     {date}
                     {separator}
                     {month}

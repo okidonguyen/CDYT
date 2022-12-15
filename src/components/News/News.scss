@@ -1,9 +1,10 @@
-.card-body a:hover {
-    color: var(--secondary);
-}
 .card-body {
     a {
         font-weight: 500;
         cursor: pointer;
     }
+}
+
+.card-body:hover {
+    color: var(--secondary);
 }

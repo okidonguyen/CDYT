@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import { bucket } from '~/cosmicjs';
-import FeatureNews from '~/components/FeatureNews';
 import HeadTittle from '~/components/HeadTittle';
+import Notification from '~/components/Notification';
 
-function TintucPage() {
+function Thongbaochitiet() {
     let { slug } = useParams();
     const [contents, setContents] = useState();
     useEffect(() => {
         (async () => {
             const data = await bucket.objects
                 .find({
-                    type: 'trangchu-tintuc',
+                    type: 'thongbao',
                     slug: slug,
                 })
                 .props('title,content');
@@ -27,7 +27,7 @@ function TintucPage() {
                 <Col className="col-12 col-lg-8 text-justify">
                     {contents !== undefined ? (
                         <div>
-                            <HeadTittle title={contents.title} />
+                            <HeadTittle title={'NỘI DUNG THÔNG BÁO'} />
                             <div dangerouslySetInnerHTML={{ __html: contents.content }} />
                         </div>
                     ) : (
@@ -35,12 +35,11 @@ function TintucPage() {
                     )}
                 </Col>
                 <Col className="col-12 col-lg-4">
-                    <HeadTittle title={'TIN TỨC NỔI BẬT'} />
-                    <FeatureNews />
+                    <Notification />
                 </Col>
             </Row>
         </Container>
     );
 }
 
-export default TintucPage;
+export default Thongbaochitiet;

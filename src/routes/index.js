@@ -17,6 +17,8 @@ import QtTrangchu from '~/pages/Quantri/QtTrangchu';
 
 // LAYOUT
 import { TintucLayout, QuantriLayout } from '~/layouts';
+import Thongbao from '../pages/Thongbao';
+import ThongbaoChitiet from '../pages/ThongbaoChitiet';
 
 const publicRoute = [
     // TRANG CHU
@@ -24,10 +26,13 @@ const publicRoute = [
     // GIOI THIEU
     { path: '/gioithieu/:slug', component: GioithieuPage, layout: TintucLayout },
     // PHONG BAN
-    { path: '/phongban/:slug', component: PhongbanPage, layout: TintucLayout },
-    //
-    { path: '/tintuc', component: Tintuc },
-    { path: '/tintuc/:slug', component: TintucPage },
+    { path: '/phongkhoa/:slug', component: PhongbanPage, layout: TintucLayout },
+    // TIN TUC
+    { path: '/tintuc/:slug', component: Tintuc, layout: TintucLayout },
+    { path: '/tintucchitiet/:slug', component: TintucPage, layout: TintucLayout },
+    // THONG BAO
+    { path: '/thongbao', component: Thongbao, layout: TintucLayout },
+    { path: '/thongbao/:slug', component: ThongbaoChitiet, layout: TintucLayout },
     // Chuong trinh dao tao
     { path: '/profile', component: Profile },
     { path: '/hoidap', component: Hoidap },

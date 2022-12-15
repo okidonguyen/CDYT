@@ -129,31 +129,43 @@ export const trangchuMenu = [
         ],
     },
     {
-        name: 'Phòng ban',
+        name: 'Phòng Khoa',
         submenu: [
             {
                 name: 'Ban giám hiệu',
-                link: '/phongban/ban-giam-hieu',
+                link: '/phongkhoa/ban-giam-hieu',
             },
             {
                 name: 'Phòng Tổ chức hành chính',
-                link: '/phongban/phong-to-chuc-hanh-chinh',
+                link: '/phongkhoa/phong-to-chuc-hanh-chinh',
             },
             {
                 name: 'Phòng đào tạo',
-                link: '/phongban/phong-dao-tao',
+                link: '/phongkhoa/phong-dao-tao',
             },
             {
                 name: 'Phòng tài chính kế toán',
-                link: '/phongban/phong-tai-chinh-ke-toan',
+                link: '/phongkhoa/phong-tai-chinh-ke-toan',
             },
             {
                 name: 'Phòng Công tác HSSV',
-                link: '/phongban/phong-cong-tac-hoc-sinh-sinh-vien',
+                link: '/phongkhoa/phong-cong-tac-hoc-sinh-sinh-vien',
             },
             {
-                name: 'Phòng Khảo thí và Kiểm định chất lượng',
-                link: '/phongban/phong-khao-thi-va-kiem-dinh-chat-luong',
+                name: 'Khoa khoa học cơ bản',
+                link: '/phongkhoa/khoa-khoa-hoc-co-ban',
+            },
+            {
+                name: 'Khoa Y',
+                link: '/phongkhoa/khoa-y',
+            },
+            {
+                name: 'KHOA ĐIỀU DƯỠNG - KTYH',
+                link: '/phongkhoa/khoa-dieu-duong-ktyh',
+            },
+            {
+                name: 'KHOA DƯỢC',
+                link: '/phongkhoa/khoa-duoc',
             },
         ],
     },
@@ -162,23 +174,19 @@ export const trangchuMenu = [
         submenu: [
             {
                 name: 'Hoạt động Đảng – Đoàn thể',
-                link: '/tintuc',
+                link: '/tintuc/dangdoanthe',
             },
             {
                 name: 'Hoạt động chuyên môn',
-                link: '/tintuc',
+                link: '/tintuc/hoatdongchuyenmon',
             },
             {
                 name: 'Thi và Tuyển sinh',
-                link: '/tintuc',
+                link: '/tintuc/thivatuyensinh',
             },
             {
                 name: 'Hoạt động khác',
-                link: '/tintuc',
-            },
-            {
-                name: 'Ảnh & Video',
-                link: '/tintuc',
+                link: '/tintuc/hoatdongkhac',
             },
         ],
     },
@@ -257,141 +265,6 @@ export const trangchuMenu = [
     {
         name: 'Liên hệ',
         link: '/lienhe',
-    },
-];
-
-export const noiboMenu = [
-    {
-        name: 'Trang chủ',
-        link: '/',
-    },
-    {
-        name: 'Tin tức nội bộ',
-        link: '/',
-    },
-    {
-        name: 'Phòng ban',
-        submenu: [
-            {
-                name: 'Ban giám hiệu',
-                link: '/',
-            },
-            {
-                name: 'Phòng Tổ chức',
-                link: '/',
-            },
-            {
-                name: 'Phòng đào tạo',
-                link: '/',
-            },
-            {
-                name: 'Phòng tài chính Kế toán',
-                link: '/',
-            },
-            {
-                name: 'Phòng Quản lý HSSV',
-                link: '/',
-            },
-        ],
-    },
-    {
-        name: 'Đoàn thể',
-        submenu: [
-            {
-                name: 'Đảng',
-                link: '/',
-            },
-            {
-                name: 'Công đoàn',
-                link: '/',
-            },
-            {
-                name: 'Đoàn thanh niên',
-                link: '/',
-            },
-        ],
-    },
-    {
-        name: 'Lịch Công tác',
-        link: '/',
-    },
-    {
-        name: 'Văn bản',
-        submenu: [
-            {
-                name: 'Văn bản TW',
-                link: '/',
-            },
-            {
-                name: 'Văn bản địa phương',
-                link: '/',
-            },
-            {
-                name: 'Văn bản trường',
-                link: '/',
-            },
-        ],
-    },
-    {
-        name: 'Tài liệu',
-        link: '/',
-    },
-];
-
-export const sinhvienMenu = [
-    {
-        name: 'Trang chủ',
-        link: '/',
-    },
-    {
-        name: 'Hoạt động sinh viên',
-        submenu: [
-            {
-                name: 'KHOA Y HỌC LÂM SÀN',
-                link: '/',
-            },
-            {
-                name: 'KHOA Y TẾ CỘNG ĐỒNG',
-                link: '/',
-            },
-            {
-                name: 'KHOA ĐIỀU DƯỠNG -KTYH',
-                link: '/',
-            },
-            {
-                name: 'KHOA KHOA HỌC CƠ BẢN',
-                link: '/',
-            },
-        ],
-    },
-    {
-        name: 'Học tập',
-        submenu: [
-            {
-                name: 'Lịch giảng',
-                link: '/',
-            },
-            {
-                name: 'Thời khoá biểu',
-                link: '/',
-            },
-            {
-                name: 'Tra cứu điểm',
-                link: '/',
-            },
-            {
-                name: 'Tài liệu',
-                link: '/',
-            },
-        ],
-    },
-    {
-        name: 'Kiến thức chuyên ngành',
-        link: '/',
-    },
-    {
-        name: 'Thư viện - Bài giảng',
-        link: '/',
     },
 ];
 

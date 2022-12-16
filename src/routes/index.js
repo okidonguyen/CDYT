@@ -4,8 +4,8 @@ import GioithieuPage from '~/pages/Gioithieu';
 import PhongbanPage from '../pages/Phongban';
 import Tintuc from '~/pages/Tintuc';
 import TintucPage from '~/pages/Tintuc/TintucPage';
-import Dangkytuyensinh from '~/pages/Dangkytuyensinh';
-import Dangkyhuongnghiep from '~/pages/Dangkyhuongnghiep';
+import Tuyensinh from '~/pages/Tuyensinh';
+import Huongnghiep from '~/pages/Huongnghiep';
 import Lienhe from '~/pages/Lienhe';
 import Hoidap from '~/pages/Hoidap';
 // OTHER
@@ -37,8 +37,8 @@ const publicRoute = [
     { path: '/profile', component: Profile },
     { path: '/hoidap', component: Hoidap },
     { path: '/search', component: Search },
-    { path: '/dangkytuyensinh', component: Dangkytuyensinh },
-    { path: '/dangkyhuongnghiep', component: Dangkyhuongnghiep },
+    { path: '/tuyensinh', component: Tuyensinh },
+    { path: '/huongnghiep', component: Huongnghiep },
     // LIEN HE
     { path: '/lienhe', component: Lienhe },
     // Quan tri

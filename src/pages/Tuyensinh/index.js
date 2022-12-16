@@ -5,7 +5,7 @@ import HeadTittle from '~/components/HeadTittle';
 import Quotes from '../../components/Quotes';
 import RunningText from '~/components/RunningText';
 
-function Dangkytuyensinh() {
+function Tuyensinh() {
     return (
         <Container fluid className="p-0">
             <RunningText separator={'/'} />
@@ -63,15 +63,15 @@ function Dangkytuyensinh() {
             </Container>
             <Container fluid="lg">
                 <br />
-                <HeadTittle title={'Đăng ký tuyển sinh'} />
-                <p>
-                    Bạn vui lòng điền đầy đủ thông tin cá nhân vào bảng đăng ký xét tuyển trực tuyến
-                    bên cạnh để tư vấn viên của trường liên hệ với bạn giải đáp các thắc mắc hoàn
-                    toàn miễn phí. Chúng tôi sẽ chủ động liên hệ lại với bạn trong vòng 24h kể từ
-                    khi nhận được thông tin đăng ký.
-                </p>
                 <Row>
                     <Col className="col-12 col-lg-8">
+                        <HeadTittle title={'Đăng ký tuyển sinh'} />
+                        <p>
+                            Bạn vui lòng điền đầy đủ thông tin cá nhân vào bảng đăng ký xét tuyển
+                            trực tuyến bên cạnh để tư vấn viên của trường liên hệ với bạn giải đáp
+                            các thắc mắc hoàn toàn miễn phí. Chúng tôi sẽ chủ động liên hệ lại với
+                            bạn trong vòng 24h kể từ khi nhận được thông tin đăng ký.
+                        </p>
                         <Form style={{ border: 'solid 1px #ddd', padding: '20px' }}>
                             <Row>
                                 <Col md={6}>
@@ -134,20 +134,18 @@ function Dangkytuyensinh() {
                             </Button>
                         </Form>
                         <br />
+                        {/* TIN TUC */}
+                        <HeadTittle title={'Tin tức tuyển sinh'} />
+                        <News numbers={3} />
+                        <br />
                     </Col>
                     <Col className="col-12 col-lg-4">
                         <CardImg src={require('~/assets/images/hoatdong/10.jpg')} alt="SINH VIEN" />
                     </Col>
                 </Row>
-
-                {/* TIN TUC */}
-                <Container fluid="lg">
-                    <HeadTittle title={'Tin tức tuyển sinh'} />
-                    <News numbers={3} />
-                </Container>
             </Container>
         </Container>
     );
 }
 
-export default Dangkytuyensinh;
+export default Tuyensinh;

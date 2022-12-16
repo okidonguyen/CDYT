@@ -19,7 +19,7 @@ function RegisterOnline(args) {
 
     return (
         <div style={{ zIndex: 999 }}>
-            <Link to={'/dangkytuyensinh'}>
+            <Link to={'/tuyensinh'}>
                 <Button color="danger">
                     <i className="bi bi-pencil-square" /> Đăng ký tuyển sinh
                 </Button>

@@ -228,11 +228,11 @@ export const trangchuMenu = [
             },
             {
                 name: 'Đăng ký tuyển sinh trực tuyến',
-                link: '/dangkytuyensinh',
+                link: '/tuyensinh',
             },
             {
                 name: 'Kết quả tuyển sinh',
-                link: '/dangkytuyensinh',
+                link: '/tuyensinh',
             },
         ],
     },

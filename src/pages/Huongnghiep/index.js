@@ -2,10 +2,10 @@ import { Col, Container, Row, Card, CardText, CardTitle, CardBody } from 'reacts
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
-import Quotes from '../../components/Quotes';
+import Quotes from '~/components/Quotes';
 import RunningText from '~/components/RunningText';
 
-function Dangkyhuongnghiep() {
+function Huongnghiep() {
     return (
         <Container fluid className="p-0">
             <RunningText separator={'/'} />
@@ -134,8 +134,9 @@ function Dangkyhuongnghiep() {
                 <HeadTittle title={'TIN TỨC HƯỚNG NGHIỆP'} />
                 <News numbers={3} />
             </Container>
+            <br/>
         </Container>
     );
 }
 
-export default Dangkyhuongnghiep;
+export default Huongnghiep;

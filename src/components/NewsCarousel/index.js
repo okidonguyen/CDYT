@@ -72,26 +72,32 @@ function NewsCarousel(args) {
                 key={index}
             >
                 <NavLink
-                            href={`tintuc/` + item.slug}
-                            className="read-continue float-end p-2 "
-                            style={{ zIndex: '10' }}
-                        >
-                <Card className="p-0 m-0 rounded-0">
-                    <CardImg
-                        alt="Card image cap"
-                        src={item.src}
-                        top
-                        style={{ height: '350px', objectFit: 'cover', borderRadius: '0px' }}
-                    />
-                    <CardBody>
-                        <CardTitle style={{ textAlign: 'justify' }} tag="h5">
-                            {item.title}
-                        </CardTitle>
-                        <CardText style={{minHeight: '100px', textAlign: 'justify', paddingBottom:"10px" }}>
-                            {item.content}
-                        </CardText>                        
-                    </CardBody>
-                </Card>
+                    href={`tintucchitiet/` + item.slug}
+                    className="read-continue float-end p-2 "
+                    style={{ zIndex: '10' }}
+                >
+                    <Card className="p-0 m-0 rounded-0">
+                        <CardImg
+                            alt="Card image cap"
+                            src={item.src}
+                            top
+                            style={{ height: '350px', objectFit: 'cover', borderRadius: '0px' }}
+                        />
+                        <CardBody>
+                            <CardTitle style={{ textAlign: 'justify' }} tag="h5">
+                                {item.title}
+                            </CardTitle>
+                            <CardText
+                                style={{
+                                    minHeight: '100px',
+                                    textAlign: 'justify',
+                                    paddingBottom: '10px',
+                                }}
+                            >
+                                {item.content}
+                            </CardText>
+                        </CardBody>
+                    </Card>
                 </NavLink>
             </CarouselItem>
         );
@@ -99,14 +105,13 @@ function NewsCarousel(args) {
 
     return (
         <Carousel activeIndex={activeIndex} next={next} previous={previous} {...args}>
-            
             {slides}
 
             <CarouselIndicators
                 items={items}
                 activeIndex={activeIndex}
                 onClickHandler={goToIndex}
-                style={{display:"none"}}
+                style={{ display: 'none' }}
             />
             {/* <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
             <CarouselControl direction="next" directionText="Next" onClickHandler={next} /> */}

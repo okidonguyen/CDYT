@@ -3,10 +3,11 @@ function HeadTittle({ title, color = 'var(--primary)' }) {
         <div
             className="border-bottom"
             style={{
-                height: '52px',
-                background: `url(${require('./bg_title.png')}) no-repeat top right`,
+                display: 'flex',
+                alignItems: 'center',
+                minHeight: '52px',
+                background: `url(${require('./bg_title.png')}) no-repeat bottom right`,
                 borderTop: `4px solid var(--primary)`,
-                lineHeight: '52px',
                 color: color,
                 fontWeight: 600,
                 fontSize: '1.4rem',

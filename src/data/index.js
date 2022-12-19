@@ -217,7 +217,7 @@ export const trangchuMenu = [
     },
     {
         name: 'Hướng nghiệp',
-        link: '/dangkyhuongnghiep',
+        link: '/huongnghiep',
     },
     {
         name: 'Tuyển sinh',

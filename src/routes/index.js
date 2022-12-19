@@ -14,9 +14,10 @@ import Search from '~/pages/Search';
 
 // ADMIN
 import QtTrangchu from '~/pages/Quantri/QtTrangchu';
+import Dangnhap from '../pages/Dangnhap';
 
 // LAYOUT
-import { TintucLayout, QuantriLayout } from '~/layouts';
+import { TintucLayout, QuantriLayout, BlankLayout } from '~/layouts';
 import Thongbao from '../pages/Thongbao';
 import ThongbaoChitiet from '../pages/ThongbaoChitiet';
 
@@ -43,6 +44,7 @@ const publicRoute = [
     { path: '/lienhe', component: Lienhe },
     // Quan tri
     { path: '/quantri', component: QtTrangchu, layout: QuantriLayout },
+    { path: '/quantri/dangnhap', component: Dangnhap, layout: BlankLayout },
 ];
 
 const privateRoute = [];

@@ -13,13 +13,15 @@ import Profile from '~/pages/Profile';
 import Search from '~/pages/Search';
 
 // ADMIN
-import QtTrangchu from '~/pages/Quantri/QtTrangchu';
+import Trangchu from '~/pages/Quantri/Trangchu';
+import Nghenghiep from '../pages/Quantri/Nghenghiep';
 import Dangnhap from '../pages/Dangnhap';
 
 // LAYOUT
 import { TintucLayout, QuantriLayout, BlankLayout } from '~/layouts';
 import Thongbao from '../pages/Thongbao';
 import ThongbaoChitiet from '../pages/ThongbaoChitiet';
+import Nguoisudung from '../pages/Quantri/Nguoisudung';
 
 const publicRoute = [
     // TRANG CHU
@@ -43,7 +45,23 @@ const publicRoute = [
     // LIEN HE
     { path: '/lienhe', component: Lienhe },
     // Quan tri
-    { path: '/quantri', component: QtTrangchu, layout: QuantriLayout },
+    { path: '/quantri', component: Trangchu, layout: QuantriLayout },
+    { path: '/quantri/nguoisudung', component: Nguoisudung, layout: QuantriLayout },
+    {
+        path: '/quantri/danhmucnghenghiep',
+        component: Nghenghiep.DmNghenghiep,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/themnghenghiep',
+        component: Nghenghiep.ThemNghenghiep,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/themnghenghiep/:id',
+        component: Nghenghiep.ThemNghenghiep,
+        layout: QuantriLayout,
+    },
     { path: '/quantri/dangnhap', component: Dangnhap, layout: BlankLayout },
 ];
 

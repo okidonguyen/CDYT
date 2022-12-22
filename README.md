@@ -18,3 +18,5 @@
 8. Quản lý module đăng ký hướng nghiệp
 
 https://okidonguyen88.onrender.com/
+
+https://github.com/Jungwoo-An/react-editor-js#readme

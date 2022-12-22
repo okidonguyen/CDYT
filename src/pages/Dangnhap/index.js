@@ -1,41 +1,18 @@
-import {
-    Alert,
-    Button,
-    Container,
-    Form,
-    FormFeedback,
-    FormGroup,
-    Input,
-    Label,
-    NavLink,
-} from 'reactstrap';
+import { Button, Container, Form, FormFeedback, FormGroup, Label, NavLink } from 'reactstrap';
 import AuthService from '~/services/auth.service';
 import { withRouter } from '~/common/with-router';
 import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
 
 const Dangnhap = ({ router }) => {
     const {
         register,
         handleSubmit,
         setError,
-        reset,
         formState: { errors },
     } = useForm();
+
     const onSubmit = async (data) => {
-        // await AuthService()
-        //     .login(data.tendangnhap, data.matkhau)
-        //     .then(
-        //         (response) => {
-        //             console.log('vao day');
-        //             console.log(response);
-        //             //props.navigate('/profile');
-        //             //window.location.reload();
-        //         },
-        //         (error) => {
-        //             console.log(error);
-        //         }
-        //     );
-        //console.log(data);
         await AuthService()
             .login(data.tendangnhap, data.matkhau)
             .then((res) => {
@@ -51,10 +28,13 @@ const Dangnhap = ({ router }) => {
 
                 if (res.status === 200) {
                     console.log('Thanh cong');
+                    localStorage.setItem('user', JSON.stringify(res.data));
                     router.navigate('/quantri');
                 }
             });
     };
+
+    useEffect(() => {});
 
     return (
         <Container className="p-5 m-auto" style={{ width: '500px' }}>

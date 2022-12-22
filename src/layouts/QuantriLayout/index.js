@@ -14,7 +14,7 @@ const QuantriLayout = ({ children }) => {
         },
         {
             name: 'Quản lý người sử dụng',
-            link: '/quantri',
+            link: '/quantri/nguoisudung',
             sub: null,
         },
         {
@@ -66,8 +66,21 @@ const QuantriLayout = ({ children }) => {
         },
         {
             name: 'Quản lý Hướng nghiệp',
-            link: '/quantri',
-            sub: null,
+            link: '#',
+            sub: [
+                {
+                    title: 'Danh mục đăng ký',
+                    target: '/quantri/dangkyhuongnghiep',
+                },
+                {
+                    title: 'Danh mục nghề nghiệp',
+                    target: '/quantri/danhmucnghenghiep',
+                },
+                {
+                    title: 'Thời gian tư vấn',
+                    target: '/quantri/thoigiantuvan',
+                },
+            ],
         },
     ];
 

@@ -37,7 +37,7 @@ const SubMenu = (props) => {
     const { title, items } = props;
 
     return (
-        <div>
+        <Nav>
             <NavItem onClick={toggle} className={!collapsed ? 'menu-open' : ''}>
                 <NavLink>
                     <i className="bi bi-contact"></i>
@@ -56,7 +56,7 @@ const SubMenu = (props) => {
                     </NavItem>
                 ))}
             </Collapse>
-        </div>
+        </Nav>
     );
 };
 

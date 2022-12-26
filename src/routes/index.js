@@ -15,6 +15,7 @@ import Search from '~/pages/Search';
 // ADMIN
 import Trangchu from '~/pages/Quantri/Trangchu';
 import Nghenghiep from '../pages/Quantri/Nghenghiep';
+import DanhmucHuongnghiep from '../pages/Quantri/DanhmucHuongnghiep';
 import Dangnhap from '../pages/Dangnhap';
 
 // LAYOUT
@@ -47,6 +48,11 @@ const publicRoute = [
     // Quan tri
     { path: '/quantri', component: Trangchu, layout: QuantriLayout },
     { path: '/quantri/nguoisudung', component: Nguoisudung, layout: QuantriLayout },
+    {
+        path: '/quantri/danhmuchuongnghiep',
+        component: DanhmucHuongnghiep,
+        layout: QuantriLayout,
+    },
     {
         path: '/quantri/danhmucnghenghiep',
         component: Nghenghiep.DmNghenghiep,

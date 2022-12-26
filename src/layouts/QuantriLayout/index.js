@@ -70,15 +70,11 @@ const QuantriLayout = ({ children }) => {
             sub: [
                 {
                     title: 'Danh mục đăng ký',
-                    target: '/quantri/dangkyhuongnghiep',
+                    target: '/quantri/danhmuchuongnghiep',
                 },
                 {
                     title: 'Danh mục nghề nghiệp',
                     target: '/quantri/danhmucnghenghiep',
-                },
-                {
-                    title: 'Thời gian tư vấn',
-                    target: '/quantri/thoigiantuvan',
                 },
             ],
         },

@@ -1,5 +1,5 @@
-import { useEffect, useState, memo } from 'react';
-import { Col, FormGroup, Input, Label, Row } from 'reactstrap';
+import { useEffect, useState } from 'react';
+import { Col, FormGroup, Input, Row } from 'reactstrap';
 
 const ProvinceLists = (args) => {
     const [tinh, setTinh] = useState(() => {
@@ -78,9 +78,8 @@ const ProvinceLists = (args) => {
         <Row>
             <Col md={4}>
                 <FormGroup>
-                    <Label for="tinh">Chọn tỉnh</Label>
                     <Input id="tinh" name="select" type="select" onChange={onTinhChange}>
-                        <option value="">Xin vui lòng chọn</option>
+                        <option value="">Tỉnh</option>
                         {tinh.isLoaded === true ? (
                             tinh.items.map((item) => (
                                 <option key={item.code} value={item.code}>
@@ -95,9 +94,8 @@ const ProvinceLists = (args) => {
             </Col>
             <Col md={4}>
                 <FormGroup>
-                    <Label for="quanHuyen">Chọn Quận, Huyện, thành phố</Label>
                     <Input id="quanHuyen" name="select" type="select" onChange={onquanHuyenChange}>
-                        <option value="">Xin vui lòng chọn</option>
+                        <option value="">TP, Quận, Huyện</option>
                         {quanHuyen.isLoaded === true ? (
                             quanHuyen.items.map((item) => (
                                 <option key={item.code} value={item.code}>
@@ -112,9 +110,8 @@ const ProvinceLists = (args) => {
             </Col>
             <Col md={4}>
                 <FormGroup>
-                    <Label for="quanHuyen">Chọn Xã, Phường</Label>
                     <Input id="xaPhuong" name="select" type="select">
-                        <option value="">Xin vui lòng chọn</option>
+                        <option value="">Xã, Phường</option>
                         {xaPhuong.isLoaded === true ? (
                             xaPhuong.items.map((item) => (
                                 <option key={item.code} value={item.code}>

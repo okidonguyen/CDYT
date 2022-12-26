@@ -1,11 +1,112 @@
-import { Col, Container, Row, Card, CardText, CardTitle, CardBody } from 'reactstrap';
+import { Col, Container, Row, Card, CardText, CardTitle, CardBody, FormFeedback } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
 import Quotes from '~/components/Quotes';
+import ProvinceLists from '~/components/ProvinceLists';
 import RunningText from '~/components/RunningText';
+import { useState, useEffect } from 'react';
+import DatePicker from 'react-datepicker';
+import { useForm } from 'react-hook-form';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Huongnghiep() {
+    const navigate = useNavigate();
+    const [startDate, setStartDate] = useState(new Date());
+    const {
+        register,
+        handleSubmit,
+        setError,
+        setValue,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        // axios
+        // .post(
+        //     API_URL + 'career/',
+        //     data,
+        //     { validateStatus: false },
+        //     { headers: authHeader() }
+        // )
+        // .then((res) => {
+        //     showError(res);
+        // });
+    };
+
+    // API GET TINH THANH PHO HUYEN XA
+    const [tinh, setTinh] = useState(() => {
+        return {
+            isLoaded: false,
+            items: [],
+            choosenCode: 0,
+        };
+    });
+
+    const onTinhChange = (e) => {
+        tinh.choosenCode = e.target.value;
+        if (tinh.choosenCode !== 0) {
+            fetch(`https://provinces.open-api.vn/api/d`)
+                .then((res) => res.json())
+                .then((json) => {
+                    setQuanHuyen({
+                        items: json.filter((p) => p.province_code == tinh.choosenCode),
+                        isLoaded: true,
+                        choosenCode: 0,
+                    });
+
+                    setXaphuong({
+                        isLoaded: false,
+                        items: [],
+                        choosenCode: 0,
+                    });
+                });
+        }
+    };
+
+    const [quanHuyen, setQuanHuyen] = useState(() => {
+        return {
+            isLoaded: false,
+            items: [],
+            choosenCode: 0,
+        };
+    });
+
+    const onquanHuyenChange = (e) => {
+        quanHuyen.choosenCode = e.target.value;
+        if (quanHuyen.choosenCode !== 0) {
+            fetch(`https://provinces.open-api.vn/api/w`)
+                .then((res) => res.json())
+                .then((json) => {
+                    setXaphuong({
+                        items: json.filter((p) => p.district_code == quanHuyen.choosenCode),
+                        isLoaded: true,
+                        choosenCode: 0,
+                    });
+                });
+        }
+    };
+
+    const [xaPhuong, setXaphuong] = useState(() => {
+        return {
+            isLoaded: false,
+            items: [],
+            choosenCode: 0,
+        };
+    });
+
+    useEffect(() => {
+        fetch('https://provinces.open-api.vn/api/p/')
+            .then((res) => res.json())
+            .then((json) => {
+                setTinh({
+                    items: json,
+                    isLoaded: true,
+                    choosenCode: 0,
+                });
+            });
+    }, []);
+
     return (
         <Container fluid className="p-0">
             <RunningText separator={'/'} />
@@ -63,14 +164,14 @@ function Huongnghiep() {
             <Container
                 fluid="lg"
                 style={{
-                    backgroundColor: '#b02225',
+                    backgroundColor: 'rgb(114 14 16)',
                     color: 'white',
                     padding: '50px',
                     marginTop: '30px',
                     marginBottom: '30px',
                 }}
             >
-                <Form>
+                <Form onSubmit={handleSubmit(onSubmit)}>
                     <Row>
                         <Col md={6} className="d-flex flex-column justify-content-center">
                             <HeadTittle title={'ĐĂNG KÝ HƯỚNG NGHIỆP'} color={'white'} />
@@ -83,46 +184,169 @@ function Huongnghiep() {
                         </Col>
                         <Col md={6} className="border p-3  rounded-3">
                             <FormGroup>
-                                <Label for="fullName">Họ và tên</Label>
-                                <Input
-                                    id="fullName"
-                                    name="fullName"
+                                <Label for="student_name">Họ và tên</Label>
+                                <input
+                                    className={`form-control ${
+                                        errors.student_name && 'is-invalid'
+                                    } `}
+                                    aria-invalid={true}
+                                    id="student_name"
+                                    type="text"
                                     placeholder="Nhập họ và tên ..."
+                                    {...register('student_name', { required: true })}
                                 />
+                                <FormFeedback>Họ và tên không được trống</FormFeedback>
                             </FormGroup>
                             <FormGroup>
-                                <Label for="phoneNumber">Số điện thoại</Label>
-                                <Input
-                                    id="phoneNumber"
-                                    name="phoneNumber"
-                                    placeholder="Nhập số điện thoại ..."
+                                <Label for="student_phone">Số điện thoại</Label>
+                                <input
+                                    className={`form-control ${
+                                        errors.student_phone && 'is-invalid'
+                                    } `}
+                                    aria-invalid={true}
+                                    id="student_phone"
                                     type="number"
+                                    placeholder="Nhập Số điện thoại ..."
+                                    {...register('student_phone', { required: true })}
                                 />
+                                <FormFeedback>Số điện thoại không được trống</FormFeedback>
                             </FormGroup>
                             <FormGroup>
-                                <Label for="student-address">Địa chỉ</Label>
-                                <Input id="student-address" placeholder="Nhập thông tin ..." />
+                                <Label for="student_street">Địa chỉ thường trú</Label>
+                                <input
+                                    className={`form-control ${
+                                        errors.student_street && 'is-invalid'
+                                    } `}
+                                    aria-invalid={true}
+                                    id="student_street"
+                                    type="text"
+                                    placeholder="Nhập số nhà ..."
+                                    {...register('student_street', { required: true })}
+                                />
+                                <br />
+                                <select
+                                    className={`form-select ${
+                                        errors.student_province && 'is-invalid'
+                                    }`}
+                                    {...register('student_province', { required: true })}
+                                    onChange={onTinhChange}
+                                >
+                                    <option value="">Tỉnh</option>
+                                    {tinh.isLoaded === true ? (
+                                        tinh.items.map((item) => (
+                                            <option key={item.code} value={item.code}>
+                                                {item.name}
+                                            </option>
+                                        ))
+                                    ) : (
+                                        <></>
+                                    )}
+                                </select>
+                                <br />
+                                <select
+                                    className={`form-select ${
+                                        errors.student_district && 'is-invalid'
+                                    }`}
+                                    {...register('student_district', { required: true })}
+                                    onChange={onquanHuyenChange}
+                                >
+                                    <option value="">TP, Quận, Huyện</option>
+                                    {quanHuyen.isLoaded === true ? (
+                                        quanHuyen.items.map((item) => (
+                                            <option key={item.code} value={item.code}>
+                                                {item.name}
+                                            </option>
+                                        ))
+                                    ) : (
+                                        <></>
+                                    )}
+                                </select>
+                                <br />
+                                <select
+                                    className={`form-select ${errors.student_ward && 'is-invalid'}`}
+                                    {...register('student_ward', { required: true })}
+                                >
+                                    <option value="">Xã, Phường</option>
+                                    {xaPhuong.isLoaded === true ? (
+                                        xaPhuong.items.map((item) => (
+                                            <option key={item.code} value={item.code}>
+                                                {item.name}
+                                            </option>
+                                        ))
+                                    ) : (
+                                        <></>
+                                    )}
+                                </select>
+                                <FormFeedback>Địa chỉ không được trống</FormFeedback>
                             </FormGroup>
+
                             <FormGroup>
                                 <Label for="student-job">Thời gian tư vấn</Label>
-                                <Input id="exampleSelect" name="select" type="select">
-                                    <option value="0">
-                                        Chọn thời gian tư vấn từ thứ 2 đến thứ 7
-                                    </option>
-                                    <option value="12"> 04:00 PM - 05:00 PM</option>
-                                    <option value="11"> 03:00 PM - 04:00 PM</option>
-                                    <option value="10"> 02:00 PM - 03:00 PM</option>
-                                    <option value="9"> 01:00 PM - 02:00 PM</option>
-                                    <option value="8"> 11:00 AM - 12:00 AM</option>
-                                    <option value="7"> 10:00 AM - 11:00 AM</option>
-                                    <option value="6"> 09:00 AM - 10:00 AM</option>
-                                    <option value="5"> 08:00 AM - 09:00 AM</option>
-                                </Input>
+                                <Row>
+                                    <Col className="col-3">
+                                        <DatePicker
+                                            name="advise_date"
+                                            selected={startDate}
+                                            dateFormat="dd/MM/yyyy"
+                                            onChange={(date) => {
+                                                date !== null
+                                                    ? setStartDate(date)
+                                                    : setStartDate(new Date());
+                                            }}
+                                            className="form-control"
+                                        />
+                                    </Col>
+                                    <Col className="col-9">
+                                        <select
+                                            className={`form-select ${
+                                                errors.advise_time && 'is-invalid'
+                                            }`}
+                                            {...register('advise_time', { required: true })}
+                                        >
+                                            <option value="">Chọn khung giờ tư vấn</option>
+                                            <option value="08:00 AM - 09:00 AM">
+                                                08:00 AM - 09:00 AM
+                                            </option>
+                                            <option value="09:00 AM - 10:00 AM">
+                                                09:00 AM - 10:00 AM
+                                            </option>
+                                            <option value="10:00 AM - 11:00 AM">
+                                                10:00 AM - 11:00 AM
+                                            </option>
+                                            <option value="11:00 AM - 12:00 AM">
+                                                11:00 AM - 12:00 AM
+                                            </option>
+                                            <option value="01:00 PM - 02:00 PM">
+                                                01:00 PM - 02:00 PM
+                                            </option>
+                                            <option value="02:00 PM - 03:00 PM">
+                                                02:00 PM - 03:00 PM
+                                            </option>
+                                            <option value="03:00 PM - 04:00 PM">
+                                                03:00 PM - 04:00 PM
+                                            </option>
+                                            <option value="04:00 PM - 05:00 PM">
+                                                04:00 PM - 05:00 PM
+                                            </option>
+                                        </select>
+                                    </Col>
+                                </Row>
                             </FormGroup>
                             <br />
                             <Button block color="info">
                                 ĐĂNG KÝ HƯỚNG NGHIỆP
                             </Button>
+                            {errors.api && (
+                                <p style={{ color: 'red', textAlign: 'center', padding: '5px' }}>
+                                    {errors.api.message}
+                                </p>
+                            )}
+
+                            {errors.success && (
+                                <p style={{ color: 'green', textAlign: 'center', padding: '5px' }}>
+                                    {errors.success.message}
+                                </p>
+                            )}
                         </Col>
                     </Row>
 
@@ -134,7 +358,7 @@ function Huongnghiep() {
                 <HeadTittle title={'TIN TỨC HƯỚNG NGHIỆP'} />
                 <News numbers={3} />
             </Container>
-            <br/>
+            <br />
         </Container>
     );
 }

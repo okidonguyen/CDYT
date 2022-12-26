@@ -1,14 +1,18 @@
-import { Col, Container, Row, Card, CardText, CardTitle, CardBody, FormFeedback } from 'reactstrap';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Container, Row, Card, CardText, CardTitle, CardBody, Alert } from 'reactstrap';
+import { Button, Form, FormGroup, Label } from 'reactstrap';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
 import Quotes from '~/components/Quotes';
-import ProvinceLists from '~/components/ProvinceLists';
 import RunningText from '~/components/RunningText';
 import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+
+import axios from 'axios';
+import authHeader from '~/services/auth-header';
+const API_URL = 'http://localhost:3001/api/';
 
 function Huongnghiep() {
     const navigate = useNavigate();
@@ -18,20 +22,38 @@ function Huongnghiep() {
         handleSubmit,
         setError,
         setValue,
+        reset,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        // axios
-        // .post(
-        //     API_URL + 'career/',
-        //     data,
-        //     { validateStatus: false },
-        //     { headers: authHeader() }
-        // )
-        // .then((res) => {
-        //     showError(res);
-        // });
+    const onSubmit = (data, e) => {
+        try {
+            axios
+                .post(
+                    API_URL + 'advise/',
+                    data,
+                    { validateStatus: false },
+                    { headers: authHeader() }
+                )
+                .then((res) => {
+                    showError(res);
+                    e.target.reset();
+                    reset();
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    // Show error after response
+    const showError = (res) => {
+        if (res.status === 404 || res.status === 401) {
+            NotificationManager.error(res.data.message);
+        }
+
+        if (res.status === 200) {
+            NotificationManager.success(res.data.message);
+        }
     };
 
     // API GET TINH THANH PHO HUYEN XA
@@ -44,7 +66,7 @@ function Huongnghiep() {
     });
 
     const onTinhChange = (e) => {
-        tinh.choosenCode = e.target.value;
+        tinh.choosenCode = e.target.value.split('$')[0];
         if (tinh.choosenCode !== 0) {
             fetch(`https://provinces.open-api.vn/api/d`)
                 .then((res) => res.json())
@@ -73,7 +95,7 @@ function Huongnghiep() {
     });
 
     const onquanHuyenChange = (e) => {
-        quanHuyen.choosenCode = e.target.value;
+        quanHuyen.choosenCode = e.target.value.split('$')[0];
         if (quanHuyen.choosenCode !== 0) {
             fetch(`https://provinces.open-api.vn/api/w`)
                 .then((res) => res.json())
@@ -195,7 +217,6 @@ function Huongnghiep() {
                                     placeholder="Nhập họ và tên ..."
                                     {...register('student_name', { required: true })}
                                 />
-                                <FormFeedback>Họ và tên không được trống</FormFeedback>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="student_phone">Số điện thoại</Label>
@@ -209,7 +230,6 @@ function Huongnghiep() {
                                     placeholder="Nhập Số điện thoại ..."
                                     {...register('student_phone', { required: true })}
                                 />
-                                <FormFeedback>Số điện thoại không được trống</FormFeedback>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="student_street">Địa chỉ thường trú</Label>
@@ -234,7 +254,10 @@ function Huongnghiep() {
                                     <option value="">Tỉnh</option>
                                     {tinh.isLoaded === true ? (
                                         tinh.items.map((item) => (
-                                            <option key={item.code} value={item.code}>
+                                            <option
+                                                key={item.code}
+                                                value={item.code + '$' + item.name}
+                                            >
                                                 {item.name}
                                             </option>
                                         ))
@@ -253,7 +276,10 @@ function Huongnghiep() {
                                     <option value="">TP, Quận, Huyện</option>
                                     {quanHuyen.isLoaded === true ? (
                                         quanHuyen.items.map((item) => (
-                                            <option key={item.code} value={item.code}>
+                                            <option
+                                                key={item.code}
+                                                value={item.code + '$' + item.name}
+                                            >
                                                 {item.name}
                                             </option>
                                         ))
@@ -269,7 +295,10 @@ function Huongnghiep() {
                                     <option value="">Xã, Phường</option>
                                     {xaPhuong.isLoaded === true ? (
                                         xaPhuong.items.map((item) => (
-                                            <option key={item.code} value={item.code}>
+                                            <option
+                                                key={item.code}
+                                                value={item.code + '$' + item.name}
+                                            >
                                                 {item.name}
                                             </option>
                                         ))
@@ -277,7 +306,6 @@ function Huongnghiep() {
                                         <></>
                                     )}
                                 </select>
-                                <FormFeedback>Địa chỉ không được trống</FormFeedback>
                             </FormGroup>
 
                             <FormGroup>
@@ -285,15 +313,23 @@ function Huongnghiep() {
                                 <Row>
                                     <Col className="col-3">
                                         <DatePicker
-                                            name="advise_date"
                                             selected={startDate}
-                                            dateFormat="dd/MM/yyyy"
+                                            dateFormat="yyyy-MM-dd"
                                             onChange={(date) => {
                                                 date !== null
                                                     ? setStartDate(date)
                                                     : setStartDate(new Date());
                                             }}
                                             className="form-control"
+                                        />
+                                        <input
+                                            className={`form-control ${
+                                                errors.advise_date && 'is-invalid'
+                                            } `}
+                                            aria-invalid={true}
+                                            type="hidden"
+                                            value={startDate}
+                                            {...register('advise_date', { required: true })}
                                         />
                                     </Col>
                                     <Col className="col-9">
@@ -337,15 +373,19 @@ function Huongnghiep() {
                                 ĐĂNG KÝ HƯỚNG NGHIỆP
                             </Button>
                             {errors.api && (
-                                <p style={{ color: 'red', textAlign: 'center', padding: '5px' }}>
+                                <Alert
+                                    style={{ color: 'red', textAlign: 'center', padding: '5px' }}
+                                >
                                     {errors.api.message}
-                                </p>
+                                </Alert>
                             )}
 
                             {errors.success && (
-                                <p style={{ color: 'green', textAlign: 'center', padding: '5px' }}>
+                                <Alert
+                                    style={{ color: 'green', textAlign: 'center', padding: '5px' }}
+                                >
                                     {errors.success.message}
-                                </p>
+                                </Alert>
                             )}
                         </Col>
                     </Row>
@@ -359,6 +399,7 @@ function Huongnghiep() {
                 <News numbers={3} />
             </Container>
             <br />
+            <NotificationContainer enterTimeout={800} leaveTimeout={500} />
         </Container>
     );
 }

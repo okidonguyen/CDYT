@@ -12,7 +12,7 @@ const DanhmucHuongnghiep = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        axios.get(API_URL + 'career/', { headers: authHeader() }).then((res) => {
+        axios.get(API_URL + 'advise/', { headers: authHeader() }).then((res) => {
             setData(res.data);
         });
     }, []);
@@ -20,7 +20,7 @@ const DanhmucHuongnghiep = () => {
     const handleDestroy = (id) => {
         axios
             .delete(
-                API_URL + 'career/' + id,
+                API_URL + 'advise/' + id,
                 data,
                 { validateStatus: false },
                 { headers: authHeader() }
@@ -49,9 +49,11 @@ const DanhmucHuongnghiep = () => {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Tên nghề nghiệp</th>
-                        <th>Mô tả</th>
-                        <th>Trạng thái</th>
+                        <th>Tên sinh viên</th>
+                        <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th>Ngày tư vấn</th>
+                        <th>Khung giờ</th>
                         <th>Tác vụ</th>
                     </tr>
                 </thead>
@@ -60,9 +62,19 @@ const DanhmucHuongnghiep = () => {
                         data.map((row) => (
                             <tr key={row.id}>
                                 <th scope="row">{row.id}</th>
-                                <td>{row.title}</td>
-                                <td>{row.description}</td>
-                                <td>{row.published ? 'Công khai' : 'Không công khai'}</td>
+                                <td>{row.student_name}</td>
+                                <td>{row.student_phone}</td>
+                                <td className="col-3">
+                                    {row.student_street +
+                                        ', ' +
+                                        row.student_ward +
+                                        ',' +
+                                        row.student_district +
+                                        ',' +
+                                        row.student_province}
+                                </td>
+                                <td>{row.advise_date}</td>
+                                <td>{row.advise_time}</td>
                                 <td>
                                     <NavLink
                                         style={{ fontWeight: 'bold', cursor: 'pointer' }}

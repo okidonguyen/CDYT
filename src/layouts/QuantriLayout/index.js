@@ -29,10 +29,6 @@ const QuantriLayout = ({ children }) => {
                     title: 'Menu Trang nội bộ',
                     target: '/',
                 },
-                {
-                    title: 'Menu Trang sinh viên',
-                    target: '/',
-                },
             ],
         },
         {

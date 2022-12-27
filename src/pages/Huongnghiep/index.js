@@ -9,6 +9,7 @@ import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { Provinces, Districts, Wards } from '../../data/provinces';
 
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
@@ -68,21 +69,32 @@ function Huongnghiep() {
     const onTinhChange = (e) => {
         tinh.choosenCode = e.target.value.split('$')[0];
         if (tinh.choosenCode !== 0) {
-            fetch(`https://provinces.open-api.vn/api/d`)
-                .then((res) => res.json())
-                .then((json) => {
-                    setQuanHuyen({
-                        items: json.filter((p) => p.province_code == tinh.choosenCode),
-                        isLoaded: true,
-                        choosenCode: 0,
-                    });
+            setQuanHuyen({
+                items: Districts.filter((p) => p.province_code == tinh.choosenCode),
+                isLoaded: true,
+                choosenCode: 0,
+            });
 
-                    setXaphuong({
-                        isLoaded: false,
-                        items: [],
-                        choosenCode: 0,
-                    });
-                });
+            setXaphuong({
+                isLoaded: false,
+                items: [],
+                choosenCode: 0,
+            });
+            // fetch(`https://provinces.open-api.vn/api/d`)
+            //     .then((res) => res.json())
+            //     .then((json) => {
+            //         setQuanHuyen({
+            //             items: json.filter((p) => p.province_code == tinh.choosenCode),
+            //             isLoaded: true,
+            //             choosenCode: 0,
+            //         });
+
+            //         setXaphuong({
+            //             isLoaded: false,
+            //             items: [],
+            //             choosenCode: 0,
+            //         });
+            //     });
         }
     };
 
@@ -97,15 +109,21 @@ function Huongnghiep() {
     const onquanHuyenChange = (e) => {
         quanHuyen.choosenCode = e.target.value.split('$')[0];
         if (quanHuyen.choosenCode !== 0) {
-            fetch(`https://provinces.open-api.vn/api/w`)
-                .then((res) => res.json())
-                .then((json) => {
-                    setXaphuong({
-                        items: json.filter((p) => p.district_code == quanHuyen.choosenCode),
-                        isLoaded: true,
-                        choosenCode: 0,
-                    });
-                });
+            setXaphuong({
+                items: Wards.filter((p) => p.district_code == quanHuyen.choosenCode),
+                isLoaded: true,
+                choosenCode: 0,
+            });
+            // fetch(`https://provinces.open-api.vn/api/w`)
+            //     .then((res) => res.json())
+            //     .then((json) => {
+            //         console.log(json);
+            //         setXaphuong({
+            //             items: json.filter((p) => p.district_code == quanHuyen.choosenCode),
+            //             isLoaded: true,
+            //             choosenCode: 0,
+            //         });
+            //     });
         }
     };
 
@@ -118,15 +136,20 @@ function Huongnghiep() {
     });
 
     useEffect(() => {
-        fetch('https://provinces.open-api.vn/api/p/')
-            .then((res) => res.json())
-            .then((json) => {
-                setTinh({
-                    items: json,
-                    isLoaded: true,
-                    choosenCode: 0,
-                });
-            });
+        setTinh({
+            items: Provinces,
+            isLoaded: true,
+            choosenCode: 0,
+        });
+        // fetch('https://provinces.open-api.vn/api/p/')
+        //     .then((res) => res.json())
+        //     .then((json) => {
+        //         setTinh({
+        //             items: json,
+        //             isLoaded: true,
+        //             choosenCode: 0,
+        //         });
+        //     });
     }, []);
 
     return (

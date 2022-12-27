@@ -34,7 +34,7 @@ const Notification = () => {
         })();
     }, []);
     return (
-        <Container className="notification border rounded-3" fluid>
+        <Container className="notificationNews border rounded-3" fluid>
             <div>
                 <HeadTittle title={'Thông báo'} />
                 {items.map((item, index) => (

@@ -59,9 +59,9 @@ const DanhmucHuongnghiep = () => {
                 </thead>
                 <tbody>
                     {data &&
-                        data.map((row) => (
+                        data.map((row, index) => (
                             <tr key={row.id}>
-                                <th scope="row">{row.id}</th>
+                                <th scope="row">{index + 1}</th>
                                 <td>{row.student_name}</td>
                                 <td>{row.student_phone}</td>
                                 <td className="col-3">

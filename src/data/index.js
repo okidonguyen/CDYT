@@ -131,10 +131,10 @@ export const trangchuMenu = [
     {
         name: 'Phòng Khoa',
         submenu: [
-            {
-                name: 'Ban giám hiệu',
-                link: '/phongkhoa/ban-giam-hieu',
-            },
+            // {
+            //     name: 'Ban giám hiệu',
+            //     link: '/phongkhoa/ban-giam-hieu',
+            // },
             {
                 name: 'Phòng Tổ chức hành chính',
                 link: '/phongkhoa/phong-to-chuc-hanh-chinh',
@@ -152,7 +152,7 @@ export const trangchuMenu = [
                 link: '/phongkhoa/phong-cong-tac-hoc-sinh-sinh-vien',
             },
             {
-                name: 'Khoa khoa học cơ bản',
+                name: 'Khoa cơ bản',
                 link: '/phongkhoa/khoa-khoa-hoc-co-ban',
             },
             {

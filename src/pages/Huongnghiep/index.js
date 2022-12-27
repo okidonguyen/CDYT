@@ -7,22 +7,18 @@ import RunningText from '~/components/RunningText';
 import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
-import { Provinces, Districts, Wards } from '../../data/provinces';
+import { Provinces, Districts, Wards } from '~/data/provinces';
 
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
 const API_URL = 'http://localhost:3001/api/';
 
 function Huongnghiep() {
-    const navigate = useNavigate();
     const [startDate, setStartDate] = useState(new Date());
     const {
         register,
         handleSubmit,
-        setError,
-        setValue,
         reset,
         formState: { errors },
     } = useForm();
@@ -80,21 +76,6 @@ function Huongnghiep() {
                 items: [],
                 choosenCode: 0,
             });
-            // fetch(`https://provinces.open-api.vn/api/d`)
-            //     .then((res) => res.json())
-            //     .then((json) => {
-            //         setQuanHuyen({
-            //             items: json.filter((p) => p.province_code == tinh.choosenCode),
-            //             isLoaded: true,
-            //             choosenCode: 0,
-            //         });
-
-            //         setXaphuong({
-            //             isLoaded: false,
-            //             items: [],
-            //             choosenCode: 0,
-            //         });
-            //     });
         }
     };
 
@@ -114,16 +95,6 @@ function Huongnghiep() {
                 isLoaded: true,
                 choosenCode: 0,
             });
-            // fetch(`https://provinces.open-api.vn/api/w`)
-            //     .then((res) => res.json())
-            //     .then((json) => {
-            //         console.log(json);
-            //         setXaphuong({
-            //             items: json.filter((p) => p.district_code == quanHuyen.choosenCode),
-            //             isLoaded: true,
-            //             choosenCode: 0,
-            //         });
-            //     });
         }
     };
 
@@ -141,15 +112,6 @@ function Huongnghiep() {
             isLoaded: true,
             choosenCode: 0,
         });
-        // fetch('https://provinces.open-api.vn/api/p/')
-        //     .then((res) => res.json())
-        //     .then((json) => {
-        //         setTinh({
-        //             items: json,
-        //             isLoaded: true,
-        //             choosenCode: 0,
-        //         });
-        //     });
     }, []);
 
     return (

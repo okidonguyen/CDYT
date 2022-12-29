@@ -1,5 +1,5 @@
 import { Card, CardBody, CardText, CardTitle, CardImg, Col, Container, Row } from 'reactstrap';
-import { Button, Form, FormGroup, Label } from 'reactstrap';
+import { Form, FormGroup, Label } from 'reactstrap';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
 import Quotes from '~/components/Quotes';
@@ -21,10 +21,11 @@ function Tuyensinh() {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
+        formState: { errors, isDirty, isValid },
     } = useForm();
 
     const onSubmit = (data, e) => {
+        console.log('onsub');
         try {
             axios
                 .post(
@@ -455,9 +456,16 @@ function Tuyensinh() {
                                 </Col>
                             </Row>
 
-                            <Button color="danger" className="w-100">
-                                ĐĂNG KÝ NGAY
-                            </Button>
+                            <input
+                                type="submit"
+                                // onClick={(e) => {
+                                //     e.target.disabled = true;
+                                // }}
+                                // color="danger"
+                                className="w-100"
+                                disabled={!isDirty || !isValid}
+                                value={'ĐĂNG KÝ NGAY'}
+                            />
                         </Form>
                         <br />
                         {/* TIN TUC */}

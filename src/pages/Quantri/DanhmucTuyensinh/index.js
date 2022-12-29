@@ -6,13 +6,13 @@ import authHeader from '~/services/auth-header';
 import axios from 'axios';
 const API_URL = 'http://localhost:3001/api/';
 
-const DanhmucHuongnghiep = () => {
+const DanhmucTuyensinh = () => {
     const navigate = useNavigate();
 
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        axios.get(API_URL + 'advise/', { headers: authHeader() }).then((res) => {
+        axios.get(API_URL + 'admissions/', { headers: authHeader() }).then((res) => {
             setData(res.data);
         });
     }, []);
@@ -20,7 +20,7 @@ const DanhmucHuongnghiep = () => {
     const handleDestroy = (id) => {
         axios
             .delete(
-                API_URL + 'advise/' + id,
+                API_URL + 'admissions/' + id,
                 data,
                 { validateStatus: false },
                 { headers: authHeader() }
@@ -44,7 +44,7 @@ const DanhmucHuongnghiep = () => {
 
     return (
         <Container>
-            <h1>DANH SÁCH ĐĂNG KÝ TUYỂN SINH</h1>
+            <h1>DANH SÁCH ĐĂNG KÝ HƯỚNG NGHIỆP</h1>
             <Table bordered>
                 <thead>
                     <tr>
@@ -73,8 +73,8 @@ const DanhmucHuongnghiep = () => {
                                         ',' +
                                         row.student_province}
                                 </td>
-                                <td>{row.advise_date}</td>
-                                <td>{row.advise_time}</td>
+                                <td>{row.admissions_date}</td>
+                                <td>{row.admissions_time}</td>
                                 <td>
                                     <NavLink
                                         style={{ fontWeight: 'bold', cursor: 'pointer' }}
@@ -101,4 +101,4 @@ const DanhmucHuongnghiep = () => {
     );
 };
 
-export default DanhmucHuongnghiep;
+export default DanhmucTuyensinh;

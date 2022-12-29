@@ -29,7 +29,7 @@ const CosmicAPI = () => {
             })
             .props('slug,title,metadata');
 
-        console.log(data);
+        //console.log(data);
         data.objects.map((item) =>
             items.push({
                 src: require('~/assets/images/banner/banner-3.jpg'),

@@ -16,6 +16,7 @@ import Search from '~/pages/Search';
 import Trangchu from '~/pages/Quantri/Trangchu';
 import Nghenghiep from '../pages/Quantri/Nghenghiep';
 import DanhmucHuongnghiep from '../pages/Quantri/DanhmucHuongnghiep';
+import DanhmucTuyensinh from '../pages/Quantri/DanhmucTuyensinh';
 import Dangnhap from '../pages/Dangnhap';
 
 // LAYOUT
@@ -24,7 +25,12 @@ import Thongbao from '../pages/Thongbao';
 import ThongbaoChitiet from '../pages/ThongbaoChitiet';
 import Nguoisudung from '../pages/Quantri/Nguoisudung';
 
+// SITEMAP
+import Sitemap from '../components/Sitemap';
+
 const publicRoute = [
+    // SITEMAP
+    { path: '/sitemap', component: Sitemap },
     // TRANG CHU
     { path: '/', component: Home },
     // GIOI THIEU
@@ -51,6 +57,11 @@ const publicRoute = [
     {
         path: '/quantri/danhmuchuongnghiep',
         component: DanhmucHuongnghiep,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/danhmuctuyensinh',
+        component: DanhmucTuyensinh,
         layout: QuantriLayout,
     },
     {

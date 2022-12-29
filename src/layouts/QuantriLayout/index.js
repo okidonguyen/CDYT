@@ -56,23 +56,19 @@ const QuantriLayout = ({ children }) => {
             sub: null,
         },
         {
+            name: 'Quản lý Nghề nghiệp',
+            link: '/quantri/danhmucnghenghiep',
+            sub: null,
+        },
+        {
             name: 'Quản lý Tuyển sinh',
-            link: '/quantri',
+            link: '/quantri/danhmuctuyensinh',
             sub: null,
         },
         {
             name: 'Quản lý Hướng nghiệp',
-            link: '#',
-            sub: [
-                {
-                    title: 'Danh mục đăng ký',
-                    target: '/quantri/danhmuchuongnghiep',
-                },
-                {
-                    title: 'Danh mục nghề nghiệp',
-                    target: '/quantri/danhmucnghenghiep',
-                },
-            ],
+            link: '/quantri/danhmuchuongnghiep',
+            sub: null,
         },
     ];
 

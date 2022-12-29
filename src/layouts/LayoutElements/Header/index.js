@@ -32,14 +32,26 @@ const HeaderTop = () => {
                 <div className="d-flex p-2 justify-content-between">
                     <div className={'hotline'}>
                         <i className="bi bi-telephone"></i>
-                        <span> Hotline: 02623.845.678</span>
+                        <span>
+                            {' '}
+                            <a
+                                href="tel:0262384578"
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                }}
+                            >
+                                Hotline: 02623.845.678{' '}
+                            </a>
+                        </span>
                     </div>
+
                     <div
                         className={'menu-top d-flex justify-content-end'}
                         // style={{ minWidth: '370px' }}
                     >
                         <div className={'menu-top-item ps-2'}>
-                            <NavLink href="/">
+                            <NavLink href="/sitemap">
                                 <i className="bi bi-diagram-2"> </i>
                                 <span className="d-none d-sm-inline-block"> Sitemap</span>
                             </NavLink>
@@ -51,12 +63,6 @@ const HeaderTop = () => {
                                 <span className="d-none d-sm-inline-block">Đăng nhập</span>
                             </NavLink>
                         </div>
-                        {/* <div className={'menu-top-item ps-2'}>
-                            <NavLink href="/sinhvien/hoatdong">
-                                <i className="bi bi-person-lines-fill"> </i>
-                                <span className="d-none d-sm-inline-block"> HSSV</span>
-                            </NavLink>
-                        </div> */}
                     </div>
                 </div>
             </div>
@@ -99,30 +105,58 @@ const HeaderMiddle = () => {
                                             }}
                                         />
                                     </div>
-                                    <i
-                                        className="bi bi-facebook d-none d-md-block"
+                                    <a
+                                        href="https://www.facebook.com/profile.php?id=100066723495495"
+                                        target={'_blank'}
                                         style={{
-                                            cursor: 'pointer',
-                                            fontSize: '1.5rem',
-                                            paddingLeft: '20px',
+                                            textDecoration: 'none',
+                                            color: 'inherit',
                                         }}
-                                    ></i>
-                                    <i
-                                        className="bi bi-youtube  d-none d-md-block"
+                                    >
+                                        <i
+                                            className="bi bi-facebook d-none d-md-block"
+                                            style={{
+                                                cursor: 'pointer',
+                                                fontSize: '1.5rem',
+                                                paddingLeft: '20px',
+                                            }}
+                                        ></i>
+                                    </a>
+                                    <a
+                                        href="https://www.youtube.com/watch?v=YGUGy5rJ3kU"
+                                        target={'_blank'}
                                         style={{
-                                            cursor: 'pointer',
-                                            fontSize: '1.5rem',
-                                            paddingLeft: '20px',
+                                            textDecoration: 'none',
+                                            color: 'inherit',
                                         }}
-                                    ></i>
-                                    <i
-                                        className="bi bi-telephone  d-none d-md-block"
+                                    >
+                                        <i
+                                            className="bi bi-youtube  d-none d-md-block"
+                                            style={{
+                                                cursor: 'pointer',
+                                                fontSize: '1.5rem',
+                                                paddingLeft: '20px',
+                                            }}
+                                        ></i>
+                                    </a>
+
+                                    <a
+                                        href="tel:0262384578"
                                         style={{
-                                            cursor: 'pointer',
-                                            fontSize: '1.5rem',
-                                            paddingLeft: '20px',
+                                            textDecoration: 'none',
+                                            color: 'inherit',
                                         }}
-                                    ></i>
+                                    >
+                                        {' '}
+                                        <i
+                                            className="bi bi-telephone  d-none d-md-block"
+                                            style={{
+                                                cursor: 'pointer',
+                                                fontSize: '1.5rem',
+                                                paddingLeft: '20px',
+                                            }}
+                                        ></i>
+                                    </a>
                                 </FormGroup>
                             </Form>
                         </div>

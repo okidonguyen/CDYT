@@ -37,7 +37,7 @@ function FeatureNews(args) {
         return (
             <NavLink
                 key={index}
-                href={item.slug}
+                href={`../tintucchitiet/${item.slug}`}
                 className="read-continue float-end "
                 style={{ zIndex: '10' }}
             >

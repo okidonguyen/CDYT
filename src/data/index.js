@@ -64,44 +64,6 @@ export const footerItems = [
     },
 ];
 
-export const notifyData = [
-    {
-        date: '1-12-2022',
-        link: '/',
-        title: '351/TB-HĐTDVC TB niêm yết điểm sát hạch tuyển dụng trường CĐYT 7-2021',
-    },
-    {
-        date: '1-12-2022',
-        link: '/',
-        title: '299/CĐYT-TB: Danh sách đủ điều kiện xét tuyển viên chức CĐYT Đắk Lắk (Vòng 2)',
-    },
-    {
-        date: '1-12-2022',
-        link: '/',
-        title: 'Thông báo về việc điều chỉnh thời gian tổ chức xét tuyển viên chức Trường CĐYT Đắk Lắk 2020',
-    },
-    {
-        date: '1-12-2022',
-        link: '/',
-        title: 'Đề cương ôn tập tuyển dụng viên chức Trường CĐYT Đắk Lắk (6/2021)',
-    },
-    {
-        date: '1-12-2022',
-        link: '/',
-        title: 'Đề cương ôn tập tuyển dụng viên chức Trường CĐYT Đắk Lắk',
-    },
-    {
-        date: '1-12-2022',
-        link: '/',
-        title: 'Thông báo V/v điều chỉnh phụ lục kế hoạch tuyển dụng và gia hạn nộp hồ sơ dự tuyển cho vị trí tuyển dụng được điều chỉnh',
-    },
-    {
-        date: '1-12-2022',
-        link: '/',
-        title: 'Thông báo tuyển dụng viên chức Trường Cao đẳng tế Đắk Lắk',
-    },
-];
-
 export const trangchuMenu = [
     {
         name: 'Trang chủ',
@@ -131,10 +93,6 @@ export const trangchuMenu = [
     {
         name: 'Phòng Khoa',
         submenu: [
-            // {
-            //     name: 'Ban giám hiệu',
-            //     link: '/phongkhoa/ban-giam-hieu',
-            // },
             {
                 name: 'Phòng Tổ chức hành chính',
                 link: '/phongkhoa/phong-to-chuc-hanh-chinh',
@@ -195,23 +153,23 @@ export const trangchuMenu = [
         submenu: [
             {
                 name: 'Ngành nghề đào tạo',
-                link: '/',
+                link: '/daotao/nganhnghe',
             },
             {
                 name: 'Chương trình đào tạo',
-                link: '/',
+                link: '/daotao/chuongtrinh',
             },
             {
-                name: 'Lịch giảng giáo viên',
-                link: '/',
+                name: 'Lịch giảng viên',
+                link: '/daotao/lichgiangvien',
             },
             {
                 name: 'Lịch thi hết môn',
-                link: '/',
+                link: '/daotao/lichhetmon',
             },
             {
                 name: 'Văn bản đào tạo',
-                link: '/',
+                link: '/daotao/vanbaodaotao',
             },
         ],
     },

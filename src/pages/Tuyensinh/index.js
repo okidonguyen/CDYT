@@ -13,7 +13,7 @@ import { Provinces, Districts, Wards } from '~/data/provinces';
 
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
-const API_URL = 'http://localhost:3001/api/';
+const API_URL = 'https://okidonguyen88.onrender.com/api/';
 
 function Tuyensinh() {
     const [startDate, setStartDate] = useState(new Date());

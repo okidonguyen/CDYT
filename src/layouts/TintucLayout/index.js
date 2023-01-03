@@ -3,7 +3,6 @@ import Footer from '~/layouts/LayoutElements/Footer';
 import MainMenu from '~/components/MainMenu';
 import RunningText from '~/components/RunningText';
 import { trangchuMenu as menuItems } from '~/data';
-
 import { Container } from 'reactstrap';
 
 function TintucLayout({ children }) {

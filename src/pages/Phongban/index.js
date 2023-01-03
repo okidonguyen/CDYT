@@ -26,23 +26,23 @@ function PhongbanPage() {
     }, []);
 
     const menuSidebar = [
-        {
-            name: 'Ban giám hiệu',
-            link: '/phongkhoa/ban-giam-hieu',
-            sub: null,
-        },
+        // {
+        //     name: 'Ban giám hiệu',
+        //     link: '/phongkhoa/ban-giam-hieu',
+        //     sub: null,
+        // },
         {
             name: 'Phòng Tổ chức hành chính',
             link: '/phongkhoa/phong-to-chuc-hanh-chinh',
             sub: null,
         },
         {
-            name: 'Phòng đào tạo',
+            name: 'Phòng Đào tạo',
             link: '/phongkhoa/phong-dao-tao',
             sub: null,
         },
         {
-            name: 'Phòng tài chính kế toán',
+            name: 'Phòng Tài chính kế toán',
             link: '/phongkhoa/phong-tai-chinh-ke-toan',
             sub: null,
         },
@@ -52,8 +52,28 @@ function PhongbanPage() {
             sub: null,
         },
         {
-            name: 'Phòng Khảo thí và Kiểm định chất lượng',
+            name: 'Phòng Khảo thí và KĐCL',
             link: '/phongkhoa/phong-khao-thi-va-kiem-dinh-chat-luong',
+            sub: null,
+        },
+        {
+            name: 'Khoa Cơ bản',
+            link: '/phongkhoa/khoa-khoa-hoc-co-ban',
+            sub: null,
+        },
+        {
+            name: 'Khoa Y',
+            link: '/phongkhoa/khoa-y',
+            sub: null,
+        },
+        {
+            name: 'Khoa Điều dưỡng - KTYH',
+            link: '/phongkhoa/khoa-dieu-duong-ktyh',
+            sub: null,
+        },
+        {
+            name: 'Khoa Dược',
+            link: '/phongkhoa/khoa-duoc',
             sub: null,
         },
     ];

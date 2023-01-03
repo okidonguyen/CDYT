@@ -25,12 +25,7 @@ import Thongbao from '../pages/Thongbao';
 import ThongbaoChitiet from '../pages/ThongbaoChitiet';
 import Nguoisudung from '../pages/Quantri/Nguoisudung';
 
-// SITEMAP
-import Sitemap from '../components/Sitemap';
-
 const publicRoute = [
-    // SITEMAP
-    { path: '/sitemap', component: Sitemap },
     // TRANG CHU
     { path: '/', component: Home },
     // GIOI THIEU

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //const API_URL = 'https://okidonguyen88.onrender.com/api/auth/';
-const API_URL = 'http://localhost:3001/api/auth/';
+const API_URL = 'https://okidonguyen88.onrender.com/api/auth/';
 
 const AuthService = () => {
     const login = async (username, password) => {

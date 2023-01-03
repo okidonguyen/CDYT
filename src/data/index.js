@@ -152,12 +152,8 @@ export const trangchuMenu = [
         name: 'Đào tạo',
         submenu: [
             {
-                name: 'Ngành nghề đào tạo',
-                link: '/daotao/nganhnghe',
-            },
-            {
                 name: 'Chương trình đào tạo',
-                link: '/daotao/chuongtrinh',
+                link: '/daotao/chuongtrinhdaotao',
             },
             {
                 name: 'Lịch giảng viên',

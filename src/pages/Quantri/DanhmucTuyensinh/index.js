@@ -88,9 +88,11 @@ const DanhmucTuyensinh = () => {
                                                         Ngày sinh:{' '}
                                                         {`${new Date(
                                                             row.student_birthday
-                                                        ).getDate()}/${new Date(
-                                                            row.student_birthday
-                                                        ).getMonth()}/${new Date(
+                                                        ).getDate()}/${
+                                                            new Date(
+                                                                row.student_birthday
+                                                            ).getMonth() + 1
+                                                        }/${new Date(
                                                             row.student_birthday
                                                         ).getFullYear()}`}
                                                     </li>

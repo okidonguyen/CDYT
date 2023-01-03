@@ -7,7 +7,7 @@ import RunningText from '~/components/RunningText';
 import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationManager, NotificationContainer } from 'react-notifications';
 import { Provinces, Districts, Wards } from '~/data/provinces';
 
 import axios from 'axios';
@@ -160,7 +160,7 @@ function Huongnghiep() {
                                     <i className="bi bi-upload"></i>
                                 </CardTitle>
                                 <CardText tag={'h5'} style={{ height: '100px', padding: '20px' }}>
-                                    Hạn chế những sai xót trong quá trình đăng ký tuyển sinh online
+                                    Hạn chế những sai sót trong quá trình đăng ký tuyển sinh online
                                 </CardText>
                             </CardBody>
                         </Card>

@@ -1,0 +1,13 @@
+.chuongtrinhdaotao {
+    padding-top: 10px;
+    .nav-item a {
+        text-decoration: none;
+        padding-left: 20px;
+        color: #495057;
+        cursor: pointer;
+    }
+
+    .nav-item a.active {
+        color: var(--primary);
+    }
+}

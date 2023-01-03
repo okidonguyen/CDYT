@@ -65,6 +65,14 @@ const Dangnhap = ({ router }) => {
                     <FormFeedback>Mật khẩu không được trống</FormFeedback>
                 </FormGroup>
                 <FormGroup>
+                    <Label for="vaitro">Vai trò</Label>
+                    <select className={`form-select`}>
+                        <option>Quản trị hệ thống</option>
+                        <option>Giáo viên</option>
+                        <option>Học Sinh</option>
+                    </select>
+                </FormGroup>
+                <FormGroup>
                     <Button block color="primary">
                         Đăng nhập
                     </Button>

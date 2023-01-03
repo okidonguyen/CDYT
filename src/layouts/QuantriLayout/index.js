@@ -56,6 +56,11 @@ const QuantriLayout = ({ children }) => {
             sub: null,
         },
         {
+            name: 'Thư viện Video',
+            link: '/quantri',
+            sub: null,
+        },
+        {
             name: 'Quản lý Nghề nghiệp',
             link: '/quantri/danhmucnghenghiep',
             sub: null,
@@ -68,6 +73,16 @@ const QuantriLayout = ({ children }) => {
         {
             name: 'Quản lý Hướng nghiệp',
             link: '/quantri/danhmuchuongnghiep',
+            sub: null,
+        },
+        {
+            name: 'Quản lý Hỏi đáp',
+            link: '/quantri/',
+            sub: null,
+        },
+        {
+            name: 'Quản lý Liên hệ',
+            link: '/quantri/',
             sub: null,
         },
     ];

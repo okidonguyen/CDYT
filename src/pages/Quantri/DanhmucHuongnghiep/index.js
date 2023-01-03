@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container, NavLink, Table } from 'reactstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import { NotificationManager, NotificationContainer } from 'react-notifications';
 import authHeader from '~/services/auth-header';
 
 import axios from 'axios';
@@ -29,10 +30,12 @@ const DanhmucHuongnghiep = () => {
                 //console.log(res);
                 if (res.status === 404 || res.status === 401) {
                     //console.log(res.data.message);
+                    NotificationManager.error(res.data.message);
                 }
 
                 if (res.status === 200) {
                     //console.log(res.data.message);
+                    NotificationManager.error(res.data.message);
                     setData(data.filter((item) => item.id !== id));
                 }
             });
@@ -73,7 +76,13 @@ const DanhmucHuongnghiep = () => {
                                         ',' +
                                         row.student_province}
                                 </td>
-                                <td>{row.advise_date}</td>
+                                <td>
+                                    {' '}
+                                    {`${new Date(row.advise_date).getDate()}/${
+                                        new Date(row.advise_date).getMonth() + 1
+                                    }/${new Date(row.advise_date).getFullYear()}`}
+                                </td>
+
                                 <td>{row.advise_time}</td>
                                 <td>
                                     <NavLink
@@ -97,6 +106,7 @@ const DanhmucHuongnghiep = () => {
                         ))}
                 </tbody>
             </Table>
+            <NotificationContainer enterTimeout={800} leaveTimeout={500} />
         </Container>
     );
 };

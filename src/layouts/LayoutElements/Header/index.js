@@ -58,7 +58,7 @@ const HeaderTop = () => {
                         </div>
                         <div className={'menu-top-item ps-2'}>
                             {/* <Login /> */}
-                            <NavLink href="/quantri/dangnhap">
+                            <NavLink href="/dangnhap">
                                 <i className="bi bi-door-open"> </i>
                                 <span className="d-none d-sm-inline-block">Đăng nhập</span>
                             </NavLink>

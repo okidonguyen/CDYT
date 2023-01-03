@@ -65,10 +65,7 @@ function Hoidap(props) {
             <Card inverse>
                 <CardImg
                     alt="Card image cap"
-                    src="https://picsum.photos/900/350?blur"
-                    style={{
-                        height: 350,
-                    }}
+                    src={require('~/assets/images/banner/Photo-03.jpg')}
                     width="100%"
                 />
                 <CardImgOverlay className="d-flex align-items-center justify-content-center">

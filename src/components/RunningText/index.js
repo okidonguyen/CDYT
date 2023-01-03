@@ -19,8 +19,7 @@ const RunningText = ({ separator = '' }) => {
                         textAlign: 'center',
                     }}
                 >
-                    Ngày
-                    {date}
+                    Ngày {date}
                     {separator}
                     {month}
                     {separator}

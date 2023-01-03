@@ -24,8 +24,10 @@ import { TintucLayout, QuantriLayout, BlankLayout } from '~/layouts';
 import Thongbao from '../pages/Thongbao';
 import ThongbaoChitiet from '../pages/ThongbaoChitiet';
 import Nguoisudung from '../pages/Quantri/Nguoisudung';
+import Chuongtrinhdaotao from '../pages/Chuongtrinhdaotao';
 
 const publicRoute = [
+    { path: '*', component: Home },
     // TRANG CHU
     { path: '/', component: Home },
     // GIOI THIEU
@@ -39,6 +41,9 @@ const publicRoute = [
     { path: '/thongbao', component: Thongbao, layout: TintucLayout },
     { path: '/thongbao/:slug', component: ThongbaoChitiet, layout: TintucLayout },
     // Chuong trinh dao tao
+    { path: '/daotao/chuongtrinhdaotao', component: Chuongtrinhdaotao },
+
+    // OTHER
     { path: '/profile', component: Profile },
     { path: '/hoidap', component: Hoidap },
     { path: '/search', component: Search },
@@ -74,7 +79,7 @@ const publicRoute = [
         component: Nghenghiep.ThemNghenghiep,
         layout: QuantriLayout,
     },
-    { path: '/quantri/dangnhap', component: Dangnhap, layout: BlankLayout },
+    { path: '/dangnhap', component: Dangnhap, layout: BlankLayout },
 ];
 
 const privateRoute = [];

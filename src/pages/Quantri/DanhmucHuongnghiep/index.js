@@ -44,7 +44,7 @@ const DanhmucHuongnghiep = () => {
 
     return (
         <Container>
-            <h1>DANH SÁCH ĐĂNG KÝ TUYỂN SINH</h1>
+            <h1>DANH SÁCH ĐĂNG KÝ HƯỚNG NGHIỆP</h1>
             <Table bordered>
                 <thead>
                     <tr>

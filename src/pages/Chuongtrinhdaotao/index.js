@@ -2,7 +2,22 @@ import React from 'react';
 import HeadTittle from '~/components/HeadTittle';
 import RunningText from '~/components/RunningText';
 import FeatureNews from '~/components/FeatureNews';
-import { Container, Nav, NavItem, NavLink, TabContent, Table, TabPane } from 'reactstrap';
+import {
+    Container,
+    Nav,
+    NavItem,
+    NavLink,
+    TabContent,
+    Table,
+    TabPane,
+    CardImg,
+    CardImgOverlay,
+    CardText,
+    CardTitle,
+    AccordionHeader,
+    AccordionItem,
+    Card,
+} from 'reactstrap';
 import { useState } from 'react';
 import './Chuongtrinhdaotao.scss';
 
@@ -11,6 +26,18 @@ function Chuongtrinhdaotao(props) {
 
     return (
         <div>
+            <Card inverse>
+                <CardImg
+                    alt="Card image cap"
+                    src={require('~/assets/images/banner/Photo-03.jpg')}
+                    width="100%"
+                />
+                <CardImgOverlay className="d-flex align-items-center justify-content-center">
+                    <div style={{ backgroundColor: '#274c3575' }} className="p-3">
+                        <CardTitle tag="h1">CHƯƠNG TRÌNH ĐÀO TẠO</CardTitle>
+                    </div>
+                </CardImgOverlay>
+            </Card>
             <RunningText separator={'/'} />
             <Container className="col-lg-12 p-3">
                 <div className="chuongtrinhdaotao">

@@ -9,13 +9,26 @@ const QuantriLayout = ({ children }) => {
     const menuSidebar = [
         {
             name: 'Cấu hình chung',
-            link: '/quantri',
+            link: '/quantri/cauhinhchung',
             sub: null,
         },
         {
             name: 'Quản lý người sử dụng',
             link: '/quantri/nguoisudung',
-            sub: null,
+            sub: [
+                {
+                    title: 'Quản trị hệ thống',
+                    target: '/quantri/',
+                },
+                {
+                    title: 'Giảng viên',
+                    target: '/quantri/',
+                },
+                {
+                    title: 'Học sinh',
+                    target: '/quantri/',
+                },
+            ],
         },
         {
             name: 'Quản lý Menu',
@@ -33,32 +46,17 @@ const QuantriLayout = ({ children }) => {
         },
         {
             name: 'Quản lý Bài viết',
-            link: '/quantri',
+            link: '#',
             sub: [
                 {
                     title: 'Danh mục bài viết',
-                    target: '/',
+                    target: '/quantri/danhmucbaiviet',
                 },
                 {
-                    title: 'Thư viện hình ảnh',
-                    target: '/',
+                    title: 'Phân quyền',
+                    target: '/quantri',
                 },
             ],
-        },
-        {
-            name: 'Quản lý Tài liệu',
-            link: '/quantri',
-            sub: null,
-        },
-        {
-            name: 'Thư viện hình ảnh',
-            link: '/quantri',
-            sub: null,
-        },
-        {
-            name: 'Thư viện Video',
-            link: '/quantri',
-            sub: null,
         },
         {
             name: 'Quản lý Nghề nghiệp',
@@ -77,12 +75,27 @@ const QuantriLayout = ({ children }) => {
         },
         {
             name: 'Quản lý Hỏi đáp',
-            link: '/quantri/',
+            link: '/quantri/danhmuchoidap',
             sub: null,
         },
         {
             name: 'Quản lý Liên hệ',
-            link: '/quantri/',
+            link: '/quantri/danhmuclienhe',
+            sub: null,
+        },
+        {
+            name: 'Quản lý Tài liệu',
+            link: '/quantri/danhmuctailieu',
+            sub: null,
+        },
+        {
+            name: 'Thư viện hình ảnh',
+            link: '/quantri/danhmuchinhanh',
+            sub: null,
+        },
+        {
+            name: 'Thư viện Video',
+            link: '/quantri/danhmucvideo',
             sub: null,
         },
     ];

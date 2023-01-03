@@ -67,9 +67,9 @@ const DanhmucTuyensinh = () => {
                                 <td scope="row">{index + 1}</td>
                                 <td>{row.student_name}</td>
                                 <td>
-                                    {`${new Date(row.student_birthday).getDate()}/${new Date(
-                                        row.student_birthday
-                                    ).getMonth()}/${new Date(row.student_birthday).getFullYear()}`}
+                                    {`${new Date(row.student_birthday).getDate()}/${
+                                        new Date(row.student_birthday).getMonth() + 1
+                                    }/${new Date(row.student_birthday).getFullYear()}`}
                                 </td>
                                 <td>{row.student_gen}</td>
                                 <td>{row.student_job}</td>

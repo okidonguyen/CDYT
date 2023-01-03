@@ -157,15 +157,15 @@ export const trangchuMenu = [
             },
             {
                 name: 'Lịch giảng viên',
-                link: '/daotao/lichgiangvien',
+                link: '/dangnhap',
             },
             {
                 name: 'Lịch thi hết môn',
-                link: '/daotao/lichhetmon',
+                link: '/dangnhap',
             },
             {
                 name: 'Văn bản đào tạo',
-                link: '/daotao/vanbaodaotao',
+                link: '/dangnhap',
             },
         ],
     },
@@ -178,7 +178,7 @@ export const trangchuMenu = [
         submenu: [
             {
                 name: 'Thông báo tuyển sinh',
-                link: '/',
+                link: '/thongbao',
             },
             {
                 name: 'Đăng ký tuyển sinh trực tuyến',
@@ -196,19 +196,19 @@ export const trangchuMenu = [
         submenu: [
             {
                 name: 'Tra cứu điểm',
-                link: '/',
+                link: '/dangnhap',
             },
             {
                 name: 'Tra cứu Lịch học',
-                link: '/',
+                link: '/dangnhap',
             },
             {
                 name: 'Tài liệu học tập',
-                link: '/',
+                link: '/dangnhap',
             },
             {
                 name: 'Thư viện bài giảng',
-                link: '/',
+                link: '/dangnhap',
             },
         ],
     },

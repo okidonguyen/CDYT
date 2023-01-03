@@ -1,23 +1,21 @@
 import { Table } from 'reactstrap';
 import userService from '~/services/user.service';
 
-function DanhmucLienhe() {
+function DanhmucTailieu() {
     userService.getAllUser().then((res) => {
         //console.log(res.data);
     });
 
     return (
         <div>
-            <h1>DANH MỤC LIÊN HỆ</h1>
+            <h1>DANH MỤC TÀI LIỆU</h1>
             <Table bordered hover striped>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Họ và tên</th>
-                        <th>Số điện thoại</th>
-                        <th>Email</th>
-                        <th>Đơn vị liên hệ</th>
-                        <th>Nội dung</th>
+                        <th>Tên tài liệu</th>
+                        <th>Mô tả</th>
+                        <th>Tải xuống</th>
                         <th>Tác vụ</th>
                     </tr>
                 </thead>
@@ -26,4 +24,4 @@ function DanhmucLienhe() {
     );
 }
 
-export default DanhmucLienhe;
+export default DanhmucTailieu;

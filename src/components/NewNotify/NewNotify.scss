@@ -1,0 +1,19 @@
+.card-body {
+    a {
+        font-weight: 500;
+        cursor: pointer;
+    }
+}
+
+.dateTimeBox {
+    background-color: var(--primary);
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.card-body:hover {
+    color: var(--secondary);
+}

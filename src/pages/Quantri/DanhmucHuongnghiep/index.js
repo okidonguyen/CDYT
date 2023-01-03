@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Container, NavLink, Table } from 'reactstrap';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 import authHeader from '~/services/auth-header';
 
@@ -48,7 +48,7 @@ const DanhmucHuongnghiep = () => {
     return (
         <Container>
             <h1>DANH SÁCH ĐĂNG KÝ HƯỚNG NGHIỆP</h1>
-            <Table bordered>
+            <Table bordered hover striped>
                 <thead>
                     <tr>
                         <th>#</th>

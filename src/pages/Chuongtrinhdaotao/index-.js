@@ -6,6 +6,11 @@ import {
     AccordionBody,
     AccordionHeader,
     AccordionItem,
+    Card,
+    CardImg,
+    CardImgOverlay,
+    CardText,
+    CardTitle,
     Col,
     Container,
     Row,
@@ -40,6 +45,21 @@ function Nganhnghe(props) {
         <div>
             <RunningText separator={'/'} />
             <Container className="col-lg-12 p-3">
+                <Card inverse>
+                    <CardImg
+                        alt="Card image cap"
+                        src={require('~/assets/images/banner/Photo-03.jpg')}
+                        width="100%"
+                    />
+                    <CardImgOverlay className="d-flex align-items-center justify-content-center">
+                        <div style={{ backgroundColor: '#274c3575' }} className="p-3">
+                            <CardTitle tag="h1">NHỮNG CÂU HỎI THƯỜNG GẶP</CardTitle>
+                            <CardText tag={'h4'}>
+                                Đây là những câu hỏi & trả lời được nhiều bạn thắc mắc nhất.
+                            </CardText>
+                        </div>
+                    </CardImgOverlay>
+                </Card>
                 <Row>
                     <Col>
                         <HeadTittle title="NGÀNH NGHỀ ĐÀO TẠO" />

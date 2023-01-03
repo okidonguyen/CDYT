@@ -40,6 +40,15 @@ const Dangnhap = ({ router }) => {
         <Container className="p-5 m-auto" style={{ width: '500px' }}>
             <Form className="border p-3 m-3" onSubmit={handleSubmit(onSubmit)}>
                 <FormGroup>
+                    <div
+                        className={'wrapper-logo d-flex justify-content-center align-items-center'}
+                    >
+                        <img
+                            src={require('~/assets/images/logo-01.png')}
+                            alt="logo"
+                            width={'400px'}
+                        />
+                    </div>
                     <h1>ĐĂNG NHẬP</h1>
                 </FormGroup>
                 <FormGroup>

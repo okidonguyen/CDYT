@@ -17,6 +17,8 @@ import Trangchu from '~/pages/Quantri/Trangchu';
 import Nghenghiep from '../pages/Quantri/Nghenghiep';
 import DanhmucHuongnghiep from '../pages/Quantri/DanhmucHuongnghiep';
 import DanhmucTuyensinh from '../pages/Quantri/DanhmucTuyensinh';
+import DanhmucLienhe from '../pages/Quantri/DanhmucLienhe';
+import DanhmucHoidap from '../pages/Quantri/DanhmucHoidap';
 import Dangnhap from '../pages/Dangnhap';
 
 // LAYOUT
@@ -25,6 +27,11 @@ import Thongbao from '../pages/Thongbao';
 import ThongbaoChitiet from '../pages/ThongbaoChitiet';
 import Nguoisudung from '../pages/Quantri/Nguoisudung';
 import Chuongtrinhdaotao from '../pages/Chuongtrinhdaotao';
+import DanhmucBaiviet from '../pages/Quantri/DanhmucBaiviet';
+import DanhmucHinhanh from '../pages/Quantri/DanhmucHinhanh';
+import DanhmucTailieu from '../pages/Quantri/DanhmucTailieu';
+import DanhmucVideo from '../pages/Quantri/DanhmucVideo';
+import Cauhinhchung from '../pages/Quantri/Cauhinhchung';
 
 const publicRoute = [
     { path: '*', component: Home },
@@ -53,6 +60,7 @@ const publicRoute = [
     { path: '/lienhe', component: Lienhe },
     // Quan tri
     { path: '/quantri', component: Trangchu, layout: QuantriLayout },
+    { path: '/quantri/cauhinhchung', component: Cauhinhchung, layout: QuantriLayout },
     { path: '/quantri/nguoisudung', component: Nguoisudung, layout: QuantriLayout },
     {
         path: '/quantri/danhmuchuongnghiep',
@@ -77,6 +85,36 @@ const publicRoute = [
     {
         path: '/quantri/themnghenghiep/:id',
         component: Nghenghiep.ThemNghenghiep,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/danhmuclienhe',
+        component: DanhmucLienhe,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/danhmuchoidap',
+        component: DanhmucHoidap,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/danhmucbaiviet',
+        component: DanhmucBaiviet,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/danhmuchinhanh',
+        component: DanhmucHinhanh,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/danhmuctailieu',
+        component: DanhmucTailieu,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/danhmucvideo',
+        component: DanhmucVideo,
         layout: QuantriLayout,
     },
     { path: '/dangnhap', component: Dangnhap, layout: BlankLayout },

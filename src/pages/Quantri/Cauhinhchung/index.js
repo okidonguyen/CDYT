@@ -13,7 +13,7 @@ function Cauhinhchung() {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Ảnh đại diện</th>
+                        <th>Tham số</th>
                         <th>Tựa đề</th>
                         <th>Liên kết</th>
                         <th>Nội dung</th>

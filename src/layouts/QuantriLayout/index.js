@@ -14,11 +14,11 @@ const QuantriLayout = ({ children }) => {
         },
         {
             name: 'Quản lý người sử dụng',
-            link: '/quantri/nguoisudung',
+            link: '#',
             sub: [
                 {
                     title: 'Quản trị hệ thống',
-                    target: '/quantri/',
+                    target: '/quantri/nguoisudung/',
                 },
                 {
                     title: 'Giảng viên',

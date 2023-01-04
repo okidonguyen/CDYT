@@ -51,7 +51,7 @@ const HeaderTop = () => {
                         // style={{ minWidth: '370px' }}
                     >
                         <div className={'menu-top-item ps-2'}>
-                            <NavLink href="/sitemap">
+                            <NavLink href="/sitemap.xml" target={'_blank'}>
                                 <i className="bi bi-diagram-2"> </i>
                                 <span className="d-none d-sm-inline-block"> Sitemap</span>
                             </NavLink>

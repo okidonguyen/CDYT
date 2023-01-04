@@ -3,6 +3,12 @@ export const items = [
         altText: '',
         caption: '',
         key: 1,
+        src: require('~/assets/images/banner/Photo-06.jpg'),
+    },
+    {
+        altText: '',
+        caption: '',
+        key: 1,
         src: require('~/assets/images/banner/Photo-01.jpg'),
     },
     {

@@ -89,7 +89,7 @@ function NewsCarousel(args) {
                             </CardTitle>
                             <CardText
                                 style={{
-                                    minHeight: '100px',
+                                    minHeight: '120px',
                                     textAlign: 'justify',
                                     paddingBottom: '10px',
                                 }}

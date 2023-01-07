@@ -3,7 +3,7 @@ import HeadTittle from '~/components/HeadTittle';
 
 function Quotes({ title, content, icon }) {
     return (
-        <Container className="text-center pt-5 pb-5">
+        <Container className="text-center pt-5 pb-5" fluid="lg">
             <HeadTittle title={title} />
             <div style={{ color: 'var(--secondary)' }}>
                 <i className={icon} style={{ fontSize: '6rem' }}></i>

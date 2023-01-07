@@ -1,4 +1,19 @@
-import { Button, Container, Form, FormFeedback, FormGroup, Label, NavLink } from 'reactstrap';
+import {
+    Button,
+    Card,
+    CardImg,
+    CardImgOverlay,
+    CardText,
+    CardTitle,
+    Col,
+    Container,
+    Form,
+    FormFeedback,
+    FormGroup,
+    Label,
+    NavLink,
+    Row,
+} from 'reactstrap';
 import AuthService from '~/services/auth.service';
 import { withRouter } from '~/common/with-router';
 import { useForm } from 'react-hook-form';
@@ -9,6 +24,7 @@ const Dangnhap = ({ router }) => {
         register,
         handleSubmit,
         setError,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -22,7 +38,7 @@ const Dangnhap = ({ router }) => {
                         type: 'custom',
                         message: 'Tên đăng nhập hoặc mật khẩu chưa đúng!',
                     });
-                    //reset();
+                    reset();
                     // clearErrors() need to invoked manually to remove that custom error
                 }
 
@@ -37,62 +53,91 @@ const Dangnhap = ({ router }) => {
     useEffect(() => {});
 
     return (
-        <Container className="p-5 m-auto" style={{ width: '500px' }}>
-            <Form className="border p-3 m-3" onSubmit={handleSubmit(onSubmit)}>
-                <FormGroup>
-                    <div
-                        className={'wrapper-logo d-flex justify-content-center align-items-center'}
-                    >
-                        <img
-                            src={require('~/assets/images/logo-01.png')}
-                            alt="logo"
-                            width={'400px'}
+        <Container className="p-5 m-auto">
+            <Row>
+                <Col className="col-lg d-none d-lg-block">
+                    <Card inverse style={{ display: 'flex' }}>
+                        <CardImg
+                            style={{ alignItems: 'center' }}
+                            src={require('~/assets/images/truong-cao-dang-y-te-dak-lak-1.jpg')}
+                            alt="Cao dang y te"
+                            width={'100%'}
                         />
-                    </div>
-                    <h1>ĐĂNG NHẬP</h1>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="tendangnhap">Tên đăng nhập</Label>
-                    <input
-                        className={`form-control ${errors.tendangnhap && 'is-invalid'} `}
-                        aria-invalid={true}
-                        id="tendangnhap"
-                        type="text"
-                        {...register('tendangnhap', { required: true })}
-                    />
-                    <FormFeedback>Tên đăng nhập không được trống</FormFeedback>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="matkhau">Mật khẩu</Label>
-                    <input
-                        className={`form-control ${errors.matkhau && 'is-invalid'} `}
-                        aria-invalid={true}
-                        id="matkhau"
-                        type="password"
-                        {...register('matkhau', { required: true })}
-                    />
-                    <FormFeedback>Mật khẩu không được trống</FormFeedback>
-                </FormGroup>
-                <FormGroup>
-                    <Label for="vaitro">Vai trò</Label>
-                    <select className={`form-select`}>
-                        <option>Quản trị hệ thống</option>
-                        <option>Giáo viên</option>
-                        <option>Học Sinh</option>
-                    </select>
-                </FormGroup>
-                <FormGroup>
-                    <Button block color="primary">
-                        Đăng nhập
-                    </Button>
-                    <NavLink href="/">Về trang chủ</NavLink>
-                    {errors.api && (
-                        <p style={{ color: 'red', textAlign: 'center', padding: '5px' }}>
-                            {errors.api.message}
-                        </p>
-                    )}
-                </FormGroup>
-            </Form>
+                        <CardImgOverlay className="d-flex align-items-center justify-content-center">
+                            <div style={{ backgroundColor: '#274c3575' }} className="p-3">
+                                <CardTitle tag="h1">
+                                    PHẦN MỀM <br /> QUẢN LÝ ĐÀO TẠO
+                                </CardTitle>
+                            </div>
+                        </CardImgOverlay>
+                    </Card>
+                </Col>
+                <Col>
+                    <Form className="border p-3" onSubmit={handleSubmit(onSubmit)}>
+                        <center>
+                            <img
+                                src={require('~/assets/images/logo-01.png')}
+                                alt="logo"
+                                width={'250px'}
+                            />
+                        </center>
+                        <FormGroup>
+                            <Label for="tendangnhap">Tên đăng nhập</Label>
+                            <input
+                                className={`form-control ${errors.tendangnhap && 'is-invalid'} `}
+                                aria-invalid={true}
+                                id="tendangnhap"
+                                type="text"
+                                {...register('tendangnhap', { required: true })}
+                            />
+                            <FormFeedback>Tên đăng nhập không được trống</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="matkhau">Mật khẩu</Label>
+                            <input
+                                className={`form-control ${errors.matkhau && 'is-invalid'} `}
+                                aria-invalid={true}
+                                id="matkhau"
+                                type="password"
+                                {...register('matkhau', { required: true })}
+                            />
+                            <FormFeedback>Mật khẩu không được trống</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="vaitro">Vai trò</Label>
+                            <select className={`form-select`}>
+                                <option>Quản trị hệ thống</option>
+                                <option>Giáo viên</option>
+                                <option>Học Sinh</option>
+                            </select>
+                        </FormGroup>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Button block color="primary">
+                                        Đăng nhập
+                                    </Button>
+                                </Col>
+                                <Col>
+                                    <Button
+                                        block
+                                        onClick={() => {
+                                            router.navigate('/');
+                                        }}
+                                    >
+                                        TRỞ LẠI
+                                    </Button>
+                                </Col>
+                            </Row>
+                            {errors.api && (
+                                <p style={{ color: 'red', textAlign: 'center', padding: '5px' }}>
+                                    {errors.api.message}
+                                </p>
+                            )}
+                        </FormGroup>
+                    </Form>
+                </Col>
+            </Row>
         </Container>
     );
 };

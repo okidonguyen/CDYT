@@ -8,17 +8,23 @@ function Tintuc() {
     let { slug } = useParams();
     let headerTitle = '';
     switch (slug) {
-        case 'hoatdongchuyenmon':
-            headerTitle = 'TIN TỨC HOẠT ĐỘNG CHUYÊN MÔN';
+        case 'hoatdongdang':
+            headerTitle = 'HOẠT ĐỘNG ĐẢNG';
+            break;
+        case 'doanthanhnien':
+            headerTitle = 'HOẠT ĐỘNG ĐOÀN THANH NIÊN';
+            break;
+        case 'congdoan':
+            headerTitle = 'HOẠT ĐỘNG CÔNG ĐOÀN';
             break;
         case 'thivatuyensinh':
-            headerTitle = 'TIN TỨC THI VÀ TUYỂN SINH';
+            headerTitle = 'HOẠT ĐỘNG THI VÀ TUYỂN SINH';
             break;
         case 'hoatdongkhac':
-            headerTitle = 'TIN TỨC HOẠT ĐỘNG KHÁC';
+            headerTitle = 'HOẠT ĐỘNG KHÁC';
             break;
         default:
-            headerTitle = 'TIN TỨC ĐẢNG - ĐOÀN THỂ';
+            headerTitle = 'HOẠT ĐỘNG CHUYÊN MÔN';
             break;
     }
 

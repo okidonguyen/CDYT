@@ -6,6 +6,7 @@ import Notification from '~/components/Notification';
 import Quotes from '~/components/Quotes';
 import RunningText from '~/components/RunningText';
 import HeadTittle from '~/components/HeadTittle';
+import News from '~/components/News';
 import { Slideshow } from '~/components';
 import { items, footerItems } from '~/data';
 import { SlideshowSettings as settings } from '~/data';
@@ -32,18 +33,37 @@ function Home() {
                     </Col>
                 </Row>
             </Container>
+
+            <Container fluid="lg" style={{ paddingBottom: '30px' }}>
+                <Row>
+                    <Col className="col-12 col-lg-4">
+                        <HeadTittle title={'HOẠT ĐỘNG CHUYÊN MÔN'} />
+                        <News category={'hoatdongchuyenmon'} numbers={2} imagetop={true} />
+                    </Col>
+
+                    <Col className="col-12 col-lg-4">
+                        <HeadTittle title={'HOẠT ĐỘNG THI VÀ TUYỂN SINH'} />
+                        <News category={'thivatuyensinh'} numbers={2} imagetop={true} />
+                    </Col>
+                    <Col className="col-12 col-lg-4">
+                        <HeadTittle title={'HOẠT ĐỘNG ĐOÀN THANH NIÊN'} />
+                        <News category={'doanthanhnien'} numbers={2} imagetop={true} />
+                    </Col>
+                </Row>
+            </Container>
+            <Quotes
+                title={'TẦM NHÌN - SỨ MỆNH'}
+                content={
+                    'ĐÀO TẠO NGUỒN NHÂN LỰC Y TẾ CÓ TRÌNH ĐỘ ĐỂ BẢO VỆ CHĂM SÓC VÀ NÂNG CAO SỨC KHỎE CỘNG ĐỒNG VÙNG TÂY NGUYÊN'
+                }
+                icon={'bi bi-book'}
+            />
+
             <Majors />
-            <Quotes 
-                    title={'TẦM NHÌN - SỨ MỆNH'}
-                    content={
-                        'ĐÀO TẠO NGUỒN NHÂN LỰC Y TẾ CÓ TRÌNH ĐỘ ĐỂ BẢO VỆ CHĂM SÓC VÀ NÂNG CAO SỨC KHỎE CỘNG ĐỒNG VÙNG TÂY NGUYÊN'
-                    }
-                    icon={'bi bi-book'}
-                />
 
             <Container
                 className="d-none d-lg-block"
-                style={{ padding: '30px', textAlign: 'center' }}
+                style={{ paddingTop: '30px', textAlign: 'center' }}
             >
                 <HeadTittle title={'HÌNH ẢNH HOẠT ĐỘNG'} />
                 <Slideshow
@@ -52,7 +72,7 @@ function Home() {
                     cssModule={'home-slider-bottom'}
                 />
             </Container>
-            <Container className="d-none d-lg-block"></Container>
+
             <CompanyLink />
         </Container>
     );

@@ -60,7 +60,7 @@ const HeaderTop = () => {
                             {/* <Login /> */}
                             <NavLink href="/dangnhap">
                                 <i className="bi bi-door-open"> </i>
-                                <span className="d-none d-sm-inline-block">Đăng nhập</span>
+                                <span className="d-none d-sm-inline-block">Quản lý đào tạo</span>
                             </NavLink>
                         </div>
                     </div>

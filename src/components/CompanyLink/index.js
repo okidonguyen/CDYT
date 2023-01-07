@@ -12,7 +12,10 @@ const imgLink = [
 
 const CompanyLink = () => {
     return (
-        <Container className="d-none d-lg-block" style={{ padding: '30px', textAlign: 'center' }}>
+        <Container
+            className="d-none d-lg-block"
+            style={{ padding: '30px 0px', textAlign: 'center' }}
+        >
             <div>
                 <HeadTittle title={'ĐỐI TÁC LIÊN KẾT'} />
                 {imgLink.map((image, index) => (

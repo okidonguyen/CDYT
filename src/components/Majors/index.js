@@ -21,7 +21,7 @@ function Majors() {
                             className="border-0 rounded-0"
                             style={{ color: 'black', height: 200 }}
                         >
-                            <HeadTittle title={'KHOA ĐÀO TẠO'} />
+                            <HeadTittle title={'CHẤT LƯỢNG ĐÀO TẠO'} />
                             <CardText>
                                 Với triết lý đào tạo “Thực học – Thực nghiệp”, Trường hướng tới đào
                                 tạo nguồn nhân lực chất lượng cao với phương pháp giảng dạy qua dự
@@ -43,7 +43,7 @@ function Majors() {
                                 width="100%"
                             />
                             <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">KHOA KHOA HỌC CƠ BẢN</CardTitle>
+                                <CardTitle tag="h5">KHOA CƠ BẢN</CardTitle>
                                 <ul>
                                     <li>Đội ngũ giáo viên</li>
                                     <li>Hoạt động chuyên môn</li>
@@ -135,7 +135,7 @@ function Majors() {
                                 width="100%"
                             />
                             <CardImgOverlay className='rounded-0"'>
-                                <CardTitle tag="h5">PHÒNG KHẢO THÍ</CardTitle>
+                                <CardTitle tag="h5">PHÒNG KHẢO THÍ VÀ KĐCL</CardTitle>
                                 <ul>
                                     <li>Chất lượng cán bộ</li>
                                     <li>Hoạt động chuyên môn</li>

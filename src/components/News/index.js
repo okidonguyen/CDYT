@@ -3,7 +3,7 @@ import { useEffect, useState, memo } from 'react';
 import { CardBody, CardImg, CardText, CardTitle, Col, NavLink, Row } from 'reactstrap';
 import './News.scss';
 
-function News({ numbers = 10, category = 'dangdoanthe' }) {
+function News({ numbers = 10, category = 'hoatdongchuyenmon', imagetop = false }) {
     const [items, setItems] = useState(() => {
         return [{}];
     });
@@ -38,30 +38,61 @@ function News({ numbers = 10, category = 'dangdoanthe' }) {
     console.log(items);
     return (
         <>
-            {items.map((item, index) => (
-                <Row key={index} className="col-12 pt-3">
-                    <Col className="col-4">
-                        <CardImg
-                            alt="Card image cap"
-                            src={item.src}
-                            style={{
-                                height: '130px',
-                                objectFit: 'cover',
-                            }}
-                        />
-                    </Col>
-                    <Col className="col-8">
-                        <NavLink href={'/tintucchitiet/' + item.slug}>
-                            <CardBody>
-                                <CardTitle tag="h5" className="pb-1">
-                                    {item.title}
-                                </CardTitle>
-                                <CardText style={{ textAlign: 'justify' }}>{item.content}</CardText>
-                            </CardBody>
-                        </NavLink>
-                    </Col>
-                </Row>
-            ))}
+            {items.map((item, index) => {
+                if (imagetop) {
+                    return (
+                        <Row key={index} className="col-12 pt-3">
+                            <Col className="col-12">
+                                <CardImg
+                                    alt="Card image cap"
+                                    src={item.src}
+                                    style={{
+                                        height: '200px',
+                                        objectFit: 'cover',
+                                    }}
+                                />
+                                <NavLink href={'/tintucchitiet/' + item.slug}>
+                                    <CardBody>
+                                        <CardTitle tag="h5" className="pb-1">
+                                            {item.title}
+                                        </CardTitle>
+                                        <CardText style={{ textAlign: 'justify' }}>
+                                            {item.content}
+                                        </CardText>
+                                    </CardBody>
+                                </NavLink>
+                            </Col>
+                        </Row>
+                    );
+                } else {
+                    return (
+                        <Row key={index} className="col-12 pt-3">
+                            <Col className="col-4">
+                                <CardImg
+                                    alt="Card image cap"
+                                    src={item.src}
+                                    style={{
+                                        height: '130px',
+                                        objectFit: 'cover',
+                                    }}
+                                />
+                            </Col>
+                            <Col className="col-8">
+                                <NavLink href={'/tintucchitiet/' + item.slug}>
+                                    <CardBody>
+                                        <CardTitle tag="h5" className="pb-1">
+                                            {item.title}
+                                        </CardTitle>
+                                        <CardText style={{ textAlign: 'justify' }}>
+                                            {item.content}
+                                        </CardText>
+                                    </CardBody>
+                                </NavLink>
+                            </Col>
+                        </Row>
+                    );
+                }
+            })}
         </>
     );
 }

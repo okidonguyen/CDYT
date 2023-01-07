@@ -116,6 +116,10 @@ export const trangchuMenu = [
                 link: '/phongkhoa/phong-cong-tac-hoc-sinh-sinh-vien',
             },
             {
+                name: 'Phòng Khảo thí và KĐCL',
+                link: '/phongkhoa/phong-khao-thi-va-kiem-dinh-chat-luong',
+            },
+            {
                 name: 'Khoa cơ bản',
                 link: '/phongkhoa/khoa-khoa-hoc-co-ban',
             },
@@ -134,23 +138,27 @@ export const trangchuMenu = [
         ],
     },
     {
-        name: 'Tin tức',
+        name: 'Hoạt động nội bộ',
         submenu: [
             {
-                name: 'Hoạt động Đảng – Đoàn thể',
-                link: '/tintuc/dangdoanthe',
+                name: 'Hoạt động Đảng',
+                link: '/tintuc/hoatdongdang',
             },
             {
                 name: 'Hoạt động chuyên môn',
                 link: '/tintuc/hoatdongchuyenmon',
             },
             {
-                name: 'Thi và Tuyển sinh',
-                link: '/tintuc/thivatuyensinh',
+                name: 'Đoàn thanh niên',
+                link: '/tintuc/doanthanhnien',
             },
             {
-                name: 'Hoạt động khác',
-                link: '/tintuc/hoatdongkhac',
+                name: 'Hoạt động Công đoàn',
+                link: '/tintuc/congdoan',
+            },
+            {
+                name: 'Thi và Tuyển sinh',
+                link: '/tintuc/thivatuyensinh',
             },
         ],
     },
@@ -186,6 +194,7 @@ export const trangchuMenu = [
                 name: 'Thông báo tuyển sinh',
                 link: '/thongbao',
             },
+
             {
                 name: 'Đăng ký tuyển sinh trực tuyến',
                 link: '/tuyensinh',

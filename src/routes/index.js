@@ -20,6 +20,8 @@ import DanhmucTuyensinh from '../pages/Quantri/DanhmucTuyensinh';
 import DanhmucLienhe from '../pages/Quantri/DanhmucLienhe';
 import DanhmucHoidap from '../pages/Quantri/DanhmucHoidap';
 import Dangnhap from '../pages/Dangnhap';
+import Blogs from '../pages/Quantri/Blog/Blogs';
+import CreateBlog from '../pages/Quantri/Blog/CreateBlog';
 
 // LAYOUT
 import { TintucLayout, QuantriLayout, BlankLayout } from '~/layouts';
@@ -87,6 +89,17 @@ const publicRoute = [
         component: Nghenghiep.ThemNghenghiep,
         layout: QuantriLayout,
     },
+    // Các routes của bài viết
+    {
+        path: '/quantri/bai-viet',
+        component: Blogs,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/tao-bai-viet',
+        component: CreateBlog,
+        layout: QuantriLayout,
+    },
     {
         path: '/quantri/danhmuclienhe',
         component: DanhmucLienhe,
@@ -118,6 +131,7 @@ const publicRoute = [
         layout: QuantriLayout,
     },
     { path: '/dangnhap', component: Dangnhap, layout: BlankLayout },
+    { path: '/quantri/dangnhap', component: Dangnhap, layout: BlankLayout },
 ];
 
 const privateRoute = [];

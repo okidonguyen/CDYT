@@ -13,40 +13,41 @@ import {
     Label,
     NavLink,
     Row,
+    Spinner,
 } from 'reactstrap';
 import AuthService from '~/services/auth.service';
 import { withRouter } from '~/common/with-router';
 import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Dangnhap = ({ router }) => {
+    const [loadingBtn, setLoadingBtn] = useState(false);
     const {
         register,
         handleSubmit,
-        setError,
         reset,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data, e) => {
+        setLoadingBtn(true);
         await AuthService()
             .login(data.tendangnhap, data.matkhau)
             .then((res) => {
                 //console.log(res);
                 if (res.status === 404 || res.status === 401) {
-                    setError('api', {
-                        type: 'custom',
-                        message: 'Tên đăng nhập hoặc mật khẩu chưa đúng!',
-                    });
-                    reset();
-                    // clearErrors() need to invoked manually to remove that custom error
+                    toast('Tên đăng nhập hoặc mật khẩu chưa đúng!');
+                    setLoadingBtn(false);
                 }
 
                 if (res.status === 200) {
-                    console.log('Thanh cong');
                     localStorage.setItem('user', JSON.stringify(res.data));
                     router.navigate('/quantri');
                 }
+
+                e.target.reset();
+                reset();
             });
     };
 
@@ -54,6 +55,7 @@ const Dangnhap = ({ router }) => {
 
     return (
         <Container className="p-5 m-auto">
+            <ToastContainer />
             <Row>
                 <Col className="col-lg d-none d-lg-block">
                     <Card inverse style={{ display: 'flex' }}>
@@ -114,8 +116,13 @@ const Dangnhap = ({ router }) => {
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button block color="primary">
+                                    <Button
+                                        block
+                                        disabled={setLoadingBtn ? false : true}
+                                        color="primary"
+                                    >
                                         Đăng nhập
+                                        {setLoadingBtn ? '' : <Spinner size="sm" />}
                                     </Button>
                                 </Col>
                                 <Col>

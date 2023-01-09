@@ -1,4 +1,15 @@
-import { Card, CardBody, CardText, CardTitle, CardImg, Col, Container, Row } from 'reactstrap';
+import {
+    Card,
+    CardBody,
+    CardText,
+    CardTitle,
+    CardImg,
+    Col,
+    Container,
+    Row,
+    Spinner,
+    Button,
+} from 'reactstrap';
 import { Form, FormGroup, Label } from 'reactstrap';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
@@ -13,19 +24,20 @@ import { Provinces, Districts, Wards } from '~/data/provinces';
 
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
-const API_URL = 'https://okidonguyen88.onrender.com/api/';
+const API_URL = 'http://localhost:3001/api/';
 
 function Tuyensinh() {
+    const [loadingBtn, setLoadingBtn] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const {
         register,
         handleSubmit,
         reset,
-        formState: { errors, isDirty, isValid },
+        formState: { errors },
     } = useForm();
 
     const onSubmit = (data, e) => {
-        console.log('onsub');
+        setLoadingBtn(true);
         try {
             axios
                 .post(
@@ -38,7 +50,8 @@ function Tuyensinh() {
                     showError(res);
                     e.target.reset();
                     reset();
-                });
+                })
+                .finally(() => setLoadingBtn(false));
         } catch (error) {
             console.log(error);
         }
@@ -456,16 +469,10 @@ function Tuyensinh() {
                                 </Col>
                             </Row>
 
-                            <input
-                                type="submit"
-                                // onClick={(e) => {
-                                //     e.target.disabled = true;
-                                // }}
-                                // color="danger"
-                                className="w-100"
-                                disabled={!isDirty || !isValid}
-                                value={'ĐĂNG KÝ NGAY'}
-                            />
+                            <Button block disabled={setLoadingBtn ? false : true} color="info">
+                                ĐĂNG KÝ NGAY
+                                {setLoadingBtn ? '' : <Spinner size="sm" />}
+                            </Button>
                         </Form>
                         <br />
                         {/* TIN TUC */}

@@ -1,4 +1,14 @@
-import { Col, Container, Row, Card, CardText, CardTitle, CardBody, Alert } from 'reactstrap';
+import {
+    Col,
+    Container,
+    Row,
+    Card,
+    CardText,
+    CardTitle,
+    CardBody,
+    Alert,
+    Spinner,
+} from 'reactstrap';
 import { Button, Form, FormGroup, Label } from 'reactstrap';
 import News from '~/components/News';
 import HeadTittle from '~/components/HeadTittle';
@@ -12,9 +22,10 @@ import { Provinces, Districts, Wards } from '~/data/provinces';
 
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
-const API_URL = 'https://okidonguyen88.onrender.com/api/';
+const API_URL = 'http://localhost:3001/api/';
 
 function Huongnghiep() {
+    const [loadingBtn, setLoadingBtn] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const {
         register,
@@ -24,6 +35,7 @@ function Huongnghiep() {
     } = useForm();
 
     const onSubmit = (data, e) => {
+        setLoadingBtn(true);
         try {
             axios
                 .post(
@@ -36,7 +48,8 @@ function Huongnghiep() {
                     showError(res);
                     e.target.reset();
                     reset();
-                });
+                })
+                .finally(() => setLoadingBtn(false));
         } catch (error) {
             console.log(error);
         }
@@ -354,8 +367,9 @@ function Huongnghiep() {
                                 </Row>
                             </FormGroup>
                             <br />
-                            <Button block color="info">
+                            <Button block disabled={setLoadingBtn ? false : true} color="info">
                                 ĐĂNG KÝ HƯỚNG NGHIỆP
+                                {setLoadingBtn ? '' : <Spinner size="sm" />}
                             </Button>
                             {errors.api && (
                                 <Alert

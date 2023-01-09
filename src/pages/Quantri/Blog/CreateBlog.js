@@ -24,6 +24,11 @@ function CreateBlog() {
   const [coverImage, setCoverImage] = useState(null);
 
   const handleTile = event => {
+    if (!event) {
+      setTitle("");
+      setSlug("slug");
+      return
+    }
     const title = event.target.value;
     const slug = slugVietnamese(title);
     setTitle(title);
@@ -34,9 +39,10 @@ function CreateBlog() {
     setTitle("");
     setSlug("");
     setMetaTitle("");
-    setCategories("");
+    setCategories([]);
     setContent("");
     setSummary("");
+    setCoverImage(null);
   }
 
   const createBlogAction = () => {
@@ -50,7 +56,7 @@ function CreateBlog() {
       categoryIds: JSON.stringify(categoryId),
       content: content,
       summary: summary,
-      coverImage: coverImage.base64
+      coverImage: coverImage?.base64
     }
 
     axios.post("http://localhost:3001/api/admin/post-create", data)
@@ -87,7 +93,6 @@ function CreateBlog() {
     };
   }
 
-
   return (
     <>
     <ToastContainer />
@@ -104,6 +109,7 @@ function CreateBlog() {
               type="text"
               name="text"
               placeholder="Nhập tiêu đề"
+              value={title}
               onChange={e => handleTile(e) }
             />
             <small className='text-muted pt-2'>{slug ? `Slug: ${slug}` : ""}</small>
@@ -116,6 +122,7 @@ function CreateBlog() {
               id="metaTitle"
               type="text"
               name="text"
+              value={metaTitle}
               placeholder="Nhập tiêu đề meta"
               onChange={e => setMetaTitle(e.target.value)}
             />

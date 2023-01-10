@@ -168,11 +168,18 @@ function Hoidap(props) {
                                     className={`form-control ${errors.ques_phone && 'is-invalid'} `}
                                     aria-invalid={true}
                                     id="ques_phone"
-                                    type="number"
-                                    placeholder="Nhập Số điện thoại ..."
-                                    {...register('ques_phone', { required: true })}
+                                    type="tel"
+                                    placeholder="Nhập số điện thoại ..."
+                                    {...register('ques_phone', {
+                                        required: true,
+                                        pattern: {
+                                            value: /^[0-9]{10}/,
+                                        },
+                                    })}
                                 />
-                                <FormFeedback>Số điện thoại không được trống</FormFeedback>
+                                <FormFeedback>
+                                    Số điện thoại không được để trống và 10 chữ số
+                                </FormFeedback>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="ques_email">Email</Label>
@@ -207,6 +214,7 @@ function Hoidap(props) {
                     </Col>
                 </Row>
             </Container>
+            <NotificationContainer enterTimeout={800} leaveTimeout={500} />
         </div>
     );
 }

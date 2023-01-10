@@ -224,9 +224,14 @@ function Huongnghiep() {
                                     } `}
                                     aria-invalid={true}
                                     id="student_phone"
-                                    type="number"
-                                    placeholder="Nhập Số điện thoại ..."
-                                    {...register('student_phone', { required: true })}
+                                    type="tel"
+                                    placeholder="Số điện thoại không để trống và nhập 10 chữ số"
+                                    {...register('student_phone', {
+                                        required: true,
+                                        pattern: {
+                                            value: /^[0-9]{10}/,
+                                        },
+                                    })}
                                 />
                             </FormGroup>
                             <FormGroup>

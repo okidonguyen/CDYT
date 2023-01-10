@@ -50,7 +50,7 @@ const QuantriLayout = ({ children }) => {
             sub: [
                 {
                     title: 'Danh mục bài viết',
-                    target: '/quantri/danhmucbaiviet',
+                    target: '/quantri/bai-viet',
                 },
                 {
                     title: 'Phân quyền',

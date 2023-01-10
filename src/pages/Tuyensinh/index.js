@@ -469,9 +469,9 @@ function Tuyensinh() {
                                 </Col>
                             </Row>
 
-                            <Button block disabled={setLoadingBtn ? false : true} color="info">
+                            <Button block disabled={loadingBtn} color="info">
                                 ĐĂNG KÝ NGAY
-                                {setLoadingBtn ? '' : <Spinner size="sm" />}
+                                {!loadingBtn ? '' : <Spinner size="sm" />}
                             </Button>
                         </Form>
                         <br />

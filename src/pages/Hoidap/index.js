@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeadTittle from '~/components/HeadTittle';
 import RunningText from '~/components/RunningText';
 import {
@@ -14,12 +14,18 @@ import {
     Col,
     Container,
     Form,
+    FormFeedback,
     FormGroup,
-    Input,
     Label,
     Row,
+    Spinner,
     UncontrolledAccordion,
 } from 'reactstrap';
+import { useForm } from 'react-hook-form';
+import { NotificationManager, NotificationContainer } from 'react-notifications';
+import axios from 'axios';
+import authHeader from '~/services/auth-header';
+const API_URL = 'http://localhost:3001/api/';
 
 function Hoidap(props) {
     const questions = [
@@ -59,6 +65,46 @@ function Hoidap(props) {
             answer: 'Năm 2021, theo đề án tuyển sinh riêng của trường, trường có ưu tiên xét tuyển 5% chỉ tiêu ngành Y khoa cho thí sinh đạt học lực loại Giỏi năm lớp 12.',
         },
     ];
+    const [loadingBtn, setLoadingBtn] = useState(false);
+    const [startDate, setStartDate] = useState(new Date());
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data, e) => {
+        setLoadingBtn(true);
+        try {
+            axios
+                .post(
+                    API_URL + 'question/',
+                    data,
+                    { validateStatus: false },
+                    { headers: authHeader() }
+                )
+                .then((res) => {
+                    showError(res);
+                    e.target.reset();
+                    reset();
+                })
+                .finally(() => setLoadingBtn(false));
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    // Show error after response
+    const showError = (res) => {
+        if (res.status === 404 || res.status === 401) {
+            NotificationManager.error(res.data.message);
+        }
+
+        if (res.status === 200) {
+            NotificationManager.success(res.data.message);
+        }
+    };
 
     return (
         <div>
@@ -101,40 +147,62 @@ function Hoidap(props) {
                         className="col-12 col-lg-4 border rounded-3"
                         style={{ backgroundColor: '#c1bdbd' }}
                     >
-                        <Form>
+                        <Form onSubmit={handleSubmit(onSubmit)}>
                             <HeadTittle title="Đặt câu hỏi" />
                             <br />
                             <FormGroup>
-                                <Label for="exampleName">Nhập họ & tên:</Label>
-                                <Input
-                                    id="exampleName"
-                                    name="text"
+                                <Label for="ques_name">Họ và tên</Label>
+                                <input
+                                    className={`form-control ${errors.ques_name && 'is-invalid'} `}
+                                    aria-invalid={true}
+                                    id="ques_name"
                                     type="text"
-                                    placeholder="Nhập họ tên ..."
+                                    placeholder="Nhập họ và tên ..."
+                                    {...register('ques_name', { required: true })}
                                 />
-                                <Label for="exampleEmail">Email của bạn:</Label>
-                                <Input
-                                    id="exampleEmail"
-                                    name="email"
-                                    type="email"
-                                    placeholder="Nhập email ..."
-                                />
-                                <Label for="sodienthoai">Số điện thoại của bạn:</Label>
-                                <Input
-                                    id="sodienthoai"
-                                    name="sodienthoai"
-                                    type="number"
-                                    placeholder="Nhập số điện thoại ..."
-                                />
-                                <Label for="exampleText">Nhập câu hỏi:</Label>
-                                <Input
-                                    id="exampleText"
-                                    name="text"
-                                    type="textarea"
-                                    placeholder="Nhập câu hỏi"
-                                />
+                                <FormFeedback>Họ và tên không được để trống</FormFeedback>
                             </FormGroup>
-                            <Button className="w-100">Gửi câu hỏi</Button>
+                            <FormGroup>
+                                <Label for="ques_phone">Số điện thoại</Label>
+                                <input
+                                    className={`form-control ${errors.ques_phone && 'is-invalid'} `}
+                                    aria-invalid={true}
+                                    id="ques_phone"
+                                    type="number"
+                                    placeholder="Nhập Số điện thoại ..."
+                                    {...register('ques_phone', { required: true })}
+                                />
+                                <FormFeedback>Số điện thoại không được trống</FormFeedback>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="ques_email">Email</Label>
+                                <input
+                                    className={`form-control ${errors.ques_email && 'is-invalid'} `}
+                                    aria-invalid={true}
+                                    id="ques_email"
+                                    type="email"
+                                    placeholder="Nhập Email ..."
+                                    {...register('ques_email', { required: true })}
+                                />
+                                <FormFeedback>Email không được trống</FormFeedback>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="ques_content">Câu hỏi</Label>
+                                <textarea
+                                    className={`form-control ${
+                                        errors.ques_content && 'is-invalid'
+                                    } `}
+                                    aria-invalid={true}
+                                    id="ques_content"
+                                    placeholder="Nhập nội dung câu hỏi"
+                                    {...register('ques_content', { required: true })}
+                                />
+                                <FormFeedback>Nội dung không được trống</FormFeedback>
+                            </FormGroup>
+                            <Button block disabled={loadingBtn} color="info">
+                                GỬI CÂU HỎI
+                                {!loadingBtn ? '' : <Spinner size="sm" />}
+                            </Button>
                         </Form>
                     </Col>
                 </Row>

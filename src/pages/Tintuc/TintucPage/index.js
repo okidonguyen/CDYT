@@ -4,13 +4,11 @@ import { Col, Container, Row } from 'reactstrap';
 import { bucket } from '~/cosmicjs';
 import FeatureNews from '~/components/FeatureNews';
 import HeadTittle from '~/components/HeadTittle';
-import { useLocation } from 'react-router-dom';
 import SociaShare from '../../../components/SocialShare';
 
 function TintucPage() {
     let { slug } = useParams();
     const [contents, setContents] = useState();
-    const location = useLocation();
 
     useEffect(() => {
         (async () => {
@@ -32,7 +30,7 @@ function TintucPage() {
                     {contents !== undefined ? (
                         <div>
                             <HeadTittle title={contents.title} />
-                            <SociaShare link={location.pathname} />
+                            <SociaShare link={window.location.href} />
                             <div dangerouslySetInnerHTML={{ __html: contents.content }} />
                         </div>
                     ) : (

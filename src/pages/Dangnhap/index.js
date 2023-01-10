@@ -38,7 +38,6 @@ const Dangnhap = ({ router }) => {
                 //console.log(res);
                 if (res.status === 404 || res.status === 401) {
                     toast('Tên đăng nhập hoặc mật khẩu chưa đúng!');
-                    setLoadingBtn(false);
                 }
 
                 if (res.status === 200) {
@@ -48,6 +47,10 @@ const Dangnhap = ({ router }) => {
 
                 e.target.reset();
                 reset();
+            })
+            .finally(() => {
+                toast('Tên đăng nhập hoặc mật khẩu chưa đúng!');
+                setLoadingBtn(false);
             });
     };
 
@@ -116,13 +119,9 @@ const Dangnhap = ({ router }) => {
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button
-                                        block
-                                        disabled={setLoadingBtn ? false : true}
-                                        color="primary"
-                                    >
+                                    <Button block disabled={loadingBtn} color="primary">
                                         Đăng nhập
-                                        {setLoadingBtn ? '' : <Spinner size="sm" />}
+                                        {!loadingBtn ? '' : <Spinner size="sm" />}
                                     </Button>
                                 </Col>
                                 <Col>
@@ -132,7 +131,7 @@ const Dangnhap = ({ router }) => {
                                             router.navigate('/');
                                         }}
                                     >
-                                        TRỞ LẠI
+                                        Trở lại trang chủ
                                     </Button>
                                 </Col>
                             </Row>

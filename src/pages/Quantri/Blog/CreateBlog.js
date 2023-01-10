@@ -1,10 +1,10 @@
-import { FormGroup, Label, Input  } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 import { Editor } from 'primereact/editor';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button as BtnPrime } from 'primereact/button';
 // move style to index.js
 import MultiSelectDemo from './components/Categories';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { slugVietnamese } from '../../../common/utils.js';
 import axios from 'axios';
 //import { ToastContainer, toast } from 'react-toastify';
@@ -93,109 +93,117 @@ function CreateBlog() {
         };
     };
 
-  return (
-    <>
-    {/* <ToastContainer /> */}
-    <div className="card p-3">
-      <h3>Thêm bài viết mới</h3>
-      <div className='row'>
-        <div className='col-4'>
-          <FormGroup>
-            <Label for="title">
-              Tiêu đề
-            </Label>
-            <Input
-              id="title"
-              type="text"
-              name="text"
-              placeholder="Nhập tiêu đề"
-              value={title}
-              onChange={e => handleTile(e) }
-            />
-            <small className='text-muted pt-2'>{slug ? `Slug: ${slug}` : ""}</small>
-          </FormGroup>
-          <FormGroup>
-            <Label for="metaTitle">
-              Tiêu đề meta
-            </Label>
-            <Input
-              id="metaTitle"
-              type="text"
-              name="text"
-              value={metaTitle}
-              placeholder="Nhập tiêu đề meta"
-              onChange={e => setMetaTitle(e.target.value)}
-            />
-          </FormGroup>
-          <FormGroup>
-          <Label >
-            Danh mục
-          </Label>
-          <MultiSelectDemo value={categories} onSelectedItems={value => setCategories(value)}/>
-        </FormGroup>
-        </div>
+    return (
+        <>
+            {/* <ToastContainer /> */}
+            <div className="card p-3">
+                <h3>Thêm bài viết mới</h3>
+                <div className="row">
+                    <div className="col-4">
+                        <FormGroup>
+                            <Label for="title">Tiêu đề</Label>
+                            <Input
+                                id="title"
+                                type="text"
+                                name="text"
+                                placeholder="Nhập tiêu đề"
+                                value={title}
+                                onChange={(e) => handleTile(e)}
+                            />
+                            <small className="text-muted pt-2">{slug ? `Slug: ${slug}` : ''}</small>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="metaTitle">Tiêu đề meta</Label>
+                            <Input
+                                id="metaTitle"
+                                type="text"
+                                name="text"
+                                value={metaTitle}
+                                placeholder="Nhập tiêu đề meta"
+                                onChange={(e) => setMetaTitle(e.target.value)}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Danh mục</Label>
+                            <MultiSelectDemo
+                                value={categories}
+                                onSelectedItems={(value) => setCategories(value)}
+                            />
+                        </FormGroup>
+                    </div>
 
-        <div className='col-4'>
-          <FormGroup>
-            <Label >
-              Tóm tắt nội dung
-            </Label>
-            <InputTextarea 
-              className='w-100'
-              rows={8} 
-              cols={30} 
-              value={summary} 
-              placeholder="Tóm tắt nội dung bài viết"
-              onChange={(e) => setSummary(e.target.value)} />
-          </FormGroup>
-        </div>
+                    <div className="col-4">
+                        <FormGroup>
+                            <Label>Tóm tắt nội dung</Label>
+                            <InputTextarea
+                                className="w-100"
+                                rows={8}
+                                cols={30}
+                                value={summary}
+                                placeholder="Tóm tắt nội dung bài viết"
+                                onChange={(e) => setSummary(e.target.value)}
+                            />
+                        </FormGroup>
+                    </div>
 
-        <div className='col-4 d-flex flex-column'>
-          Ảnh bìa
-          {
-            coverImage ? (
-              <div className='cover-image-preview'>
-                <i className="pi pi-times" onClick={removeCoverImage}></i>
-                <img src={coverImage.base64} alt="test" />
-              </div>
-              ) : (
-              <label 
-                className='cover-image mt-3 d-flex justify-content-center align-items-center' 
-                htmlFor="coverImage">
-                <i className="pi pi-camera" style={{'fontSize': '2em'}}></i>
-                <input 
-                  id='coverImage'
-                  accept="image/*"
-                  onChange={e => handleCoverImage(e)} 
-                  type="file" 
-                  hidden/>
-              </label>)
-          }
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col-12'>
-          <FormGroup>
-            <Label >
-              Nội dung
-            </Label>
-            <Editor 
-              style={{height:'300px'}}
-              value={content}
-              placeholder="Nội dung bài viết"
-              onTextChange={e => setContent(e.htmlValue)} />
-          </FormGroup>
-        </div>
-        <div className='col-12'>
-          
-        </div>
-      </div>
-      <div className='p-3'>
-        <BtnPrime label="Tạo" icon="pi pi-check" className="p-button-success" loading={loadingBtn} onClick={createBlogAction}/>
-      </div>
-    </div>
-    </>
-  );
+                    <div className="col-4 d-flex flex-column">
+                        Ảnh bìa
+                        {coverImage ? (
+                            <div className="cover-image-preview">
+                                <i className="pi pi-times" onClick={removeCoverImage}></i>
+                                <img src={coverImage.base64} alt="test" />
+                            </div>
+                        ) : (
+                            <label
+                                className="cover-image mt-3 d-flex justify-content-center align-items-center"
+                                htmlFor="coverImage"
+                            >
+                                <i className="pi pi-camera" style={{ fontSize: '2em' }}></i>
+                                <input
+                                    id="coverImage"
+                                    accept="image/*"
+                                    onChange={(e) => handleCoverImage(e)}
+                                    type="file"
+                                    hidden
+                                />
+                            </label>
+                        )}
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <FormGroup>
+                            <Label>Nội dung</Label>
+                            <Editor
+                                style={{ height: '300px' }}
+                                value={content}
+                                placeholder="Nội dung bài viết"
+                                onTextChange={(e) => setContent(e.htmlValue)}
+                            />
+                        </FormGroup>
+                    </div>
+                    <div className="col-12"></div>
+                </div>
+                <div className="p-3">
+                    <BtnPrime
+                        label="Tạo"
+                        icon="pi pi-check"
+                        className="p-button-success"
+                        loading={loadingBtn}
+                        onClick={createBlogAction}
+                    />
+                    <BtnPrime
+                        label="Trở lại"
+                        icon="pi pi-check"
+                        className="p-button-success"
+                        loading={loadingBtn}
+                        onClick={createBlogAction}
+                    />
+                </div>
+            </div>
+            <NotificationContainer enterTimeout={800} leaveTimeout={500} />
+        </>
+    );
 }
 
 export default CreateBlog;

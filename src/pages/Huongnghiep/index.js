@@ -367,9 +367,9 @@ function Huongnghiep() {
                                 </Row>
                             </FormGroup>
                             <br />
-                            <Button block disabled={setLoadingBtn ? false : true} color="info">
+                            <Button block disabled={loadingBtn} color="info">
                                 ĐĂNG KÝ HƯỚNG NGHIỆP
-                                {setLoadingBtn ? '' : <Spinner size="sm" />}
+                                {!loadingBtn ? '' : <Spinner size="sm" />}
                             </Button>
                             {errors.api && (
                                 <Alert

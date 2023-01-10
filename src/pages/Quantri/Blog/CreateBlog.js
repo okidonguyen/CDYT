@@ -1,63 +1,58 @@
-import { FormGroup, Label, Input } from 'reactstrap';
 import { Editor } from 'primereact/editor';
 import { InputTextarea } from 'primereact/inputtextarea';
-import { Button as BtnPrime } from 'primereact/button';
+import { Button } from 'primereact/button';
+import { useForm, Controller } from 'react-hook-form';
+import { InputText } from 'primereact/inputtext';
+import { classNames } from 'primereact/utils';
+import { useNavigate } from 'react-router-dom';
 // move style to index.js
-import MultiSelectDemo from './components/Categories';
+import Categories from './components/Categories';
 import { useState } from 'react';
 import { slugVietnamese } from '../../../common/utils.js';
 import axios from 'axios';
-//import { ToastContainer, toast } from 'react-toastify';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 // move style to index.js
 import './styles.scss';
 
 function CreateBlog() {
-    const [title, setTitle] = useState('');
+    const navigate = useNavigate();
     const [slug, setSlug] = useState('');
-    const [metaTitle, setMetaTitle] = useState('');
-    const [categories, setCategories] = useState('');
-    const [content, setContent] = useState('');
-    const [summary, setSummary] = useState('');
     const [loadingBtn, setLoadingBtn] = useState(false);
     const [coverImage, setCoverImage] = useState(null);
 
+    const defaultValues = {
+        title: '',
+        metaTitle: '',
+        categories: [],
+        summary: '',
+        content: '',
+    };
+
+    const {
+        control,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm({ defaultValues });
+
     const handleTile = (event) => {
         if (!event) {
-            setTitle('');
             setSlug('slug');
             return;
         }
         const title = event.target.value;
         const slug = slugVietnamese(title);
-        setTitle(title);
         setSlug(slug);
     };
 
     const refreshForm = () => {
-        setTitle('');
         setSlug('');
-        setMetaTitle('');
-        setCategories([]);
-        setContent('');
-        setSummary('');
         setCoverImage(null);
+        reset();
     };
 
-    const createBlogAction = () => {
+    const createBlogAction = (data) => {
         setLoadingBtn(true);
-        const categoryId = categories?.length > 0 ? categories.map(({ id }) => id) : [];
-
-        const data = {
-            title: title,
-            slug: slug,
-            metaTitle: metaTitle,
-            categoryIds: JSON.stringify(categoryId),
-            content: content,
-            summary: summary,
-            coverImage: coverImage?.base64,
-        };
-
         axios
             .post('http://localhost:3001/api/admin/post-create', data)
             .then((response) => response)
@@ -93,113 +88,251 @@ function CreateBlog() {
         };
     };
 
+    const onSubmit = (data) => {
+        const categoryId = data.categories.length > 0 ? data.categories.map(({ id }) => id) : [];
+        const inputs = {
+            ...data,
+            slug: slug,
+            categoryIds: JSON.stringify(categoryId),
+        };
+        if (coverImage?.base64) inputs.coverImage = coverImage.base64;
+
+        createBlogAction(inputs);
+    };
+
+    const getFormErrorMessage = (name) => {
+        return errors[name] && <small className="p-error">{errors[name].message}</small>;
+    };
+
     return (
         <>
-            {/* <ToastContainer /> */}
-            <div className="card p-3">
+            <div className="card p-3 mb-3">
                 <h3>Thêm bài viết mới</h3>
-                <div className="row">
-                    <div className="col-4">
-                        <FormGroup>
-                            <Label for="title">Tiêu đề</Label>
-                            <Input
-                                id="title"
-                                type="text"
-                                name="text"
-                                placeholder="Nhập tiêu đề"
-                                value={title}
-                                onChange={(e) => handleTile(e)}
-                            />
-                            <small className="text-muted pt-2">{slug ? `Slug: ${slug}` : ''}</small>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="metaTitle">Tiêu đề meta</Label>
-                            <Input
-                                id="metaTitle"
-                                type="text"
-                                name="text"
-                                value={metaTitle}
-                                placeholder="Nhập tiêu đề meta"
-                                onChange={(e) => setMetaTitle(e.target.value)}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label>Danh mục</Label>
-                            <MultiSelectDemo
-                                value={categories}
-                                onSelectedItems={(value) => setCategories(value)}
-                            />
-                        </FormGroup>
-                    </div>
-
-                    <div className="col-4">
-                        <FormGroup>
-                            <Label>Tóm tắt nội dung</Label>
-                            <InputTextarea
-                                className="w-100"
-                                rows={8}
-                                cols={30}
-                                value={summary}
-                                placeholder="Tóm tắt nội dung bài viết"
-                                onChange={(e) => setSummary(e.target.value)}
-                            />
-                        </FormGroup>
-                    </div>
-
-                    <div className="col-4 d-flex flex-column">
-                        Ảnh bìa
-                        {coverImage ? (
-                            <div className="cover-image-preview">
-                                <i className="pi pi-times" onClick={removeCoverImage}></i>
-                                <img src={coverImage.base64} alt="test" />
-                            </div>
-                        ) : (
-                            <label
-                                className="cover-image mt-3 d-flex justify-content-center align-items-center"
-                                htmlFor="coverImage"
-                            >
-                                <i className="pi pi-camera" style={{ fontSize: '2em' }}></i>
-                                <input
-                                    id="coverImage"
-                                    accept="image/*"
-                                    onChange={(e) => handleCoverImage(e)}
-                                    type="file"
-                                    hidden
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="row">
+                        <div className="col-4">
+                            {/* START: Title */}
+                            <div className="d-flex flex-column">
+                                <label
+                                    htmlFor="title"
+                                    className={classNames({ 'p-error': errors.title })}
+                                >
+                                    Tiêu đề *
+                                </label>
+                                <Controller
+                                    name="title"
+                                    control={control}
+                                    rules={{
+                                        required: 'Băt buộc nhập tiêu đề.',
+                                        maxLength: {
+                                            value: 255,
+                                            message: 'Tiêu đề quá dài.',
+                                        },
+                                    }}
+                                    render={({ field, fieldState }) => (
+                                        <InputText
+                                            id={field.title}
+                                            {...field}
+                                            onInput={(e) => handleTile(e)}
+                                            className={`${classNames({
+                                                'p-invalid': fieldState.invalid,
+                                            })}`}
+                                            placeholder="Nhập tiêu đề"
+                                        />
+                                    )}
                                 />
-                            </label>
-                        )}
+
+                                {getFormErrorMessage('title')}
+                                {slug && (
+                                    <small className="text-muted py-2">
+                                        {slug ? `Slug: ${slug}` : ''}
+                                    </small>
+                                )}
+                            </div>
+                            {/* END: Title */}
+
+                            {/* START: Meta title */}
+                            <div className="d-flex flex-column mt-2">
+                                <label
+                                    htmlFor="metaTitle"
+                                    className={classNames({ 'p-error': errors.metaTitle })}
+                                >
+                                    Tiêu đề meta
+                                </label>
+                                <Controller
+                                    name="metaTitle"
+                                    control={control}
+                                    rules={{
+                                        maxLength: {
+                                            value: 255,
+                                            message: 'Tiêu đề meta quá dài.',
+                                        },
+                                    }}
+                                    render={({ field, fieldState }) => (
+                                        <InputText
+                                            id={field.metaTitle}
+                                            {...field}
+                                            className={`${classNames({
+                                                'p-invalid': fieldState.invalid,
+                                            })}`}
+                                            placeholder="Nhập tiêu đề meta"
+                                        />
+                                    )}
+                                />
+
+                                {getFormErrorMessage('metaTitle')}
+                            </div>
+                            {/* END: Meta title */}
+
+                            {/* START: Category */}
+                            <div className="d-flex flex-column mt-2">
+                                <label
+                                    htmlFor="categories"
+                                    className={classNames({ 'p-error': errors.categories })}
+                                >
+                                    Danh mục
+                                </label>
+                                <Controller
+                                    name="categories"
+                                    control={control}
+                                    rules={{
+                                        required: 'Bắt buộc chọn danh mục.',
+                                    }}
+                                    render={({ field, fieldState }) => (
+                                        <Categories
+                                            id={field.categories}
+                                            value={field.value}
+                                            className={`${classNames({
+                                                'p-invalid': fieldState.invalid,
+                                            })}`}
+                                            onSelectedItems={(e) => field.onChange(e)}
+                                        />
+                                    )}
+                                />
+
+                                {getFormErrorMessage('categories')}
+                            </div>
+                            {/* END: Category */}
+                        </div>
+
+                        <div className="col-4">
+                            {/* START: Meta title */}
+                            <div className="d-flex flex-column mt-2">
+                                <label
+                                    htmlFor="summary"
+                                    className={classNames({ 'p-error': errors.summary })}
+                                >
+                                    Tóm tắt nội dung
+                                </label>
+                                <Controller
+                                    name="summary"
+                                    control={control}
+                                    rules={{
+                                        maxLength: {
+                                            value: 255,
+                                            message: 'Tiêu đề meta quá dài.',
+                                        },
+                                    }}
+                                    render={({ field, fieldState }) => (
+                                        <InputTextarea
+                                            id={field.summary}
+                                            value={field.value}
+                                            className={` ${classNames({
+                                                'p-invalid': fieldState.invalid,
+                                            })}`}
+                                            rows={8}
+                                            cols={30}
+                                            placeholder="Tóm tắt nội dung bài viết"
+                                            onChange={(e) => field.onChange(e.target.value)}
+                                        />
+                                    )}
+                                />
+
+                                {getFormErrorMessage('summary')}
+                            </div>
+                            {/* END: Meta title */}
+                        </div>
+
+                        <div className="col-4 d-flex flex-column">
+                            Ảnh bìa
+                            {coverImage ? (
+                                <div className="cover-image-preview">
+                                    <i className="pi pi-times" onClick={removeCoverImage}></i>
+                                    <img src={coverImage.base64} alt="test" />
+                                </div>
+                            ) : (
+                                <label
+                                    className="cover-image mt-3 d-flex justify-content-center align-items-center"
+                                    htmlFor="coverImage"
+                                >
+                                    <i className="pi pi-camera" style={{ fontSize: '2em' }}></i>
+                                    <input
+                                        id="coverImage"
+                                        accept="image/*"
+                                        onChange={(e) => handleCoverImage(e)}
+                                        type="file"
+                                        hidden
+                                    />
+                                </label>
+                            )}
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <FormGroup>
-                            <Label>Nội dung</Label>
-                            <Editor
-                                style={{ height: '300px' }}
-                                value={content}
-                                placeholder="Nội dung bài viết"
-                                onTextChange={(e) => setContent(e.htmlValue)}
-                            />
-                        </FormGroup>
+                    <div className="row">
+                        <div className="col-12">
+                            {/* START: Content */}
+                            <div className="d-flex flex-column mt-2">
+                                <label
+                                    htmlFor="content"
+                                    className={classNames({ 'p-error': errors.content })}
+                                >
+                                    Nội dung
+                                </label>
+                                <Controller
+                                    name="content"
+                                    control={control}
+                                    rules={{
+                                        required: 'Bắt buộc nhập nội dung.',
+                                        maxLength: {
+                                            value: 255,
+                                            message: 'Tiêu đề meta quá dài.',
+                                        },
+                                    }}
+                                    render={({ field, fieldState }) => (
+                                        <Editor
+                                            id={field.content}
+                                            style={{ height: '300px' }}
+                                            value={field.value}
+                                            className={` ${classNames({
+                                                'p-invalid': fieldState.invalid,
+                                            })}`}
+                                            placeholder="Nội dung bài viết"
+                                            onTextChange={(e) => field.onChange(e.htmlValue)}
+                                        />
+                                    )}
+                                />
+
+                                {getFormErrorMessage('content')}
+                            </div>
+                            {/* END: Content */}
+                        </div>
+                        <div className="col-12"></div>
                     </div>
-                    <div className="col-12"></div>
-                </div>
-                <div className="p-3">
-                    <BtnPrime
-                        label="Tạo"
-                        icon="pi pi-check"
-                        className="p-button-success"
-                        loading={loadingBtn}
-                        onClick={createBlogAction}
-                    />
-                    <BtnPrime
-                        label="Trở lại"
-                        icon="pi pi-check"
-                        className="p-button-success"
-                        loading={loadingBtn}
-                        onClick={createBlogAction}
-                    />
-                </div>
+                    <div className="pt-3 pb-0 d-flex gap-2">
+                        <Button
+                            label="Quay lại"
+                            type="button"
+                            className="p-button-danger"
+                            onClick={() => navigate('/quantri/bai-viet')}
+                        />
+                        <Button label="Làm mới" type="button" onClick={refreshForm} />
+                        <Button
+                            label="Tạo"
+                            className="p-button-success"
+                            loading={loadingBtn}
+                            type="submit"
+                        />
+                    </div>
+                </form>
             </div>
             <NotificationContainer enterTimeout={800} leaveTimeout={500} />
         </>

@@ -22,6 +22,7 @@ import DanhmucHoidap from '../pages/Quantri/DanhmucHoidap';
 import Dangnhap from '../pages/Dangnhap';
 import Blogs from '../pages/Quantri/Blog/Blogs';
 import CreateBlog from '../pages/Quantri/Blog/CreateBlog';
+import PreviewBlog from '../pages/Quantri/Blog/BlogDetails';
 
 // LAYOUT
 import { TintucLayout, QuantriLayout, BlankLayout } from '~/layouts';
@@ -94,6 +95,16 @@ const publicRoute = [
         path: '/quantri/bai-viet',
         component: Blogs,
         layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/bai-viet/:id/cap-nhat',
+        component: CreateBlog,
+        layout: QuantriLayout,
+    },
+    {
+        path: '/quantri/bai-viet/:id/xem-truoc',
+        component: PreviewBlog,
+        layout: TintucLayout,
     },
     {
         path: '/quantri/tao-bai-viet',

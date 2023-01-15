@@ -4,21 +4,23 @@ import { Button } from 'primereact/button';
 import { useForm, Controller } from 'react-hook-form';
 import { InputText } from 'primereact/inputtext';
 import { classNames } from 'primereact/utils';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 // move style to index.js
 import Categories from './components/Categories';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { slugVietnamese } from '../../../common/utils.js';
-import axios from 'axios';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 // move style to index.js
 import './styles.scss';
+import { apiCreateBlog, apiBlogDetails, apiUpdateBlog } from './services/api';
 
 function CreateBlog() {
     const navigate = useNavigate();
     const [slug, setSlug] = useState('');
     const [loadingBtn, setLoadingBtn] = useState(false);
     const [coverImage, setCoverImage] = useState(null);
+    const [content, setContent] = useState('');
+    let { id } = useParams();
 
     const defaultValues = {
         title: '',
@@ -33,7 +35,45 @@ function CreateBlog() {
         formState: { errors },
         handleSubmit,
         reset,
+        setValue,
     } = useForm({ defaultValues });
+
+    const getBlogDetails = async () => {
+        try {
+            if (!id) return null;
+            const { data: res } = await apiBlogDetails(id);
+
+            if (res.success) {
+                const details = res.data;
+
+                setValue('title', details.title);
+                setValue('metaTitle', details.metaTitle);
+                setValue(
+                    'categories',
+                    details.categories.map(({ id, title }) => ({ id: id, title: title }))
+                );
+                setValue('summary', details.summary);
+                setContent(details.content);
+                setCoverImage({ base64: details.coverImage });
+                setSlug(details.slug);
+
+                return details;
+            }
+
+            return null;
+        } catch (err) {
+            console.log(err);
+            return null;
+        }
+    };
+
+    useEffect(() => {
+        getBlogDetails();
+    }, []);
+
+    useEffect(() => {
+        setValue('content', content);
+    }, [content]);
 
     const handleTile = (event) => {
         if (!event) {
@@ -53,13 +93,30 @@ function CreateBlog() {
 
     const createBlogAction = (data) => {
         setLoadingBtn(true);
-        axios
-            .post('http://localhost:3001/api/admin/post-create', data)
+        apiCreateBlog(data)
             .then((response) => response)
             .then((res) => {
                 NotificationManager.success(res.data.message);
 
                 if (res?.data?.success) refreshForm();
+            })
+            .catch((err) => {
+                NotificationManager.error('Lỗi kết nối server!');
+            })
+            .finally(() => setLoadingBtn(false));
+    };
+
+    const updateBlogAction = (inputs) => {
+        setLoadingBtn(true)
+        apiUpdateBlog(inputs)
+            .then((response) => response)
+            .then(({ data: res }) => {
+                if (!res?.success) {
+                    NotificationManager.error(res.message);
+                    return;
+                }
+
+                NotificationManager.success('Cập nhật thành công');
             })
             .catch((err) => {
                 NotificationManager.error('Lỗi kết nối server!');
@@ -95,9 +152,15 @@ function CreateBlog() {
             slug: slug,
             categoryIds: JSON.stringify(categoryId),
         };
+
         if (coverImage?.base64) inputs.coverImage = coverImage.base64;
 
-        createBlogAction(inputs);
+        if (!id) {
+            createBlogAction(inputs);
+        } else {
+            inputs.id = id;
+            updateBlogAction(inputs);
+        }
     };
 
     const getFormErrorMessage = (name) => {
@@ -255,10 +318,10 @@ function CreateBlog() {
 
                         <div className="col-4 d-flex flex-column">
                             Ảnh bìa
-                            {coverImage ? (
+                            {coverImage?.base64 ? (
                                 <div className="cover-image-preview">
                                     <i className="pi pi-times" onClick={removeCoverImage}></i>
-                                    <img src={coverImage.base64} alt="test" />
+                                    <img src={coverImage?.base64} alt="test" />
                                 </div>
                             ) : (
                                 <label
@@ -292,10 +355,6 @@ function CreateBlog() {
                                     control={control}
                                     rules={{
                                         required: 'Bắt buộc nhập nội dung.',
-                                        maxLength: {
-                                            value: 255,
-                                            message: 'Tiêu đề meta quá dài.',
-                                        },
                                     }}
                                     render={({ field, fieldState }) => (
                                         <Editor
@@ -324,13 +383,22 @@ function CreateBlog() {
                             className="p-button-danger"
                             onClick={() => navigate('/quantri/bai-viet')}
                         />
-                        <Button label="Làm mới" type="button" onClick={refreshForm} />
-                        <Button
-                            label="Tạo"
-                            className="p-button-success"
-                            loading={loadingBtn}
-                            type="submit"
-                        />
+                        { !id && ( <Button label="Làm mới" type="button" onClick={refreshForm} />)}
+                        {!id ? (
+                            <Button
+                                label="Tạo"
+                                className="p-button-success"
+                                loading={loadingBtn}
+                                type="submit"
+                            />
+                        ) : (
+                            <Button
+                                label="Cập nhật"
+                                className="p-button-success"
+                                loading={loadingBtn}
+                                type="submit"
+                            />
+                        )}
                     </div>
                 </form>
             </div>

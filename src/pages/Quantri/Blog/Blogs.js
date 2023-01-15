@@ -1,39 +1,36 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import userService from '~/services/user.service';
 import { SearchIcon } from '@primer/octicons-react';
-import {
-    Button,
-    Card,
-    CardBody,
-    PaginationLink,
-    PaginationItem,
-    Pagination,
-    Table,
-    InputGroup,
-    Input,
-} from 'reactstrap';
-import AddNewCompoent from './components/AddNewBlogModel';
-import { createReactEditorJS } from 'react-editor-js';
-import axios from 'axios';
+import { DataTable } from 'primereact/datatable';
+import { Button as PrimeBtn } from 'primereact/button';
+import { Column } from 'primereact/column';
+import { Button, InputGroup, Input } from 'reactstrap';
+import { apiAllBlogs } from './services/api';
 
 function Blog() {
     const navigate = useNavigate();
     const [blogs, setBlogs] = useState([]);
     const [keySearch, setKeySearch] = useState('');
-    const [pagination, setPagination] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [totalRecords, setTotalRecords] = useState(0);
+    const [pageSize, setPageSize] = useState(4);
+    const [first, setFirst] = useState(0);
+    const [visibleModal, setVisibleModal] = useState(false);
+    const [detailId, setDetailId] = useState(null);
 
     const getBlogs = (args) => {
-        axios
-            .get('http://localhost:3001/api/admin/posts', {
-                params: args,
-            })
+        setLoading(true);
+        apiAllBlogs(args)
             .then((response) => response)
             .then((res) => {
-                setPagination(res.data.data.pagination);
+                const pagination = res.data.data.pagination;
+                // console.log(pagination);
+                setTotalRecords(pagination.totalRecords);
+
                 setBlogs(res.data.data.data);
             })
-            .catch((err) => console.log(err));
+            .catch((err) => console.log(err))
+            .finally(() => setLoading(false));
     };
 
     useEffect(() => {
@@ -46,33 +43,26 @@ function Blog() {
 
     const onEnterSearch = (e) => {
         if (e.key === 'Enter') {
-            onSearch({ keySearch: keySearch });
+            onSearch();
         }
     };
 
-    const RenderBlog = () => {
-        if (blogs.length > 0)
-            return blogs.map((blog) => (
-                <tr key={blog.id}>
-                    <th>{blog?.id || '-'}</th>
-                    <th>{blog?.title}</th>
-                    <th>{blog?.summary || '-'}</th>
-                    <th>{blog?.createdAt || '-'}</th>
-                    <th>{blog?.user?.fullname || '-'}</th>
-                </tr>
-            ));
-
-        return (
-            <tr>
-                <td colSpan={5} className="text-center">
-                    Không tìm thấy bài viết nào
-                </td>
-            </tr>
-        );
+    const onPageChange = async (page) => {
+        console.log(page);
+        await setPageSize(page.rows);
+        await setFirst(page.first);
+        getBlogs({
+            page: page.page + 1,
+            pageSize: page.rows,
+        });
     };
 
-    const onPageChange = (page) => {
-        getBlogs({ keySearch: keySearch, page: page, pageSize: 10 });
+    const showPreview = async (id) => {
+        window.open(`/quantri/bai-viet/${id}/xem-truoc`); 
+    };
+
+    const onClickDeleteBlog = () => {
+        console.log('delete');
     };
 
     return (
@@ -100,49 +90,52 @@ function Blog() {
                     </div>
                 </div>
 
-                <Table striped>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tiêu đề</th>
-                            <th>Tóm tắt</th>
-                            <th>Ngày tạo</th>
-                            <th>Người tạo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <RenderBlog />
-                    </tbody>
-                </Table>
-                <Pagination>
-                    <PaginationItem>
-                        <PaginationLink first href="#" />
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#" previous />
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">1</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">2</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">3</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">4</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#">5</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#" next />
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationLink href="#" last />
-                    </PaginationItem>
-                </Pagination>
+                <DataTable
+                    value={blogs}
+                    paginator
+                    first={first}
+                    rows={pageSize}
+                    paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
+                    rowsPerPageOptions={[2, 10, 25, 50]}
+                    totalRecords={totalRecords}
+                    dataKey="id"
+                    lazy
+                    rowHover
+                    filterDisplay="menu"
+                    loading={loading}
+                    responsiveLayout="scroll"
+                    emptyMessage="Không tìm thấy bài viết nào."
+                    currentPageReportTemplate="Hiển thị {first} - {last} của {totalRecords} trang"
+                    onPage={(e) => onPageChange(e)}
+                >
+                    <Column field="title" header="Tiêu đề"></Column>
+                    <Column field="slug" header="slug"></Column>
+                    <Column field="user.fullname" header="Người tạo"></Column>
+                    <Column field="createdAt" header="Ngày tạo"></Column>
+                    <Column
+                        style={{ width: '11rem' }}
+                        header="Chức năng"
+                        body={({ id }) => (
+                            <>
+                                <PrimeBtn
+                                    icon="pi pi-eye"
+                                    className="p-button-rounded p-button-text"
+                                    onClick={() => showPreview(id)}
+                                />
+                                <PrimeBtn
+                                    icon="pi pi-pencil"
+                                    className="p-button-rounded p-button-text"
+                                    onClick={() => navigate(`/quantri/bai-viet/${id}/cap-nhat`)}
+                                />
+                                <PrimeBtn
+                                    icon="pi pi-trash"
+                                    className="p-button-rounded p-button-text"
+                                    onClick={() => onClickDeleteBlog(id)}
+                                />
+                            </>
+                        )}
+                    ></Column>
+                </DataTable>
             </div>
         </>
     );

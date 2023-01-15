@@ -49,7 +49,7 @@ const MultiSelectDemo = (props) => {
     return (
         <div>
             <MultiSelect
-                value={selectedItems}
+                value={props.value}
                 options={options}
                 onChange={(e) => onSelectedChange(e.value)}
                 optionLabel="title"

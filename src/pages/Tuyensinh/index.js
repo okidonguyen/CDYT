@@ -24,7 +24,7 @@ import { Provinces, Districts, Wards } from '~/data/provinces';
 
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
-const API_URL = 'http://localhost:3001/api/';
+import {API_URL} from '~/data';
 
 function Tuyensinh() {
     const [loadingBtn, setLoadingBtn] = useState(false);

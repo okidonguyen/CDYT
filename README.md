@@ -17,6 +17,6 @@
     - Thiết kế đẹp hơn
 8. Quản lý module đăng ký hướng nghiệp
 
-http://localhost:3001/
+http://112.213.89.28:3003/
 
 https://github.com/Jungwoo-An/react-editor-js#readme

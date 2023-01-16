@@ -15,7 +15,7 @@ import { useForm } from 'react-hook-form';
 import authHeader from '~/services/auth-header';
 
 import axios from 'axios';
-const API_URL = 'http://localhost:3001/api/';
+import {API_URL} from '~/data';
 
 const DmNghenghiep = () => {
     const navigate = useNavigate();

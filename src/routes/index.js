@@ -36,6 +36,8 @@ import DanhmucTailieu from '../pages/Quantri/DanhmucTailieu';
 import DanhmucVideo from '../pages/Quantri/DanhmucVideo';
 import Cauhinhchung from '../pages/Quantri/Cauhinhchung';
 
+
+
 const publicRoute = [
     { path: '*', component: Home },
     // TRANG CHU
@@ -147,4 +149,4 @@ const publicRoute = [
 
 const privateRoute = [];
 
-export { publicRoute, privateRoute };
+export { publicRoute };

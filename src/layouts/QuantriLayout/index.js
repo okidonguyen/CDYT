@@ -2,10 +2,14 @@ import Sidebar from '~/layouts/LayoutElements/Sidebar';
 import Topbar from '~/layouts/LayoutElements/Topbar';
 import { useState } from 'react';
 import { Container } from 'reactstrap';
+import AuthService from '~/services/auth.service';
 
 const QuantriLayout = ({ children }) => {
     const [sidebarIsOpen, setSidebarOpen] = useState(true);
     const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
+    
+    console.log(AuthService().getCurrentUser());
+    
     const menuSidebar = [
         {
             name: 'Cấu hình chung',

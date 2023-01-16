@@ -3,7 +3,7 @@ import { publicRoute } from '~/routes';
 import { Fragment } from 'react';
 import { DefaultLayout } from './layouts';
 
-function App() {
+function  App() {
     return (
         <BrowserRouter>
             <div className="App">

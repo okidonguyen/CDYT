@@ -1,3 +1,5 @@
+//export const API_URL = 'http://112.213.89.28:3003/api/';
+export const API_URL = 'http://localhost:3001/api/';
 export const items = [
     {
         altText: '',
@@ -36,6 +38,7 @@ export const items = [
         src: require('~/assets/images/banner/Photo-05.jpg'),
     },
 ];
+
 
 export const footerItems = [
     {

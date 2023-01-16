@@ -1,9 +1,8 @@
-import userService from '~/services/user.service';
+import axios from 'axios';
+
+import {API_URL} from '~/data';
 
 function Trangchu() {
-    userService.getAllUser().then((res) => {
-        //console.log(res.data);
-    });
 
     return <h1>TRANG CHỦ QUẢN TRỊ</h1>;
 }

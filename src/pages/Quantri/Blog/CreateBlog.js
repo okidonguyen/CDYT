@@ -93,7 +93,12 @@ function CreateBlog() {
 
     const createBlogAction = (data) => {
         setLoadingBtn(true);
+<<<<<<< Updated upstream
         apiCreateBlog(data)
+=======
+        axios
+            .post('http://112.213.89.28:3003/api/admin/post-create', data)
+>>>>>>> Stashed changes
             .then((response) => response)
             .then((res) => {
                 NotificationManager.success(res.data.message);

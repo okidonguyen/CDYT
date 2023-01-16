@@ -7,7 +7,7 @@ import { NotificationManager, NotificationContainer } from 'react-notifications'
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
 import { useState } from 'react';
-const API_URL = 'http://localhost:3001/api/';
+import {API_URL} from '~/data';
 
 function Lienhe() {
     const [loadingBtn, setLoadingBtn] = useState(false);

@@ -1,14 +1,13 @@
 import axios from 'axios';
-
-//const API_URL = 'http://localhost:3001/api/auth/';
-const API_URL = 'http://localhost:3001/api/auth/';
+import authHeader from './auth-header';
+import {API_URL} from '~/data';
 
 const AuthService = () => {
     const login = async (username, password) => {
         let response = null;
         try {
             response = await axios.post(
-                API_URL + 'signin',
+                API_URL + 'auth/signin',
                 {
                     username,
                     password,
@@ -22,14 +21,6 @@ const AuthService = () => {
             //console.log(response);
             return response;
         }
-
-        // console.log('vao ay');
-        // if (response.data.username) {
-        //     localStorage.setItem('user', JSON.stringify(response.data));
-        // }
-        // console.log(response.data);
-
-        // console.log(API_URL + 'signin');
     };
 
     const logout = () => {
@@ -37,12 +28,16 @@ const AuthService = () => {
     };
 
     const register = async (username, email, password) => {
-        return await axios.post(API_URL + 'signup', {
+        return await axios.post(API_URL + 'auth/signup', {
             username,
             email,
             password,
         });
     };
+
+    const authConfirm = async () => {
+        return await axios.get(API_URL + 'auth/authConfirm', { headers: authHeader() });
+    }
 
     const getCurrentUser = () => {
         return JSON.parse(localStorage.getItem('user'));
@@ -53,6 +48,7 @@ const AuthService = () => {
         logout: logout,
         register: register,
         getCurrentUser: getCurrentUser,
+        authConfirm: authConfirm,
     };
 };
 

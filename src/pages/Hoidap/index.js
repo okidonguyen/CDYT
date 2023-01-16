@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import HeadTittle from '~/components/HeadTittle';
 import RunningText from '~/components/RunningText';
+
 import {
     AccordionBody,
     AccordionHeader,
@@ -25,7 +26,7 @@ import { useForm } from 'react-hook-form';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 import axios from 'axios';
 import authHeader from '~/services/auth-header';
-const API_URL = 'http://localhost:3001/api/';
+import {API_URL} from '~/data';
 
 function Hoidap(props) {
     const questions = [

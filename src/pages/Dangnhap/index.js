@@ -3,7 +3,6 @@ import {
     Card,
     CardImg,
     CardImgOverlay,
-    CardText,
     CardTitle,
     Col,
     Container,
@@ -11,7 +10,6 @@ import {
     FormFeedback,
     FormGroup,
     Label,
-    NavLink,
     Row,
     Spinner,
 } from 'reactstrap';
@@ -22,6 +20,7 @@ import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Dangnhap = ({ router }) => {
+    router.navigate("/")
     const [loadingBtn, setLoadingBtn] = useState(false);
     const {
         register,
@@ -49,12 +48,11 @@ const Dangnhap = ({ router }) => {
                 reset();
             })
             .finally(() => {
-                toast('Tên đăng nhập hoặc mật khẩu chưa đúng!');
                 setLoadingBtn(false);
             });
     };
 
-    useEffect(() => {});
+    //useEffect(() => {});
 
     return (
         <Container className="p-5 m-auto">

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 const MultiSelectDemo = (props) => {
-    const host = 'http://localhost:3001';
+    const host = 'http://112.213.89.28:3003';
 
     const [selectedItems, setSelectedItems] = useState([]);
     const [options, setOptions] = useState([]);

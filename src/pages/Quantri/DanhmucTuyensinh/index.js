@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import authHeader from '~/services/auth-header';
 
 import axios from 'axios';
-const API_URL = 'http://localhost:3001/api/';
+import {API_URL} from '~/data';
 
 const DanhmucTuyensinh = () => {
     const navigate = useNavigate();

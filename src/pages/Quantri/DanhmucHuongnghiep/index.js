@@ -5,7 +5,7 @@ import { NotificationManager, NotificationContainer } from 'react-notifications'
 import authHeader from '~/services/auth-header';
 
 import axios from 'axios';
-const API_URL = 'http://localhost:3001/api/';
+import {API_URL} from '~/data';
 
 const DanhmucHuongnghiep = () => {
     const navigate = useNavigate();

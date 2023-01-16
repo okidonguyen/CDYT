@@ -19,15 +19,8 @@ function Blog() {
     const [detailId, setDetailId] = useState(null);
 
     const getBlogs = (args) => {
-<<<<<<< Updated upstream
         setLoading(true);
         apiAllBlogs(args)
-=======
-        axios
-            .get('http://112.213.89.28:3003/api/admin/posts', {
-                params: args,
-            })
->>>>>>> Stashed changes
             .then((response) => response)
             .then((res) => {
                 const pagination = res.data.data.pagination;
